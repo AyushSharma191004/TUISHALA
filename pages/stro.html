@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Learning Style Carousel</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Styling */
+.story-section { 
+padding: 80px 0; 
+background-color: var(--bg-section);
+}
+/* Default fade */
+.story-carousel.carousel-fade .carousel-item {
+opacity: 0;
+transition: opacity 0.6s ease-in-out;
+}
+
+.story-carousel.carousel-fade .carousel-item.active {
+opacity: 1;
+}
+/* KEY FIX: non-active slides ka text hide karo */
+.story-carousel .carousel-item:not(.active) .quote-text,
+.story-carousel .carousel-item:not(.active) .quote-desc,
+.story-carousel .carousel-item:not(.active) .quote-author-name,
+.story-carousel .carousel-item:not(.active) .quote-author-role {
+opacity: 0;
+}
+.story-carousel .carousel-inner {
+     position: relative; 
+}
+
+.story-section-quote-text {
+    font-size: 1.938rem; 
+    font-weight: 600; 
+    color: var(--text-dark);
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+    max-width: 90%;
+}
+.story-section-quote-desc {
+    color: var(--text-primary); 
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.8; 
+    margin-bottom: 28px; 
+    max-width: 90%;
+}
+.story-section-quote-author-name { 
+    font-weight: 600;
+     color: var(--primary-color); 
+     font-size: 1.188rem; 
+     margin-bottom: 4px;
+}
+.story-section-quote-author-role { 
+    color: var(--text-muted); 
+    font-size: 1.125rem; 
+    font-weight: 400;
+}
+
+.story-image-wrapper {
+    position: relative; 
+    border-radius: 20px;
+    overflow: hidden; 
+    height: 380px;
+}
+.story-image { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.story-section-play-button {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px; 
+    height: 70px;
+    background: rgba(25, 153, 251, 0.95);
+    border-radius: 50%; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    color: white; 
+    font-size: 20px; 
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 8px 30px rgba(25, 153, 251, 0.4);
+}
+.story-section-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--primary-dark);
+}
+.story-section-play-text {
+    /* position: absolute; 
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%); */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(25, 153, 251, 0.95);
+    color: white;
+     padding: 0.72em 2.68em;
+    border-radius: 10px; 
+    font-size: 1.188rem;
+    font-weight: 400; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 8px; 
+    cursor: pointer;
+}
+.story-section-play-text i{
+    font-size: 1.6rem;
+}
+
+/* Custom carousel arrows */
+.story-carousel .carousel-control-prev,
+.story-carousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1; 
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+.story-carousel .carousel-control-prev { 
+    left: -5%; 
+}
+.story-carousel .carousel-control-next {
+     right: -5%; 
+}
+.story-carousel .carousel-control-prev:hover,
+.story-carousel .carousel-control-next:hover {
+    background: var(--primary-color); 
+    color: white; 
+    border-color: var(--primary-color);
+}
+.story-carousel .carousel-control-prev-icon,
+.story-carousel .carousel-control-next-icon {
+    filter: none;
+    width: 18px;
+    height: 18px;
+}
+/* Tablet */
+/* --- RESPONSIVE BEHAVIOUR (Great Learning Style) --- */
+
+@media (max-width: 991.98px) {
+    .story-section {
+        padding: 40px 0; /* Mobile par padding kam */
+    }
+
+    .story-carousel .carousel-item {
+        height: 600px; /* Mobile par fixed height taaki content fit ho jaye */
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* 1. Image ko background ki tarah set karna */
+    .story-image-col {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 0 !important;
+    }
+
+    .story-image-wrapper {
+        height: 100% !important;
+        border-radius: 0; /* Full screen look on mobile */
+    }
+
+    .story-image {
+        height: 100% !important;
+        object-fit: cover; /* Image stretch na ho */
+    }
+
+    /* 2. Gradient Overlay (For Text Readability) */
+    .story-image-wrapper::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80%; /* Niche se upar tak gradient */
+        background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.9) 85%);
+        z-index: 2;
+    }
+
+    /* 3. Play Button Overlay adjust */
+    .story-section-play-text {
+        top: 40% !important; /* Play button ko thoda upar rakha mobile par */
+        z-index: 3;
+    }
+
+    /* 4. Text Content ko image ke upar lana */
+    .story-text-col {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10; /* Sabse upar */
+        padding: 40px 20px !important; /* Side spacing */
+        text-align: center; /* Center aligned like Great Learning mobile */
+    }
+
+    /* 5. Text Colors change for Dark Background on Mobile */
+    .story-section-quote-text {
+        color: #ffffff !important; /* White text on dark overlay */
+        font-size: 1.5rem; /* Shrunk for mobile */
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .story-section-quote-desc {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin-bottom: 15px;
+        /* Optional: limit lines if desc is too long on mobile */
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .story-section-quote-author-name {
+        color: var(--primary-color) !important;
+        font-size: 1.1rem;
+    }
+
+    .story-section-quote-author-role {
+        color: #d1d5db !important;
+        font-size: 0.9rem;
+    }
+
+    /* 6. Navigation arrows hide or reposition for mobile */
+    .story-carousel .carousel-control-prev,
+    .story-carousel .carousel-control-next {
+        display: none; /* Mobile par arrows ki jagah swipe use hota h */
+    }
+}
+
+/* Small Mobile screens extra adjustment */
+@media (max-width: 576px) {
+    .story-carousel .carousel-item {
+        height: 550px;
+    }
+    .story-section-quote-text {
+        font-size: 1.25rem;
+    }
+}
+</style>
+<body>
+
+    <section class="story-section mt-5">
+      <div class="container position-relative">
+          <div id="storyCarousel" class="carousel slide  story-carousel" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">  <!-- carousel-fade -->
+              <div class="carousel-inner">
+                  <!-- Slide 1 -->
+                  <div class="carousel-item active">
+                      <div class="row align-items-start">
+                          <div class="col-lg-6 story-text-col">
+                              
+                              <h3 class="story-section-quote-text">&ldquo;I worked on hands-on projects that introduced me to real-world problems&rdquo;</h3>
+                              <p class="story-section-quote-desc">I had a really enjoyable learning experience. The program covered tools and topics I use in modern-day analytics. The mentors and Program Manager were always there to guide me. I was able to build strong foundational skills in Python, SQL, and Tableau and these skills are helping in my current role. I was able to land an amazing job as a business analyst in Amazon.</p>
+                              <div class="story-section-quote-author-name">Saanjey Shankhadhar</div>
+                              <div class="story-section-quote-author-role">PG Graduate Program in Data Science and Business Analytics</div>
+                          </div>
+                          <div class="col-lg-6 story-image-col">
+                              <div class="story-image-wrapper">
+                                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Story" class="story-image">
+                                  <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                                  <div class="story-section-play-text"><i class="fas fa-play"></i> Watch Story</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="carousel-item">
+                      <div class="row align-items-center">
+                          <div class="col-lg-6 story-text-col">
+                              
+                              <h3 class="story-section-quote-text">&ldquo;The mentorship and curriculum helped me switch careers seamlessly&rdquo;</h3>
+                              <p class="story-section-quote-desc">Coming from a non-tech background, I was worried about keeping up. But the structured approach and patient mentors made all the difference. The projects were industry-relevant and the career support team helped me crack interviews at multiple Fortune 500 companies.</p>
+                              <div class="story-section-quote-author-name">Priya Menon</div>
+                              <div class="story-section-quote-author-role">PG Graduate Program in Full Stack Development</div>
+                          </div>
+                          <div class="col-lg-6 story-image-col">
+                              <div class="story-image-wrapper">
+                                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Story" class="story-image">
+                                  <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                                  <div class="story-section-play-text"><i class="fas fa-play" ></i> Watch Story</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Slide 3 -->
+                  <div class="carousel-item">
+                      <div class="row align-items-center">
+                          <div class="col-lg-6 story-text-col">
+                              
+                              <h3 class="story-section-quote-text">&ldquo;From learning to earning in just 6 months&rdquo;</h3>
+                              <p class="story-section-quote-desc">The Generative AI program was ahead of its time. While others were still figuring out the basics, I was already building LLM-powered applications. The capstone project directly led to my current role as an AI Product Manager at a leading startup.</p>
+                              <div class="story-section-quote-author-name">Rahul Verma</div>
+                              <div class="story-section-quote-author-role">PG Graduate Program in Generative AI</div>
+                          </div>
+                          <div class="col-lg-6 story-image-col">
+                              <div class="story-image-wrapper">
+                                  <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="Story" class="story-image">
+                                  <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                                  <div class="story-section-play-text"><i class="fas fa-play" ></i> Watch Story</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Custom Arrows -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#storyCarousel" data-bs-slide="prev">
+                    <!-- <i class="fas fa-chevron-left"></i> -->
+                     <img src="../assets/icons/Vector (4).svg" alt="">
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#storyCarousel" data-bs-slide="next">
+                    <!-- <i class="fas fa-chevron-right"></i> -->
+                    <img src="../assets/icons/Vector (5).svg" alt="">
+                    <span class="visually-hidden">Next</span>
+                </button>
+          </div>
+      </div>
+    </section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

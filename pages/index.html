@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuishala</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <!-- Index css -->
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <!-- symbols -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="../assets/icons/logo figma 2.svg"
+            alt="logo"
+            class="logo-img"
+          />
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Center Links -->
+          <ul class="navbar-nav me-auto ms-5 text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+
+          <!-- Right Buttons -->
+          <div
+            class="d-flex gap-2 justify-content-center align-items-center mt-3 mt-lg-0"
+          >
+            <button class="btn btn-outline-custom">Sign in</button>
+            <button class="btn btn-primary-custom">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- NAVBAR END -->
+
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Content -->
+                <div class="col-lg-6">
+                    <h1>
+                    Learn Skills That
+                    <span
+                        >Get<br />
+                        You Hired</span
+                    >
+                    </h1>
+
+                    <p style="max-width:480px;">
+                    Master in-demand skills with expert-led courses. Build your
+                    portfolio, boost your career, and achieve your goals.
+                    </p>
+
+
+                    <div class="hero-flex-left d-flex gap-3 mt-3 flex-wrap">
+                    <a href="#" class="btn hero-btn-primary d-flex align-items-center ps-3">
+                            Explore Courses 
+                            <span class="hero-btn-arrow ms-2">
+                                <img src="../assets/icons/Arrow 1.svg" alt="arrow">
+                            </span>
+                        </a>
+
+                    <a href="#" class="btn hero-btn-outline-secondary d-flex align-items-center justify-content-between px-3">
+                        Watch Demo 
+                        <span class="hero-btn-arrow ms-2">
+                            <img src="../assets/icons/Vector.svg" alt="btn">
+                        </span>
+                        </a>
+                    </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="d-flex gap-5 hero-stats justify-content-start flex-wrap mt-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <h4>500+</h4>
+                        <p>Courses</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <h4>50k+</h4>
+                        <p>Students</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <h4>98%</h4>
+                        <p>Success Rate</p>
+                    </div>
+                    </div>
+                </div>
+
+                
+                <!-- Right Image - Bootstrap Carousel (Auto-slide with active dot width increase) -->
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="hero-img-carousel">
+
+                      <!--TOP-LEFT CORNER SQUARE BOX -->
+                      <div class="hero-corner-box-top-left"></div>    
+                      <!-- BOTTOM-RIGHT CORNER SQUARE BOX -->
+                      <div class="hero-corner-box-bottom-right"></div>
+
+                      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                          
+                          <!-- Carousel Indicators / Dots - Active dot ki width automatically badhegi CSS se -->
+                          <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                          </div>
+                          
+                          <!-- Carousel Inner - 5 Images jo auto-slide hongi -->
+                          <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                  <img src="https://picsum.photos/id/20/540/360" class="d-block w-100" alt="Learning session">
+                              </div>
+                              <div class="carousel-item">
+                                  <img src="https://picsum.photos/id/26/540/360" class="d-block w-100" alt="Coding workshop">
+                              </div>
+                              <div class="carousel-item">
+                                  <img src="https://picsum.photos/id/0/540/360" class="d-block w-100" alt="Laptop workspace">
+                              </div>
+                              <div class="carousel-item">
+                                  <img src="https://picsum.photos/id/91/540/360" class="d-block w-100" alt="Study group">
+                              </div>
+                              <div class="carousel-item">
+                                  <img src="https://picsum.photos/id/155/540/360" class="d-block w-100" alt="Online course">
+                              </div>
+                          </div>
+                            
+                        </div>
+                    </div>
+                </div>
+         </div>
+      </div>
+    </section>
+    <!-- Hero section End -->
+
+    <!-- FEATURED COURSES START -->
+    <section class="featured-courses py-5">
+      <div class="container">
+
+        <!-- Heading -->
+        <div class="text-center mb-5">
+          <h2 class="featured-section-title">
+            Featured <span>Courses</span>
+          </h2>
+          <p class="featured-section-subtitle ">
+            Learn from industry experts and transform your career
+          </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="row g-4 g-lg-5">
+
+          <!-- CARD 1 -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="feature-course-card">
+
+              <div class="feature-course-img">
+                <img src="../assets/images/Home/Rectangle 4.png" alt="">
+                <span class="feature-course-badge-custom">Beginner</span>
+              </div>
+
+              <div class="feature-course-content">
+                <h5>Digital Marketing Course</h5>
+                <p class="mb-0">SEO, SMO, Email Marketing Analytics</p>
+                <div class="feature-course-below">
+                <div class="feature-course-divider"></div>
+
+                <div class="feature-course-meta">
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Vector (1).svg" alt="star"> 4.5</span>
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Person-add.svg" alt="per"> 1200</span>
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Vector (2).svg" alt="clc"> 40 hours</span>
+                </div>
+
+                <button class="btn feature-course-btn-custom w-100 mt-4">
+                  Enroll Now
+                </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="feature-course-card">
+
+              <div class="feature-course-img">
+                <img src="../assets/images/Home/Rectangle 4.png" alt="">
+                <span class="feature-course-badge-custom">Intermediate</span>
+              </div>
+
+              <div class="feature-course-content">
+                <h5>Digital Marketing Course</h5>
+                <p>SEO, SMO, Email Marketing Analytics</p>
+                 <div class="feature-course-below">
+                <div class="feature-course-divider"></div>
+
+                <div class="feature-course-meta">
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Vector (1).svg" alt="star"> 4.5</span>
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Person-add.svg" alt="per"> 1200</span>
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Vector (2).svg" alt="clc"> 40 hours</span>
+                </div>
+
+                <button class="btn feature-course-btn-custom w-100 mt-4">
+                  Enroll Now
+                </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="feature-course-card">
+
+              <div class="feature-course-img">
+                <img src="../assets/images/Home/Rectangle 4.png" alt="">
+                <span class="feature-course-badge-custom">Advance</span>
+              </div>
+
+              <div class="feature-course-content">
+                <h5>Digital Marketing Course</h5>
+                <p>SEO, SMO, Email Marketing Analytics</p>
+                <div class="feature-course-below">
+                <div class="feature-course-divider"></div>
+
+                <div class="feature-course-meta">
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Vector (1).svg" alt="star"> 4.5</span>
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Person-add.svg" alt="per"> 1200</span>
+                  <span class="feature-course-meta-icon"><img src="../assets/icons/Vector (2).svg" alt="clc"> 40 hours</span>
+                </div>
+
+                <button class="btn feature-course-btn-custom w-100 mt-4">
+                  Enroll Now
+                </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- FEATURED COURSES END -->
+
+    <!-- WHY CHOOSE START -->
+    <section class="why-choose py-5">
+      <div class="container">
+
+        <!-- Heading -->
+        <div class="text-center mb-4">
+          <h2 class="why-choose-section-title">
+            Why Choose <span>Tuishala</span>
+          </h2>
+          <p class="why-choose-section-subtitle">
+            Everything you need to succeed in your learning journey
+          </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="row g-4">
+
+          <!-- CARD -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="why-choose-feature-card">
+              <div class="why-choose-icon-box">
+                <img src="../assets/icons/Group.svg" alt="icon">
+              </div>
+              <h5>Expert Instructors</h5>
+              <p>Learn From Industry professionals with real world experience.</p>
+            </div>
+          </div>
+
+          <!-- Repeat -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="why-choose-feature-card">
+              <div class="why-choose-icon-box">
+                <img src="../assets/icons/Group 1.svg" alt="icon">
+              </div>
+              <h5>Lifetime Access</h5>
+              <p>Learn From Industry professionals with real world experience.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="why-choose-feature-card">
+              <div class="why-choose-icon-box">
+                <img src="../assets/icons/Group 2.svg" alt="icon">
+              </div>
+              <h5>Certificates</h5>
+              <p>Learn From Industry professionals with real world experience.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="why-choose-feature-card">
+              <div class="why-choose-icon-box">
+                <img src="../assets/icons/Group (1).svg" alt="icon">
+              </div>
+              <h5>Global Community</h5>
+              <p>Learn From Industry professionals with real world experience.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="why-choose-feature-card">
+              <div class="why-choose-icon-box">
+                <img src="../assets/icons/Group (2).svg" alt="icon">
+              </div>
+              <h5>24/7 Support</h5>
+              <p>Learn From Industry professionals with real world experience.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="why-choose-feature-card">
+              <div class="why-choose-icon-box">
+                <img src="../assets/icons/Productivity.svg" alt="icon">
+              </div>
+              <h5>Career Growth</h5>
+              <p>Learn From Industry professionals with real world experience.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- WHY CHOOSE END -->
+
+    <!-- Dark STATS SECTION START -->
+    <section class="dark-stats-section py-4">
+      <div class="container">
+        <div class="row text-center justify-content-center">
+
+          <!-- ITEM 1 -->
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <div class="dark-stats-box">
+              <div class="dark-stats-icon">
+                <img src="../assets/icons/Rectangle.svg" alt="icon">
+              </div>
+              <h4><span class="counter" data-target="50000">0</span>+</h4>
+              <p>Active Students</p>
+            </div>
+          </div>
+
+          <!-- ITEM 2 -->
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <div class="dark-stats-box">
+              <div class="dark-stats-icon">
+                <img src="../assets/icons/Rectangle (1).svg" alt="icon">
+              </div>
+              <h4><span class="counter" data-target="500">0</span>+</h4>
+              <p>Quality Courses</p>
+            </div>
+          </div>
+
+          <!-- ITEM 3 -->
+          <div class="col-6 col-md-3">
+            <div class="dark-stats-box">
+              <div class="dark-stats-icon">
+                <img src="../assets/icons/Rectangle (2).svg" alt="icon">
+              </div>
+              <h4><span class="counter" data-target="100">0</span>+</h4>
+              <p>Expert Instructor</p>
+            </div>
+          </div>
+
+          <!-- ITEM 4 -->
+          <div class="col-6 col-md-3">
+            <div class="dark-stats-box">
+              <div class="dark-stats-icon">
+                <img src="../assets/icons/Rectangle (3).svg" alt="icon">
+              </div>
+             <h4><span class="counter" data-target="35000">0</span>+</h4>
+              <p>Certified Issued</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+   <!-- dark STATS SECTION END -->
+
+    <!--  Master Skills section -->
+    <section class="master-skills-section">
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="master-skill-section-label">Master skills. Build a Career.</div>
+                    <h2 class="master-skill-section-title">Modern skills for modern careers</h2>
+                    <p class="master-skill-section-desc">Stay at the top of your game with skills from the hottest domains. Explore topics that interest you most and see how the programs are relevant to you.</p>
+                </div>
+                <div class="col-lg-7 pt-lg-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon"><img src="../assets/icons/Group 88.svg" alt="ai"></div>
+                                    <div class="master-skill-skill-name">AI & Machine Learning</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon"><img src="../assets/icons/Group 88.svg" alt="ai"></div>
+                                    <div class="master-skill-skill-name">AI & Machine Learning</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon"><img src="../assets/icons/Group (3).svg" alt="gen"></div>
+                                    <div class="master-skill-skill-name">Generative AI</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon"><img src="../assets/icons/Group (3).svg" alt="gen"></div>
+                                    <div class="master-skill-skill-name">Generative AI</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon"><img src="../assets/icons/Group (4).svg" alt="sof"></div>
+                                    <div class="master-skill-skill-name">Software and tech</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon"><img src="../assets/icons/Group (4).svg" alt="sof"></div>
+                                    <div class="master-skill-skill-name">Software and tech</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon cloud"><img src="../assets/icons/Group 40.svg" alt="clo"></div>
+                                    <div class="master-skill-skill-name">Cloud Computing</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="master-skill-skill-card">
+                                <div class="master-skill-skill-info">
+                                    <div class="master-skill-skill-icon cloud"><img src="../assets/icons/Group 40.svg" alt="clo"></div>
+                                    <div class="master-skill-skill-name">Cloud Computing</div>
+                                </div>
+                                <img src="../assets/icons/Vector (3).svg" class="arrow" alt="arrow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Master skill section end -->
+
+    <!-- Testimonials Marquee section -->
+    <section class="marquee-testimonials-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="marquee-testimonials-section-title">What are <span>Students Says</span></h2>
+                <p class="marquee-testimonials-subtitle">Join thousands of successful learners who transformed their careers</p>
+            </div>
+        </div>
+        
+        <div class="marquee-container">
+            <div class="marquee-track" id="testimonialTrack">
+                <!-- Cards duplicated for seamless loop -->
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Edu-learn transformed my career! The web development course was very excellent and the instructors were amazing. I landed my dream job within 3 months of completing the course.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Ritika Roy" class="author-img">
+                        <div>
+                            <div class="author-name">Ritika Roy</div>
+                            <div class="author-role">Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Edu-learn transformed my career! The web development course was very excellent and the instructors were amazing. I landed my dream job within 3 months of completing the course.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Ritika Roy" class="author-img">
+                        <div>
+                            <div class="author-name">Ritika Roy</div>
+                            <div class="author-role">Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Edu-learn transformed my career! The web development course was very excellent and the instructors were amazing. I landed my dream job within 3 months of completing the course.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=9" alt="Ritika Roy" class="author-img">
+                        <div>
+                            <div class="author-name">Ritika Roy</div>
+                            <div class="author-role">Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">The data science program completely changed my perspective. Practical projects and mentorship helped me transition from marketing to analytics seamlessly.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Ananya Sharma" class="author-img">
+                        <div>
+                            <div class="author-name">Ananya Sharma</div>
+                            <div class="author-role">Data Analyst</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Best learning platform I've ever used. The cloud computing certification opened doors to opportunities I never thought possible. Highly recommended!</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=8" alt="Vikram Patel" class="author-img">
+                        <div>
+                            <div class="author-name">Vikram Patel</div>
+                            <div class="author-role">Cloud Architect</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">The AI course structure is phenomenal. From basics to advanced concepts, everything was covered with real-world applications. Got hired at a top tech firm!</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Neha Gupta" class="author-img">
+                        <div>
+                            <div class="author-name">Neha Gupta</div>
+                            <div class="author-role">ML Engineer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate set for seamless infinite scroll -->
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Edu-learn transformed my career! The web development course was very excellent and the instructors were amazing. I landed my dream job within 3 months of completing the course.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Ritika Roy" class="author-img">
+                        <div>
+                            <div class="author-name">Ritika Roy</div>
+                            <div class="author-role">Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Edu-learn transformed my career! The web development course was very excellent and the instructors were amazing. I landed my dream job within 3 months of completing the course.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Ritika Roy" class="author-img">
+                        <div>
+                            <div class="author-name">Ritika Roy</div>
+                            <div class="author-role">Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Edu-learn transformed my career! The web development course was very excellent and the instructors were amazing. I landed my dream job within 3 months of completing the course.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=9" alt="Ritika Roy" class="author-img">
+                        <div>
+                            <div class="author-name">Ritika Roy</div>
+                            <div class="author-role">Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">The data science program completely changed my perspective. Practical projects and mentorship helped me transition from marketing to analytics seamlessly.</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Ananya Sharma" class="author-img">
+                        <div>
+                            <div class="author-name">Ananya Sharma</div>
+                            <div class="author-role">Data Analyst</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">Best learning platform I've ever used. The cloud computing certification opened doors to opportunities I never thought possible. Highly recommended!</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=8" alt="Vikram Patel" class="author-img">
+                        <div>
+                            <div class="author-name">Vikram Patel</div>
+                            <div class="author-role">Cloud Architect</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="marquee-testimonial-card">
+                    <div class="marquee-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="marquee-testimonial-text">The AI course structure is phenomenal. From basics to advanced concepts, everything was covered with real-world applications. Got hired at a top tech firm!</p>
+                    <div class="marquee-testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Neha Gupta" class="author-img">
+                        <div>
+                            <div class="author-name">Neha Gupta</div>
+                            <div class="author-role">ML Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Marquee section end -->
+
+    <!--  Story Carousel (Bootstrap 5 Fade) -->
+    <section class="story-section mt-5">
+      <div class="container position-relative">
+          <div id="storyCarousel" class="carousel slide  story-carousel" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">  <!-- carousel-fade -->
+              <div class="carousel-inner">
+                  <!-- Slide 1 -->
+                  <div class="carousel-item active">
+                      <div class="row align-items-start">
+                          <div class="col-lg-6 story-text-col">
+                              
+                              <h3 class="story-section-quote-text">&ldquo;I worked on hands-on projects that introduced me to real-world problems&rdquo;</h3>
+                              <p class="story-section-quote-desc">I had a really enjoyable learning experience. The program covered tools and topics I use in modern-day analytics. The mentors and Program Manager were always there to guide me. I was able to build strong foundational skills in Python, SQL, and Tableau and these skills are helping in my current role. I was able to land an amazing job as a business analyst in Amazon.</p>
+                              <div class="story-section-quote-author-name">Saanjey Shankhadhar</div>
+                              <div class="story-section-quote-author-role">PG Graduate Program in Data Science and Business Analytics</div>
+                          </div>
+                          <div class="col-lg-6 story-image-col">
+                              <div class="story-image-wrapper">
+                                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Story" class="story-image">
+                                  <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                                  <div class="story-section-play-text"><i class="fas fa-play"></i> Watch Story</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="carousel-item">
+                      <div class="row align-items-center">
+                          <div class="col-lg-6 story-text-col">
+                              
+                              <h3 class="story-section-quote-text">&ldquo;The mentorship and curriculum helped me switch careers seamlessly&rdquo;</h3>
+                              <p class="story-section-quote-desc">Coming from a non-tech background, I was worried about keeping up. But the structured approach and patient mentors made all the difference. The projects were industry-relevant and the career support team helped me crack interviews at multiple Fortune 500 companies.</p>
+                              <div class="story-section-quote-author-name">Priya Menon</div>
+                              <div class="story-section-quote-author-role">PG Graduate Program in Full Stack Development</div>
+                          </div>
+                          <div class="col-lg-6 story-image-col">
+                              <div class="story-image-wrapper">
+                                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Story" class="story-image">
+                                  <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                                  <div class="story-section-play-text"><i class="fas fa-play" ></i> Watch Story</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Slide 3 -->
+                  <div class="carousel-item">
+                      <div class="row align-items-center">
+                          <div class="col-lg-6 story-text-col">
+                              
+                              <h3 class="story-section-quote-text">&ldquo;From learning to earning in just 6 months&rdquo;</h3>
+                              <p class="story-section-quote-desc">The Generative AI program was ahead of its time. While others were still figuring out the basics, I was already building LLM-powered applications. The capstone project directly led to my current role as an AI Product Manager at a leading startup.</p>
+                              <div class="story-section-quote-author-name">Rahul Verma</div>
+                              <div class="story-section-quote-author-role">PG Graduate Program in Generative AI</div>
+                          </div>
+                          <div class="col-lg-6 story-image-col">
+                              <div class="story-image-wrapper">
+                                  <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="Story" class="story-image">
+                                  <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                                  <div class="story-section-play-text"><i class="fas fa-play" ></i> Watch Story</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Custom Arrows -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#storyCarousel" data-bs-slide="prev">
+                    <!-- <i class="fas fa-chevron-left"></i> -->
+                     <img src="../assets/icons/Vector (4).svg" alt="">
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#storyCarousel" data-bs-slide="next">
+                    <!-- <i class="fas fa-chevron-right"></i> -->
+                    <img src="../assets/icons/Vector (5).svg" alt="">
+                    <span class="visually-hidden">Next</span>
+                </button>
+          </div>
+      </div>
+    </section>
+
+    <!-- stroy section end -->
+
+    <!-- company section start -->
+    <section class="companies-section">
+      <div class="container">
+          <h3 class="companies-title">Join <span>Tuishala</span> graduates at top-tier companies</h3>
+      </div>
+      
+      <div class="company-marquee-container">
+          <!-- Top Row - Moves Right -->
+          <div class="company-marquee-wrapper">
+              <div class="company-track track-right">
+                  <!-- Set 1 -->
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/google-logo-icon-png-svg 1.svg" alt="Google" class="company-logo google">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/pngimg.com - amazon_PNG12 1.svg" alt="Amazon" class="company-logo amazon">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Adobe-logo 1.svg" alt="Adobe" class="company-logo adobe">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Accenture.svg 1.svg" alt="Accenture" class="company-logo accenture">
+                  </div>
+                  <!-- Set 2 (Duplicate for seamless loop) -->
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/google-logo-icon-png-svg 1.svg" alt="Google" class="company-logo google">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/pngimg.com - amazon_PNG12 1.svg" alt="Amazon" class="company-logo amazon">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Adobe-logo 1.svg" alt="Adobe" class="company-logo adobe">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Accenture.svg 1.svg" alt="Accenture" class="company-logo accenture">
+                  </div>
+                  <!-- Set 3 (Extra for safety, avoids gap) -->
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/google-logo-icon-png-svg 1.svg" alt="Google" class="company-logo google">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/pngimg.com - amazon_PNG12 1.svg" alt="Amazon" class="company-logo amazon">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Adobe-logo 1.svg" alt="Adobe" class="company-logo adobe">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Accenture.svg 1.svg" alt="Accenture" class="company-logo accenture">
+                  </div>
+              </div>
+          </div>
+
+          <!-- Bottom Row - Moves Left -->
+          <div class="company-marquee-wrapper">
+              <div class="company-track track-left">
+                  <!-- Set 1 -->
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Intel-logo-2022 1.svg" alt="Intel" class="company-logo intel">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/microsoft_logo_icon_168102 1.svg" alt="Microsoft" class="company-logo microsoft">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Cognizant_logo_2022.svg 1.svg" alt="Cognizant" class="company-logo cognizant">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/oracle_logo_icon_168919 1.svg" alt="Oracle" class="company-logo oracle">
+                  </div>
+                  <!-- Set 2 (Duplicate) -->
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Intel-logo-2022 1.svg" alt="Intel" class="company-logo intel">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/microsoft_logo_icon_168102 1.svg" alt="Microsoft" class="company-logo microsoft">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Cognizant_logo_2022.svg 1.svg" alt="Cognizant" class="company-logo cognizant">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/oracle_logo_icon_168919 1.svg" alt="Oracle" class="company-logo oracle">
+                  </div>
+                  <!-- Set 3 (Extra) -->
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Intel-logo-2022 1.svg" alt="Intel" class="company-logo intel">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/microsoft_logo_icon_168102 1.svg" alt="Microsoft" class="company-logo microsoft">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/Cognizant_logo_2022.svg 1.svg" alt="Cognizant" class="company-logo cognizant">
+                  </div>
+                  <div class="company-logo-item">
+                      <img src="../assets/icons/oracle_logo_icon_168919 1.svg" alt="Oracle" class="company-logo oracle">
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <!-- company section end -->
+
+    <!--Faculty Section -->
+    <section class="faculty-section">
+        <div class="container">
+            <h2 class="faculty-title">Master your craft with <span>renowned faculty</span></h2>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="faculty-card">
+                        <div class="faculty-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Pramanth Raj Sinha" class="faculty-img">
+                        </div>
+                        <div class="faculty-body">
+                            <div class="faculty-name">Pramanth Raj Sinha</div>
+                            <div class="faculty-role">Founder & Trustee</div>
+                            <div class="faculty-working-label">WORKING AT</div>
+                            <p class="faculty-desc">
+                                Former McKinsey Partner, Co-Founder & Trustee of Ashoka University, and PhD holder in Mechani... <a href="#" class="faculty-read-more">Read More</a>
+                            </p>
+                            <a href="#" class="faculty-linkedin-link">
+                                LinkedIn Profile <img src="../assets/icons/Vector (6).svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="faculty-card">
+                        <div class="faculty-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Pramanth Raj Sinha" class="faculty-img">
+                        </div>
+                        <div class="faculty-body">
+                            <div class="faculty-name">Pramanth Raj Sinha</div>
+                            <div class="faculty-role">Founder & Trustee</div>
+                            <div class="faculty-working-label">WORKING AT</div>
+                            <p class="faculty-desc">
+                                Former McKinsey Partner, Co-Founder & Trustee of Ashoka University, and PhD holder in Mechani... <a href="#" class="faculty-read-more">Read More</a>
+                            </p>
+                            <a href="#" class="faculty-linkedin-link">
+                                LinkedIn Profile <img src="../assets/icons/Vector (6).svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="faculty-card">
+                        <div class="faculty-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Pramanth Raj Sinha" class="faculty-img">
+                        </div>
+                        <div class="faculty-body">
+                            <div class="faculty-name">Pramanth Raj Sinha</div>
+                            <div class="faculty-role">Founder & Trustee</div>
+                            <div class="faculty-working-label">WORKING AT</div>
+                            <p class="faculty-desc">
+                                Former McKinsey Partner, Co-Founder & Trustee of Ashoka University, and PhD holder in Mechani... <a href="#" class="faculty-read-more">Read More</a>
+                            </p>
+                            <a href="#" class="faculty-linkedin-link">
+                                LinkedIn Profile <img src="../assets/icons/Vector (6).svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Faculty Section End-->
+
+        <!-- Feature Block section  -->
+        <section class="edge-feature-section">
+            <div class="container">
+                <div class="edge-header mb-5">
+                    <div class="edge-subtitle">Your Path to Career Success Starts with Tuishala</div>
+                    <h2 class="edge-title">What gives us an edge?</h2>
+                </div>
+            </div>
+            <div class="feature-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Left Content -->
+                        <div class="col-lg-5 ">
+                            <div class="step-badge">Step1: Learn smarter</div>
+                            <h3 class="feature-heading">Learn with expert-curated content</h3>
+                            <p class="feature-desc">Build the right skills, the right way.</p>
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <div class="stat-number">40+</div>
+                                    <div class="stat-label">Hours of learning content</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">76%</div>
+                                    <div class="stat-label">Learners satisfaction rate</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-start">Start Learning</a>
+                        </div>
+
+                        <!-- Right Images -->
+                        <div class="col-lg-7">
+                            <div class="feature-images-wrapper">
+                                <!-- Main Screen Image (upar) -->
+                                <img src="../assets/images/Home/Group 79.png" alt="Main Screen" class="img-fluid main-screen">
+
+                                <!-- Background Curve Vector (peeche & center mein) -->
+                                <img src="../assets/images/Home/Vector 1.png" class="img-fluid curve-bg" alt="Background Curve">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== Feature Block: Step 2 (Blue BG) ========== -->
+            <div class="feature-block blue">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Left Content -->
+                        <div class="col-lg-5 ">
+                            <div class="step-badge">Step2: Learn smarter</div>
+                            <h3 class="feature-heading">Learn with expert-curated content</h3>
+                            <p class="feature-desc">Build the right skills, the right way.</p>
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <div class="stat-number">40+</div>
+                                    <div class="stat-label">Hours of learning content</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">76%</div>
+                                    <div class="stat-label">Learners satisfaction rate</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-start">Start Learning</a>
+                        </div>
+
+                        <!-- Right Images -->
+                        <div class="col-lg-7">
+                            <div class="feature-images-wrapper">
+                                <!-- Main Screen Image (upar) -->
+                                <img src="../assets/images/Home/Group 79.png" alt="Main Screen" class="img-fluid main-screen">
+
+                                <!-- Background Curve Vector (peeche & center mein) -->
+                                <img src="../assets/images/Home/Vector 2.png" class="img-fluid curve-bg" alt="Background Curve">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- step-3 -->
+            <div class="feature-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Left Content -->
+                        <div class="col-lg-5 ">
+                            <div class="step-badge">Step1: Learn smarter</div>
+                            <h3 class="feature-heading">Learn with expert-curated content</h3>
+                            <p class="feature-desc">Build the right skills, the right way.</p>
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <div class="stat-number">40+</div>
+                                    <div class="stat-label">Hours of learning content</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">76%</div>
+                                    <div class="stat-label">Learners satisfaction rate</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-start">Start Learning</a>
+                        </div>
+
+                        <!-- Right Images -->
+                        <div class="col-lg-7">
+                            <div class="feature-images-wrapper">
+                                <!-- Main Screen Image (upar) -->
+                                <img src="../assets/images/Home/Group 79.png" alt="Main Screen" class="img-fluid main-screen">
+
+                                <!-- Background Curve Vector (peeche & center mein) -->
+                                <img src="../assets/images/Home/Vector 1.png" class="img-fluid curve-bg" alt="Background Curve">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- step-4 -->
+             <div class="feature-block blue">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Left Content -->
+                        <div class="col-lg-5 ">
+                            <div class="step-badge">Step2: Learn smarter</div>
+                            <h3 class="feature-heading">Learn with expert-curated content</h3>
+                            <p class="feature-desc">Build the right skills, the right way.</p>
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <div class="stat-number">40+</div>
+                                    <div class="stat-label">Hours of learning content</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">76%</div>
+                                    <div class="stat-label">Learners satisfaction rate</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-start">Start Learning</a>
+                        </div>
+
+                        <!-- Right Images -->
+                        <div class="col-lg-7">
+                            <div class="feature-images-wrapper">
+                                <!-- Main Screen Image (upar) -->
+                                <img src="../assets/images/Home/Group 79.png" alt="Main Screen" class="img-fluid main-screen">
+
+                                <!-- Background Curve Vector (peeche & center mein) -->
+                                <img src="../assets/images/Home/Vector 2.png" class="img-fluid curve-bg" alt="Background Curve">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feature Block section end -->
+
+         <!-- Faq section -->
+        <section class="faq-container">
+            <div class="container">
+            <h2 class="faq-title mb-4">Frequently Asked Questions</h2>
+
+            <div class="accordion accordion-flush" id="tuishalaFaq">
+                
+                <!-- Question 1 (Expanded) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true">
+                            What is Tuishala?
+                        </button>
+                    </h2>
+                    <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#tuishalaFaq">
+                        <div class="accordion-body">
+                            EduLearn is an online learning community with thousands of classes for creative and curious people, on topics including illustration, design, photography, video, freelancing, and more. On EduLearn, you'll find inspiration from hands-on classes and teachers at the top of their creative fields, so you can take the next step in your creative journey.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                            Why Choose Tuishala?
+                        </button>
+                    </h2>
+                    <div id="q2" class="accordion-collapse collapse" data-bs-parent="#tuishalaFaq">
+                        <div class="accordion-body">
+                            Placeholder text for why users should choose this platform.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                            What is Tuishala?
+                        </button>
+                    </h2>
+                    <div id="q3" class="accordion-collapse collapse" data-bs-parent="#tuishalaFaq">
+                        <div class="accordion-body">
+                            Tuishala provides a comprehensive learning environment for students.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                            What Can I Learn From Tuishala?
+                        </button>
+                    </h2>
+                    <div id="q4" class="accordion-collapse collapse" data-bs-parent="#tuishalaFaq">
+                        <div class="accordion-body">
+                            Explore a wide range of subjects from technology to the arts.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                            Can I teach on Tuishala?
+                        </button>
+                    </h2>
+                    <div id="q5" class="accordion-collapse collapse" data-bs-parent="#tuishalaFaq">
+                        <div class="accordion-body">
+                            Yes! We welcome experts to share their knowledge on our platform.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeated Question for Layout Match -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
+                            What Can I Learn From Tuishala?
+                        </button>
+                    </h2>
+                    <div id="q6" class="accordion-collapse collapse" data-bs-parent="#tuishalaFaq">
+                        <div class="accordion-body">
+                            Information regarding specific learning paths.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7">
+                            What Can I Learn From Tuishala?
+                        </button>
+                    </h2>
+                    <div id="q7" class="accordion-collapse collapse" data-bs-parent="#tuishalaFaq">
+                        <div class="accordion-body">
+                            Information regarding advanced certifications.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+         <!-- Faq section end-->
+
+        <!--  LEARNER SUPPORT SECTION -->
+        <section class="support-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <h2 class="support-title">EduLearn <span>Learner Support</span></h2>
+                        <p class="support-subtitle">Talk to our experts. We are available 7 days a week, 09 AM to 7 PM</p>
+
+                        <!-- Indian National -->
+                        <div class="contact-row">
+                            <img src="../assets/icons/Rectangle (4).svg"  alt="India">
+                            <span class="contact-label">Indian National</span>
+                            <div class="phone-box ms-lg-5 ms-sm-4">
+                                <img src="../assets/icons/Group 34.svg" alt=""> 1800 210 2026
+                            </div>
+                        </div>
+
+                        <!-- Foreign National -->
+                        <div class="contact-row">
+                            <img src="../assets/icons/Group (5).svg"  alt="World">
+                            <span class="contact-label">Foreign Nationals</span>
+                            <div class="phone-box ms-lg-3">
+                            <img src="../assets/icons/Group 34.svg" alt=""> 1800 210 2026
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call Widget -->
+            <div class="call-widget gap-4" id="callWidget">
+                <div class="speech-bubble" id="speechBubble">
+                    <button class="close-btn" id="closeWidgetBtn" aria-label="Close" onclick="closeWidget()">×</button>
+                    Start your degree or diploma at 10k per month! Best-in-class courses in Data Science, Management and Technology
+                    
+                </div>
+                <div class="call-icon-btn" id="callIconBtn">
+                <img src="../assets/icons/Group 32.svg" alt="">
+                </div>
+            </div>
+        </section>
+        <!--  LEARNER SUPPORT SECTION end-->
+        
+        <!--  CTA SECTION -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="offer-badge">Limited Time Offer <img src="../assets/icons/Rectangle (5).svg" alt=""></div>
+                <h1 class="cta-title">Start Your Learning Journey Today</h1>
+                <p class="cta-subtitle">Get access to 500+ courses with a special discount. Transform your career with expert-led training.</p>
+                
+                <div class="cta-btns d-flex justify-content-center gap-3">
+                    <button class="btn-white">Get Started Now <img src="../assets/icons/Arrow 2.svg" alt=""></button>
+                    <button class="btn-outline-white">Browse Courses <img src="../assets/icons/Arrow 3.svg" alt=""></button>
+                </div>
+
+                <div class="social-follow">
+                    <span>Follow Us On</span>
+                    <div class="social-icons">
+                        <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!--  CTA SECTION end-->
+
+        <!-- 3. FOOTER SECTION -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="footer-logo">
+                            <img src="../assets/icons/logo figma 2.svg" alt="Tuishala Logo"> 
+                        </div>
+                        <p class="footer-tagline">Building Careers of Tomorrow</p>
+                        <div class="footer-social-icons mb-4 mb-lg-0">
+                        <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-end mt-5">
+                        <div class="footer-app-buttons d-flex flex-column align-items-lg-end">
+                            <a href="#" class="btn">GET THE ANDROID APP</a>
+                            <a href="#" class="btn">GET THE IOS APP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border-color: #333;">
+
+                <div class="row mt-5">
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Instructors</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Category</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Business</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Support</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Support</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Bootstrap js -->
+    <script src="../assets/js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

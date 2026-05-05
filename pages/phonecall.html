@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Tuishala - Learner Support | Call Simulation</title>
+    <!-- Bootstrap 5 (grid & utilities) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (for extra icons and ring animation) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --font-family: 'Poppins', sans-serif;
+            --primary-color: #1999FB;
+            --primary-light: #5dadea;
+            --primary-dark: #1d4ed8;
+            --primary-link: #0A66C2;
+            --text-primary: #777777;   
+            --text-secondary: #565656; 
+            --text-muted: #94a3b8;
+            --text-dark: #000000;
+            --bg-white: #ffffff;
+            --bg-light: #F6F6F6;
+            --bg-section: #FAFAFA;
+            --bg-dark: #0f172a;
+            --border-color: #CCCCCC;
+            --border-light-color: #D7D7D7;
+            --transition: all 0.3s ease;
+            --widget-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            --call-ring-shadow: 0 0 0 0 rgba(25, 153, 251, 0.5);
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-section);
+        }
+
+        /* SECTION 1: LEARNER SUPPORT - FULLY RESPONSIVE */
+        .support-section {
+            padding: 60px 0;
+            position: relative;
+            background-color: var(--bg-white);
+        }
+
+        .support-title {
+            font-size: 2.063rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .support-title span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .support-subtitle {
+            color: var(--text-primary);
+            font-size: 1.375rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        /* Contact row - fully responsive flex with wrapping */
+        .contact-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            gap: 20px;
+        }
+
+        .contact-row > img {
+            height: 39px;
+            width: 39px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-weight: 500;
+            font-size: 1.625rem;
+            color: var(--text-primary);
+            min-width: 170px;
+            flex-shrink: 0;
+        }
+
+        .phone-box {
+            border: 1px solid var(--border-color);
+            padding: 12px 28px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-primary);
+            font-size: 1.375rem;
+            font-weight: 400;
+            background: white;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .phone-box:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(25, 153, 251, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .phone-box > img {
+            height: 29px;
+            width: 29px;
+            object-fit: contain;
+        }
+
+        /* ===== FLOATING CALL WIDGET ===== */
+        .call-widget {
+            position: fixed;
+            right: 24px;
+            bottom: 30px;
+            display: flex;
+            align-items: center;
+            z-index: 1050;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        /* Speech bubble styling */
+        .speech-bubble {
+            background: white;
+            border: 1px solid var(--border-light-color);
+            border-radius: 20px;
+            font-weight: 500;
+            padding: 16px 20px;
+            width: 360px;
+            font-size: 1rem;
+            line-height: 1.45;
+            color: #1e293b;
+            box-shadow: var(--widget-shadow);
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        /* triangle arrow on the right side */
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            right: -18px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            border-left: 18px solid white;
+            filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.08));
+        }
+
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent;
+            border-left: 20px solid var(--border-light-color);
+            z-index: -1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn:hover {
+            background: #dc2626;
+            transform: scale(1.05);
+        }
+
+        /* CALL ICON BUTTON with ring animation */
+        .call-icon-btn {
+            background: var(--primary-color);
+            color: white;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(25, 153, 251, 0.45);
+            transition: all 0.25s ease;
+            border: none;
+            position: relative;
+            animation: subtlePulse 2s infinite;
+        }
+
+        .call-icon-btn:hover {
+            transform: scale(1.08);
+            background: var(--primary-dark);
+            box-shadow: 0 10px 24px rgba(25, 153, 251, 0.6);
+            animation: none;
+        }
+
+        /* Ring animation for call simulation */
+        @keyframes ringEffect {
+            0% { box-shadow: 0 0 0 0 rgba(25, 153, 251, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(25, 153, 251, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(25, 153, 251, 0); }
+        }
+
+        .call-icon-btn.ringing {
+            animation: ringEffect 1.2s ease-in-out infinite;
+        }
+
+        @keyframes subtlePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .call-icon-btn > img {
+            height: 32px;
+            width: 32px;
+            filter: brightness(0) invert(1);
+            object-fit: contain;
+        }
+
+        /* Call Simulation Modal (Toast / Overlay) */
+        .call-sim-overlay {
+            position: fixed;
+            bottom: 120px;
+            right: 110px;
+            background: #1e293b;
+            color: white;
+            border-radius: 48px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1060;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            background: rgba(30, 41, 59, 0.95);
+            border-left: 4px solid var(--primary-color);
+            font-family: monospace;
+            font-weight: 500;
+            animation: slideInRight 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .call-sim-overlay .call-status {
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .call-sim-overlay .call-timer {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            background: #0f172a;
+            padding: 4px 10px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        .call-sim-overlay .end-call-btn {
+            background: #ef4444;
+            border: none;
+            color: white;
+            border-radius: 40px;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .call-sim-overlay .end-call-btn:hover {
+            background: #dc2626;
+            transform: scale(1.02);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ========== FULL RESPONSIVE BREAKPOINTS ========== */
+        @media (max-width: 992px) {
+            .support-title { font-size: 1.85rem; }
+            .support-subtitle { font-size: 1.2rem; }
+            .contact-label { font-size: 1.4rem; min-width: 150px; }
+            .phone-box { font-size: 1.2rem; padding: 10px 22px; }
+            .speech-bubble { width: 320px; font-size: 0.95rem; padding: 14px 18px; }
+            .call-widget { right: 20px; bottom: 25px; }
+            .call-sim-overlay { bottom: 110px; right: 100px; }
+        }
+
+        @media (max-width: 768px) {
+            .support-title { font-size: 1.65rem; }
+            .support-subtitle { font-size: 1.1rem; }
+            .contact-label { font-size: 1.25rem; min-width: 130px; }
+            .phone-box { font-size: 1rem; padding: 8px 18px; }
+            .contact-row > img { height: 34px; width: 34px; }
+            .speech-bubble { width: 280px; font-size: 0.9rem; padding: 12px 16px; }
+            .call-icon-btn { width: 56px; height: 56px; }
+            .call-icon-btn > img { height: 28px; width: 28px; }
+            .close-btn { width: 28px; height: 28px; font-size: 20px; top: -10px; right: -10px; }
+            .speech-bubble::after { right: -16px; border-left-width: 16px; border-top-width: 14px; border-bottom-width: 14px; }
+            .speech-bubble::before { right: -18px; border-left-width: 18px; }
+            .call-sim-overlay { bottom: 100px; right: 80px; padding: 10px 18px; }
+        }
+
+        @media (max-width: 576px) {
+            .support-section { padding: 40px 0 90px 0; }
+            .support-title { font-size: 1.5rem; text-align: center; }
+            .support-subtitle { font-size: 1rem; text-align: center; }
+            .contact-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                background: var(--bg-light);
+                padding: 16px;
+                border-radius: 20px;
+                margin-bottom: 16px;
+            }
+            .contact-label { font-size: 1.125rem; min-width: auto; }
+            .phone-box { width: 100%; justify-content: center; }
+            .call-widget {
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 16px;
+                gap: 10px;
+            }
+            .speech-bubble { width: 260px; font-size: 0.85rem; padding: 12px 14px; }
+            .speech-bubble::after { right: -14px; border-left-width: 14px; border-top-width: 12px; border-bottom-width: 12px; }
+            .call-icon-btn { width: 52px; height: 52px; }
+            .call-sim-overlay {
+                bottom: 90px;
+                right: 50%;
+                transform: translateX(50%);
+                width: 90%;
+                justify-content: space-between;
+                border-radius: 60px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .speech-bubble { width: 220px; font-size: 0.8rem; }
+            .call-icon-btn { width: 48px; height: 48px; }
+        }
+
+        .phone-box, .call-icon-btn {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LEARNER SUPPORT SECTION -->
+    <section class="support-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 col-12">
+                    <h2 class="support-title">EduLearn <span>Learner Support</span></h2>
+                    <p class="support-subtitle">Talk to our experts. We are available 7 days a week, 09 AM to 7 PM</p>
+
+                    <!-- INDIAN NATIONAL CONTACT ROW (clickable call simulation) -->
+                    <div class="contact-row" data-phone="1800 210 2026">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%23FF9933'/%3E%3Ccircle cx='24' cy='24' r='22' fill='%23ffffff'/%3E%3Cpath fill='%23138C44' d='M24 2C12.97 2 4 11 4 22h40c0-11-8.97-20-20-20z'/%3E%3Cpath fill='%23FF671F' d='M24 46c11.03 0 20-9 20-20H4c0 11 8.97 20 20 20z'/%3E%3Ccircle cx='24' cy='22' r='8' fill='%23000080'/%3E%3Ccircle cx='24' cy='22' r='4' fill='%23FF9933'/%3E%3C/svg%3E"
+                             alt="India Flag" loading="lazy">
+                        <span class="contact-label">Indian National</span>
+                        <div class="phone-box" data-sim-call="18002102026">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' viewBox='0 0 24 24' fill='none' stroke='%231999FB' stroke-width='1.5'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E"
+                                 alt="phone icon">
+                            1800 210 2026
+                        </div>
+                    </div>
+
+                    <!-- FOREIGN NATIONAL CONTACT ROW -->
+                    <div class="contact-row" data-phone="+91 1800 210 2026">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%233F51B5' d='M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4z'/%3E%3Cpath fill='%23FFC107' d='M24 12c-6.63 0-12 5.37-12 12s5.37 12 12 12 12-5.37 12-12-5.37-12-12-12z'/%3E%3Ccircle cx='24' cy='24' r='6' fill='%23F44336'/%3E%3C/svg%3E"
+                             alt="Global Icon" loading="lazy">
+                        <span class="contact-label">Foreign Nationals</span>
+                        <div class="phone-box" data-sim-call="9118002102026">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' viewBox='0 0 24 24' fill='none' stroke='%231999FB' stroke-width='1.5'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E"
+                                 alt="phone">
+                            +91 1800 210 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Call Widget (with simulation) -->
+        <div class="call-widget" id="callWidget">
+            <div class="speech-bubble" id="speechBubble">
+                <button class="close-btn" id="closeWidgetBtn" aria-label="Close">×</button>
+                Start your degree or diploma at 10k per month! Best-in-class courses in Data Science, Management and Technology
+            </div>
+            <div class="call-icon-btn" id="callIconBtn">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E"
+                     alt="call support">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function() {
+            // CALL SIMULATION FULL UX: For better UX, clicking on call icon / phone boxes triggers realistic call simulation.
+            let activeCallElement = null;   // stores current call overlay
+            let callTimerInterval = null;
+            let currentCallSeconds = 0;
+            
+            // Helper: format seconds to MM:SS
+            function formatTime(sec) {
+                let mins = Math.floor(sec / 60);
+                let remainSec = sec % 60;
+                return `${mins.toString().padStart(2,'0')}:${remainSec.toString().padStart(2,'0')}`;
+            }
+            
+            // Remove existing call simulation overlay if any
+            function removeCallOverlay() {
+                if (activeCallElement && activeCallElement.remove) {
+                    activeCallElement.remove();
+                    activeCallElement = null;
+                }
+                if (callTimerInterval) {
+                    clearInterval(callTimerInterval);
+                    callTimerInterval = null;
+                }
+                currentCallSeconds = 0;
+                // remove ringing class from call icon
+                const iconBtn = document.getElementById('callIconBtn');
+                if (iconBtn) iconBtn.classList.remove('ringing');
+            }
+            
+            // Create call simulation UI (incoming call, then connect)
+            function startCallSimulation(phoneNumber, sourceElement = null) {
+                // remove any existing call first
+                removeCallOverlay();
+                
+                // add ringing animation to widget icon
+                const iconBtn = document.getElementById('callIconBtn');
+                if (iconBtn) iconBtn.classList.add('ringing');
+                
+                // Create incoming call notification (connecting stage)
+                const overlay = document.createElement('div');
+                overlay.className = 'call-sim-overlay';
+                overlay.innerHTML = `
+                    <i class="fas fa-phone-alt" style="color: #22c55e; font-size: 1.2rem;"></i>
+                    <div class="call-status">Calling <strong>${phoneNumber}</strong> ...</div>
+                    <div class="call-timer" id="callTimerDisplay">00:00</div>
+                    <button class="end-call-btn" id="endCallSimBtn"><i class="fas fa-phone-slash"></i> End</button>
+                `;
+                document.body.appendChild(overlay);
+                activeCallElement = overlay;
+                
+                // Simulate connection after 1.8 seconds (ringing then answered)
+                let connected = false;
+                const connectTimeout = setTimeout(() => {
+                    if (activeCallElement) {
+                        connected = true;
+                        const statusSpan = activeCallElement.querySelector('.call-status');
+                        if (statusSpan) statusSpan.innerHTML = `📞 Connected to <strong>Tuishala Support</strong> (${phoneNumber})`;
+                        // start timer
+                        currentCallSeconds = 0;
+                        const timerSpan = document.getElementById('callTimerDisplay');
+                        if (timerSpan) timerSpan.innerText = formatTime(0);
+                        if (callTimerInterval) clearInterval(callTimerInterval);
+                        callTimerInterval = setInterval(() => {
+                            if (activeCallElement) {
+                                currentCallSeconds++;
+                                const timerSpanActive = document.getElementById('callTimerDisplay');
+                                if (timerSpanActive) timerSpanActive.innerText = formatTime(currentCallSeconds);
+                            } else {
+                                clearInterval(callTimerInterval);
+                            }
+                        }, 1000);
+                        // remove ringing class after connected
+                        if (iconBtn) iconBtn.classList.remove('ringing');
+                    }
+                }, 1800);
+                
+                // End call function
+                const endCall = () => {
+                    clearTimeout(connectTimeout);
+                    removeCallOverlay();
+                    if (iconBtn) iconBtn.classList.remove('ringing');
+                };
+                
+                // Add event listener to end button after dom ready
+                const endBtn = overlay.querySelector('#endCallSimBtn');
+                if (endBtn) {
+                    endBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        endCall();
+                    });
+                }
+                
+                // Optional: auto cleanup if clicked outside but we keep user control only via End.
+                // also store timeout for safety
+                overlay.setAttribute('data-timeout-id', connectTimeout);
+            }
+            
+            // Function to handle call trigger from any phone element
+            function handleCallTrigger(phoneNumber) {
+                if (!phoneNumber) return;
+                // clean phone number (remove spaces, plus)
+                let cleanNumber = phoneNumber.replace(/\s+/g, '');
+                startCallSimulation(cleanNumber);
+            }
+            
+            // Attach event listeners to all .phone-box elements (Indian & Foreign)
+            const phoneBoxes = document.querySelectorAll('.phone-box');
+            phoneBoxes.forEach(box => {
+                // Extract phone number from text content or data attribute
+                box.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    let phoneText = '';
+                    // get the numeric text inside phone-box (excluding icon)
+                    const rawText = box.innerText.trim();
+                    const match = rawText.match(/[\+\d\s]+/);
+                    if (match) phoneText = match[0].trim();
+                    if (phoneText) {
+                        handleCallTrigger(phoneText);
+                    } else if (box.getAttribute('data-sim-call')) {
+                        handleCallTrigger(box.getAttribute('data-sim-call'));
+                    } else {
+                        handleCallTrigger('18002102026');
+                    }
+                });
+            });
+            
+            // FLOATING CALL ICON (MAIN WIDGET) -> triggers support call
+            const floatingCallBtn = document.getElementById('callIconBtn');
+            if (floatingCallBtn) {
+                floatingCallBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // open widget bubble if closed? keep same behaviour: also trigger call simulation
+                    const speech = document.getElementById('speechBubble');
+                    if (speech && speech.style.display === 'none') {
+                        speech.style.display = 'block';
+                        localStorage.setItem('supportWidgetClosed', 'false');
+                    }
+                    // Trigger call to main support number
+                    handleCallTrigger('1800 210 2026');
+                });
+            }
+            
+            // Close bubble functionality
+            const closeWidgetBtn = document.getElementById('closeWidgetBtn');
+            const speechBubble = document.getElementById('speechBubble');
+            if (closeWidgetBtn && speechBubble) {
+                closeWidgetBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    speechBubble.style.display = 'none';
+                    localStorage.setItem('supportWidgetClosed', 'true');
+                });
+            }
+            
+            // Restore widget state from localStorage
+            if (localStorage.getItem('supportWidgetClosed') === 'true') {
+                if (speechBubble) speechBubble.style.display = 'none';
+            } else {
+                if (speechBubble) speechBubble.style.display = 'block';
+            }
+            
+            // Additional UX: if any existing call overlay disappears on escape? not needed
+            // Also add a subtle call simulation for floating widget second call simulation already done.
+            // Ensure on window unload cleanup
+            window.addEventListener('beforeunload', () => {
+                if (callTimerInterval) clearInterval(callTimerInterval);
+            });
+            
+            // Make phone-box rows also indicate they are clickable
+            const allCalls = document.querySelectorAll('.phone-box');
+            allCalls.forEach(el => {
+                el.style.cursor = 'pointer';
+                el.title = 'Click to start call simulation';
+            });
+        })();
+    </script>
+</body>
+</html>
