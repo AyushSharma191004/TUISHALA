@@ -58,11 +58,13 @@ body {
 .hero h1 {
     font-size: 2.813rem;
     font-weight: 500;
+    line-height: 1.3;
 }
 
 .hero h1 span {
     color: var(--primary-color);
     font-weight: 600;
+
 }
 
 .hero p {
@@ -446,6 +448,7 @@ body {
 /* Why choose section */
 .why-choose{
   background: var(--bg-section);
+  padding-bottom: 2rem;
 }
 
 /* TITLE */
@@ -488,7 +491,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin: 0 auto 2rem;
 }
 
 .why-choose-icon-box img {
@@ -507,7 +510,9 @@ body {
   font-size: 1.125rem;
   font-weight: 400;
   color: var(--text-secondary);
+  margin-bottom: 0;
 }
+
 
 /* RESPONSIVE TWEAKS */
 @media (max-width: 768px) {
@@ -527,19 +532,30 @@ body {
     max-width: 100%;
   }
 }
+@media (min-width: 1200px){
+    .why-choose-feature-card p{
+        margin-right: 3rem;
+    }
+}
+@media (min-width: 768px) and (max-width:991px){
+    .why-choose-feature-card p{
+        margin-right: 3rem;
+    }
+}
 /* why choose sectin end */
 
 /* dark stats section */
 .dark-stats-section {
   background-color: #000;
+  padding: 2rem 0;
 }
 
 .dark-stats-box h4 {
   color: #fff;
   font-size: 1.875rem;
   font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  margin-top: 1.4rem;
+  margin-bottom: 7px;
 }
 
 .dark-stats-box p {
@@ -576,7 +592,7 @@ body {
 /* Master skill section */
 
 .master-skills-section {
-    padding: 80px 0 44px;
+    padding: 70px 0 44px;
    
 }
 
@@ -650,12 +666,19 @@ body {
 @media (max-width:992px) {
     .master-skill-section-label {
         text-align: center;
+        margin-bottom: 0px;
     }
     .master-skill-section-title{
         font-size: 1.5rem;
+        margin: 0 auto 12px;
+        text-align: center;
+        
     }
     .master-skills-section{
         padding: 44px 0;
+    }
+    .master-skill-section-desc{
+        text-align: center;
     }
 }
 
@@ -695,6 +718,7 @@ body {
 .marquee-track {
     display: flex;
     gap: 24px;
+    align-items: stretch; 
     width: max-content;
     animation: scroll 30s linear infinite;
 }
@@ -711,17 +735,28 @@ body {
 .marquee-testimonial-card {
     background: var(--card-bg);
     border-radius: 16px;
-    padding: 30px;
-    width: 360px;
-    flex-shrink: 0;
+    max-width: 400px;
+
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* height: auto; */
+    min-height: 100%;
+    width: 100%;
 }
+.marquee-testimonial-top{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 
+}
 .marquee-testimonial-stars {
     color: #fbbf24;
-    font-size: 14px;
-    margin-bottom: 16px;
+    font-size: 20px;
+    margin-bottom: 1.7rem;
     letter-spacing: 2px;
 }
 
@@ -731,31 +766,39 @@ body {
     font-weight: 400;
     /* line-height: 1.7; */
     margin-bottom: 24px;
+     flex-grow: 1;
+}
+
+.marquee-testimonial-divider{
+    border: 1px solid #D9D9D9;
+    margin-bottom: 2rem;
 }
 
 .marquee-testimonial-author {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 0 20px 20px;
 }
 
 .marquee-testimonial-author .author-img {
-    width: 44px;
-    height: 44px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .marquee-testimonial-author .author-name {
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-dark);
-    font-size: 14px;
-    margin-bottom: 2px;
+    font-size: 20px;
+    line-height: 1;
 }
 
 .marquee-testimonial-author .author-role {
     color: var(--text-muted);
-    font-size: 13px;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 /* Testimonial Marquee section end*/
@@ -764,7 +807,7 @@ body {
 /* stroy carousel section */
 
 .story-section { 
-padding: 80px 0; 
+padding: 40px 0; 
 background-color: var(--bg-section);
 }
 /* Default fade */
@@ -796,7 +839,7 @@ opacity: 0;
 }
 
 .story-section-quote-desc {
-  display: -webkit-box;
+  /* display: -webkit-box; */
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -1335,7 +1378,7 @@ opacity: 0;
 /* Faculty section */
 
 .faculty-section { 
-    padding: 80px 0; 
+    padding: 0px 0 65px; 
     background-color: var(--bg-white);
  }
 .faculty-title {
@@ -1368,6 +1411,7 @@ width: 100%;
 height: 227px;
  overflow: hidden;
 background: #f0f0f0;
+border-radius: 10px;
 }
 .faculty-img {
 width: 100%; 
@@ -1424,6 +1468,12 @@ font-weight: 500;
 width: 22px; 
 height: 22px; 
 
+}
+@media (max-width:1200px) {
+    .faculty-title{
+        text-align: center;
+        margin-bottom: 25px;
+    }
 }
 
 /* faculty section end */
@@ -1785,7 +1835,7 @@ left: 11%;
 /* CUSTOM FAQ STYLING */
 .faq-container {
     /* max-width: 1000px; */
-    margin: 60px auto;
+    margin: 60px auto 40px;
     padding: 0 20px;
 }
 
@@ -1813,7 +1863,9 @@ left: 11%;
     transition: var(--transition);
 }
 
-
+.accordion-button:not(.collapsed){
+    padding-bottom: 0;
+}
 .accordion-button::after {
 background-image: none !important; /* Bootstrap  default arrow  disable  */
 content: '+' !important;           
@@ -1869,7 +1921,11 @@ font-size: 1.375rem;
 font-weight: 500;
     margin-bottom: 30px;
     }
-
+.contact-row-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 .contact-row { 
 display: flex;
     align-items: center; 
@@ -2219,7 +2275,7 @@ object-fit: contain;
 .cta-section { 
     background-color: var(--primary-color); 
     color: white; 
-    padding: 50px 0; 
+    padding: 50px 0 40px; 
     text-align: center;
 
 }
@@ -2250,7 +2306,7 @@ object-fit: contain;
 .cta-subtitle {
         font-size: 1.875rem; 
         font-weight: 500; 
-        margin: 0 auto 40px;  
+        margin: 0 auto 30px;  
     }
     .cta-btns {
 flex-wrap: wrap;
@@ -2276,7 +2332,7 @@ flex-wrap: wrap;
     }
 
 .cta-section .social-follow {
-        margin-top: 40px;
+        margin-top: 30px;
         }
 .cta-section .social-follow span {
         display: block; 

@@ -1,391 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Smarter Section</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        :root {
-            --font-family: 'Poppins', sans-serif;
-            --primary-color: #1999FB;
-            --primary-light: #5dadea;
-            --primary-dark: #1d4ed8;
-            --text-primary: #777777;
-            --text-secondary: #565656;
-            --text-muted: #94a3b8;
-            --text-dark: #000000;
-            --bg-white: #ffffff;
-            --bg-light: #f8fafc;
-            --bg-section: #FAFAFA;
-            --bg-dark: #0f172a;
-            --border-color: #CCCCCC;
-            --card-bg: #ffffff;
-            --card-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            --transition: all 0.3s ease;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>upGrad Edge | Scroll Stack Animation</title>
+  <!-- Bootstrap 5 CSS (required for grid and responsive behaviour) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* ----- GLOBAL STYLES (matching original Figma design) ----- */
+/* feature block section */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-family); color: var(--text-secondary); overflow-x: hidden;  }
+:root {
+ /*  font family  */
+   --font-family: 'Poppins', sans-serif;
 
-        /* ========== Feature Block ========== */
-        .edge-header {
-        text-align: center; 
-            
-        }
-        .edge-subtitle {
-            color: var(--text-secondary); font-size: 1.25rem;
-            font-weight: 400;
-            margin-bottom: 8px;
-        }
-        .edge-title {
-            color: var(--text-dark); font-size: 2.25rem;
-            font-weight: 600;
-        }
-        .feature-block {
-            background: var(--text-dark);
-            position: relative;
-            overflow: hidden;
-            /* padding: 80px 0;  Added padding */
-        }
+ /*  PRIMARY COLORS  */
+  --primary-color: #1999FB;
+  --primary-light:#5dadea;
+  --primary-dark:#1d4ed8;
+  --primary-link:#0A66C2;
 
-        /* Step Badge */
-        .edge-feature-section .step-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--bg-white);
-            font-size: 0.938rem;
-            font-weight: 500;
-            padding: 4px 31px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            letter-spacing: 0.3px;
-        }
+  /*  TEXT COLORS */
+  --text-primary: #777777;   
+  --text-secondary: #565656; 
+  --text-muted: #94a3b8;
+  --text-dark:#000000;
 
-        /* Feature Heading */
-        .edge-feature-section .feature-heading {
-            font-size: 1.563rem;
-            font-weight: 600;
-            color:var(--bg-white);
-            line-height: 1.3;
-            max-width: 80%;
-        }
+  /*  BACKGROUND COLORS */
+  --bg-white: #ffffff;
+  --bg-light: #F6F6F6;
+  --bg-section: #FAFAFA;
+  --bg-card:#EEEEEE;
+  --bg-dark: #0f172a;
 
-        /* Feature Description */
-        .edge-feature-section .feature-desc {
-            font-size: 1.188rem;
-            font-weight: 400;
-            color: var(--border-color);
-        }
+  /*  BORDER & CARD */
+  --border-color: #CCCCCC;
+  --border-light-color:#D7D7D7;
+  --border-fadelight-color:#D5D5D5;
+  --card-bg: #ffffff;
+  --card-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-        /* Stats Row */
-        .edge-feature-section .stats-row {
-            display: flex;
-            gap: 0;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-        .edge-feature-section .stat-item {
-            padding-right: 28px;
-            border-right: 1px solid var(--border-color);
-            margin-right: 28px;
-            margin-bottom: 10px;
-        }
-        .edge-feature-section .stat-item:last-child {
-            border-right: none;
-            padding-right: 0;
-            margin-right: 0;
-        }
-        .edge-feature-section .stat-number {
-            font-size: 1.313rem;
-            font-weight: 600;
-            color: var(--bg-white);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-        .edge-feature-section .stat-label {
-            font-size: 1.125rem;
-            color: var(--border-color);
-            font-weight: 400;
-            line-height: 1.4;
-        }
+  /*  ACCENT COLORS */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --transition: all 0.3s ease;
+}
+.edge-header {
+text-align: center; 
+    
+}
+.edge-subtitle {
+    color: var(--text-secondary); font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.edge-title {
+    color: var(--text-dark); font-size: 2.25rem;
+    font-weight: 600;
+}
+.feature-block {
+    background: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+    /* padding: 80px 0;  Added padding */
+}
 
-        /* Start Learning Button */
-        .edge-feature-section .btn-start {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            /* padding: 14px 36px; */
-            height: 51px;
-            width: 284px;
-            background: var(--bg-white);
-            color: var(--text-dark);
-            border-radius: 5px;
-            font-weight: 500;
-            font-size: 1.125rem;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-        }
-        .edge-feature-section .btn-start:hover {
-            background: var(--primary-color);
-            color: white;
-        }
+/* Step Badge */
+.edge-feature-section .step-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--bg-white);
+    font-size: 0.938rem;
+    font-weight: 500;
+    padding: 4px 31px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    letter-spacing: 0.3px;
+}
 
-        /* ========== Right Side Images ========== */
-        .edge-feature-section .feature-images-wrapper {
-            position: relative;
-            width: 100%;
-            min-height: 450px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: visible;
-        }
+/* Feature Heading */
+.edge-feature-section .feature-heading {
+    font-size: 1.563rem;
+    font-weight: 600;
+    color:var(--bg-white);
+    line-height: 1.3;
+    max-width: 80%;
+}
 
-        /* Main Screen Image - upar rahega */
-        .edge-feature-section .feature-images-wrapper .main-screen {
-            position: relative;
-            z-index: 2;
-            max-width: 85%;
-            height: auto;
-            border-radius: 12px;
-        }
+/* Feature Description */
+.edge-feature-section .feature-desc {
+    font-size: 1.188rem;
+    font-weight: 400;
+    color: var(--border-color);
+}
 
-        /* Background Curve Vector - peeche rahega */
-        .edge-feature-section .feature-images-wrapper .curve-bg{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            max-width: 130%;
-            height: auto;
-            pointer-events: none;
-        }
+/* Stats Row */
+.edge-feature-section .stats-row {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+.edge-feature-section .stat-item {
+    padding-right: 28px;
+    border-right: 1px solid var(--border-color);
+    margin-right: 28px;
+    margin-bottom: 10px;
+}
+.edge-feature-section .stat-item:last-child {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.edge-feature-section .stat-number {
+    font-size: 1.313rem;
+    font-weight: 600;
+    color: var(--bg-white);
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.edge-feature-section .stat-label {
+    font-size: 1.125rem;
+    color: var(--border-color);
+    font-weight: 400;
+    line-height: 1.4;
+}
 
-        /* ========== Blue Feature Block ========== */
-        .feature-block.blue {
-            background: var(--primary-color);
-            margin-top: -1px;
-            /* padding: 80px 0;  Added padding */
-        }
-        .feature-block.blue .step-badge {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        .feature-block.blue .feature-heading { 
-            color: white; 
-        }
-        .feature-block.blue .feature-desc { 
-            color: rgba(255,255,255,0.85); 
-        }
-        .feature-block.blue .stat-number { 
-            color: white; 
-        }
-        .feature-block.blue .stat-label { 
-            color: rgba(255,255,255,0.8); 
-        }
-        .feature-block.blue .stat-item {
-            border-right: 1px solid rgba(255, 255, 255, 0.25);
-        }
-        .feature-block.blue .stat-item:last-child { 
-            border-right: none; 
-        }
-        .feature-block.blue .btn-start {
-            background: white;
-            color: var(--primary-color);
-        }
-        .feature-block.blue .btn-start:hover {
-            background: var(--bg-dark);
-            color: white;
-        }
-        .feature-block.blue .curve-bg {
-            left: 22%;
-            transform: translateY(-50%);
-            height: 540px;
-        }
- @media (max-width: 1400px){
-     .feature-block.blue .curve-bg{
-        left: 4%;
-     }
- }
-  @media (max-width: 1200px){
-     .feature-block.blue .curve-bg{
-        left: 11%;
-     }
- }
-        /* =========================================================
-           RESPONSIVE - Tablet (max-width: 991px)
-           ========================================================= */
-        @media (max-width: 991px) {
-            .feature-block,
-            .feature-block.blue {
-                padding: 60px 0;
-            }
-            .feature-heading {
-                font-size: 30px;
-                max-width: 100%;
-            }
-            .feature-images-wrapper {
-                margin-top: 50px;
-                min-height: 380px;
-            }
-           .edge-feature-section .main-screen {
-                max-width: 80%;
-            }
-           .edge-feature-section .curve-bg {
-                max-width: 140%;
-            }
-            .feature-block.blue .curve-bg {
-                left: 35%;
-                height: 450px;
-            }
-            .feature-block .curve-bg {
-                height: 450px;
-            }
-        }
+/* Start Learning Button */
+.edge-feature-section .btn-start {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* padding: 14px 36px; */
+    height: 51px;
+    width: 284px;
+    background: var(--bg-white);
+    color: var(--text-dark);
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+}
+.edge-feature-section .btn-start:hover {
+    background: var(--primary-color);
+    color: white;
+}
 
-        /* =========================================================
-           RESPONSIVE - Mobile (max-width: 767px)
-           ========================================================= */
-        @media (max-width: 767px) {
-            .feature-block,
-            .feature-block.blue {
-                padding: 50px 0;
-            }
-            .feature-heading {
-                font-size: 26px;
-            }
-            .feature-desc {
-                font-size: 15px;
-                margin-bottom: 24px;
-            }
-            .edge-feature-section .stats-row {
-                flex-direction: column;
-                gap: 0;
-                margin-bottom: 24px;
-            }
-           .edge-feature-section .stat-item {
-                border-right: none !important;
-                padding-right: 0;
-                margin-right: 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-                padding-bottom: 16px;
-                margin-bottom: 16px;
-            }
-            .feature-block.blue .stat-item {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-            }
-            .edge-feature-section .stat-item:last-child {
-                border-bottom: none;
-                padding-bottom: 0;
-                margin-bottom: 0;
-            }
-            .edge-feature-section .stat-number {
-                font-size: 28px;
-            }
-            .edge-feature-section .stat-label {
-                font-size: 13px;
-            }
-           .edge-feature-section .btn-start {
-                width: 100%;
-                padding: 14px 24px;
-            }
-           .edge-feature-section .feature-images-wrapper {
-                min-height: 320px;
-                margin-top: 40px;
-            }
-           .edge-feature-section .main-screen {
-                max-width: 90%;
-            }
-           .edge-feature-section .curve-bg {
-                max-width: 160%;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-            }
-            .feature-block.blue .curve-bg,.feature-block .curve-bg  {
-                height: 350px;
-            }
-           
-           .edge-feature-section .edge-title { font-size: 1.75rem; }
+/* ========== Right Side Images ========== */
+.edge-feature-section .feature-images-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+/* Main Screen Image - upar rahega */
+.edge-feature-section .feature-images-wrapper .main-screen {
+    position: relative;
+    z-index: 2;
+    max-width: 85%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Background Curve Vector - peeche rahega */
+.edge-feature-section .feature-images-wrapper .curve-bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    max-width: 130%;
+    /* height: auto; */
+    pointer-events: none;
+}
+
+/* ========== Blue Feature Block ========== */
+.feature-block.blue {
+    background: var(--primary-color);
+    margin-top: -1px;
+    /* padding: 80px 0;  Added padding */
+}
+.feature-block.blue .step-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.feature-block.blue .feature-heading { 
+    color: white; 
+}
+.feature-block.blue .feature-desc { 
+    color: rgba(255,255,255,0.85); 
+}
+.feature-block.blue .stat-number { 
+    color: white; 
+}
+.feature-block.blue .stat-label { 
+    color: rgba(255,255,255,0.8); 
+}
+.feature-block.blue .stat-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+.feature-block.blue .stat-item:last-child { 
+    border-right: none; 
+}
+.feature-block.blue .btn-start {
+    background: white;
+    color: var(--primary-color);
+}
+.feature-block.blue .btn-start:hover {
+    background: var(--bg-dark);
+    color: white;
+}
+.feature-block.blue .curve-bg {
+    left: 22%;
+    transform: translateY(-50%);
+    height: 540px;
+}
+@media (max-width: 1400px){
+.feature-block.blue .curve-bg{
+left: 17%;
+}
+}
+@media (max-width: 1200px){
+.feature-block.blue .curve-bg{
+left: 11%;
+}
+}
+/* =========================================================
+    RESPONSIVE - Tablet (max-width: 991px)
+    ========================================================= */
+@media (max-width: 991px) {
+    .feature-block,
+    .feature-block.blue {
+        padding: 60px 0;
+    }
+    .feature-heading {
+        font-size: 30px;
+        max-width: 100%;
+    }
+    .feature-images-wrapper {
+        margin-top: 50px;
+        min-height: 380px;
+    }
+    .edge-feature-section .main-screen {
+        max-width: 80%;
+    }
+    .edge-feature-section .curve-bg {
+        max-width: 140%;
+    }
+    .feature-block.blue .curve-bg {
+        left: 35%;
+        height: 450px;
+    }
+    .feature-block .curve-bg {
+        height: 450px;
+    }
+}
+
+/* =========================================================
+    RESPONSIVE - Mobile (max-width: 767px)
+    ========================================================= */
+@media (max-width: 767px) {
+    .feature-block,
+    .feature-block.blue {
+        padding: 50px 0;
+    }
+    .feature-heading {
+        font-size: 26px;
+    }
+    .feature-desc {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+    .edge-feature-section .stats-row {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 24px;
+    }
+    .edge-feature-section .stat-item {
+        border-right: none !important;
+        padding-right: 0;
+        margin-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+    .feature-block.blue .stat-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .edge-feature-section .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .edge-feature-section .stat-number {
+        font-size: 28px;
+    }
+    .edge-feature-section .stat-label {
+        font-size: 13px;
+    }
+    .edge-feature-section .btn-start {
+        width: 100%;
+        padding: 14px 24px;
+    }
+    .edge-feature-section .feature-images-wrapper {
+        min-height: 320px;
+        margin-top: 40px;
+    }
+    .edge-feature-section .main-screen {
+        max-width: 90%;
+    }
+    .edge-feature-section .curve-bg {
+        max-width: 160%;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+    .feature-block.blue .curve-bg , .feature-block .curve-bg  {
+        height: 350px;
+    }
+    
+    .edge-feature-section .edge-title { font-size: 1.75rem; }
 
 
 
-        }
+}
 
-        /* =========================================================
-           RESPONSIVE - Small Mobile (max-width: 575px)
-           ========================================================= */
-        @media (max-width: 575px) {
-            .feature-block,
-            .feature-block.blue {
-                padding: 40px 0;
-            }
-            .feature-heading {
-                font-size: 22px;
-                margin-bottom: 10px;
-            }
-           .edge-feature-section .step-badge {
-                font-size: 11px;
-                padding: 6px 14px;
-                margin-bottom: 14px;
-            }
-           .edge-feature-section .feature-desc {
-                font-size: 14px;
-                margin-bottom: 20px;
-            }
-           .edge-feature-section .stat-number {
-                font-size: 24px;
-            }
-           .edge-feature-section .stat-label {
-                font-size: 12px;
-            }
-            .feature-images-wrapper {
-                min-height: 260px;
-                margin-top: 30px;
-            }
-           .edge-feature-section .main-screen {
-                max-width: 95%;
-            }
-           .edge-feature-section .curve-bg {
-                max-width: 180%;
-            }
-           .edge-feature-section .btn-start {
-                font-size: 14px;
-                padding: 12px 20px;
-            }
-            .feature-block.blue .curve-bg,.feature-block .curve-bg  {
-                height: 280px;
-            }
-        }
+/* =========================================================
+    RESPONSIVE - Small Mobile (max-width: 575px)
+    ========================================================= */
+@media (max-width: 575px) {
+    .feature-block,
+    .feature-block.blue {
+        padding: 40px 0;
+    }
+    .feature-heading {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .edge-feature-section .step-badge {
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 14px;
+    }
+    .edge-feature-section .feature-desc {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .edge-feature-section .stat-number {
+        font-size: 24px;
+    }
+    .edge-feature-section .stat-label {
+        font-size: 12px;
+    }
+    .feature-images-wrapper {
+        min-height: 260px;
+        margin-top: 30px;
+    }
+    .edge-feature-section .main-screen {
+        max-width: 95%;
+    }
+    .edge-feature-section .curve-bg {
+        max-width: 180%;
+    }
+    .edge-feature-section .btn-start {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    .feature-block.blue .curve-bg , .feature-block .curve-bg  {
+        height: 280px;
+    }
+}
 
-        /* =========================================================
-           RESPONSIVE - Extra Small (max-width: 375px)
-           ========================================================= */
-        @media (max-width: 375px) {
-            .feature-heading {
-                font-size: 20px;
-            }
-            .feature-images-wrapper {
-                min-height: 220px;
-            }
-           .edge-feature-section .main-screen {
-                max-width: 100%;
-            }
-           .edge-feature-section .curve-bg {
-                max-width: 200%;
-            }
-        }
-    </style>
+/* =========================================================
+    RESPONSIVE - Extra Small (max-width: 375px)
+    ========================================================= */
+@media (max-width: 375px) {
+    .feature-heading {
+        font-size: 20px;
+    }
+    .feature-images-wrapper {
+        min-height: 220px;
+    }
+    .edge-feature-section .main-screen {
+        max-width: 100%;
+    }
+    .edge-feature-section .curve-bg {
+        max-width: 200%;
+    }
+}
+
+/* =========================================
+   FEATURE STORY SCROLL SYSTEM
+========================================= */
+
+.feature-block {
+
+    position: relative;
+
+    z-index: 1;
+
+    will-change: transform, opacity;
+}
+
+/* STACK EFFECT */
+/* =========================================
+   STACK SCROLL SYSTEM
+========================================= */
+
+.feature-block {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: sticky;
+
+    top: 0;
+
+    overflow: hidden;
+}
+
+/* DEPTH STACKING */
+.feature-block:nth-child(2) { z-index: 2; }
+.feature-block:nth-child(3) { z-index: 3; }
+.feature-block:nth-child(4) { z-index: 4; }
+.feature-block:nth-child(5) { z-index: 5; }
+
+/* SMOOTH TRANSITIONS */
+.feature-block {
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+/* PREMIUM DEPTH */
+.feature-block.active-block {
+
+    z-index: 5;
+}
+
+/* IMAGE MOTION */
+.main-screen {
+
+    will-change: transform;
+
+    transform: translateZ(0);
+}
+/* feature block section end */
+  </style>
 </head>
 <body>
 
-    <!-- ========== Feature Block: Step 1 (Black BG) ========== -->
-        <section class="edge-feature-section">
+     <section class="edge-feature-section">
             <div class="container">
                 <div class="edge-header mb-5">
                     <div class="edge-subtitle">Your Path to Career Success Starts with Tuishala</div>
@@ -533,7 +619,182 @@
                 </div>
             </div>
         </section>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<!-- Bootstrap JS Bundle (for responsive toggles, not essential for animation) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    /* =========================================
+   FEATURE STORYTELLING SCROLL
+========================================= */
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+function initFeatureStoryScroll() {
+
+    const blocks = gsap.utils.toArray(".feature-block");
+
+    blocks.forEach((block, index) => {
+
+        /* BLOCK ENTRY */
+        gsap.fromTo(block,
+
+            {
+                y: 120,
+                opacity: 0.4,
+                scale: 0.96
+            },
+
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+
+                ease: "power3.out",
+
+                scrollTrigger: {
+
+                    trigger: block,
+
+                    start: "top bottom",
+
+                    end: "top center",
+
+                    scrub: 1
+                }
+            }
+        );
+
+        /* PREVIOUS BLOCK SCALE BACK */
+        if (index > 0) {
+
+            gsap.to(blocks[index - 1], {
+
+                scale: 0.92,
+
+                opacity: 0.45,
+
+                ease: "power2.out",
+
+                scrollTrigger: {
+
+                    trigger: block,
+
+                    start: "top center",
+
+                    end: "top top",
+
+                    scrub: 1
+                }
+            });
+        }
+
+        /* IMAGE FLOAT */
+        gsap.to(block.querySelector(".main-screen"), {
+
+            y: -14,
+
+            repeat: -1,
+
+            yoyo: true,
+
+            duration: 3.5,
+
+            ease: "sine.inOut"
+
+        });
+
+    });
+
+}
+function initFeatureStoryScroll() {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const blocks = gsap.utils.toArray(".feature-block");
+
+    blocks.forEach((block, index) => {
+
+        /* CURRENT BLOCK REVEAL */
+        gsap.from(block, {
+
+            opacity: 0,
+
+            y: 100,
+
+            duration: 1.2,
+
+            ease: "power3.out",
+
+            scrollTrigger: {
+
+                trigger: block,
+
+                start: "top 82%",
+            }
+        });
+
+        /* PREVIOUS BLOCK MOVE BACK */
+        if (index > 0) {
+
+            gsap.to(blocks[index - 1], {
+
+                scale: 0.96,
+
+                opacity: 0.55,
+
+                y: -30,
+
+                ease: "power2.out",
+
+                scrollTrigger: {
+
+                    trigger: block,
+
+                    start: "top 65%",
+
+                    end: "top 35%",
+
+                    scrub: 1
+                }
+            });
+
+        }
+
+        /* IMAGE FLOAT */
+        const image = block.querySelector(".main-screen");
+
+        if (image) {
+
+            gsap.to(image, {
+
+                y: -10,
+
+                repeat: -1,
+
+                yoyo: true,
+
+                duration: 3.5,
+
+                ease: "sine.inOut"
+            });
+        }
+
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    initFeatureStoryScroll();
+
+});
+
+
+</script>
+
 </body>
 </html>
