@@ -1,858 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLearn Sections</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AI Tools Section</title>
+
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
-        /* YOUR PROVIDED RESET & VARIABLES */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --font-family: 'Poppins', sans-serif;
-            --primary-color: #1999FB;
-            --primary-light:#5dadea;
-            --primary-dark:#1d4ed8;
-            --primary-link:#0A66C2;
-            --text-primary: #777777;   
-            --text-secondary: #565656; 
-            --text-muted: #94a3b8;
-            --text-dark:#000000;
-            --bg-white: #ffffff;
-            --bg-light: #F6F6F6;
-            --bg-section: #FAFAFA;
-            --bg-dark: #0f172a;
-            --border-color: #CCCCCC;
-            --border-light-color:#D7D7D7;
-            --transition: all 0.3s ease;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body { font-family: var(--font-family); }
-        a { text-decoration: none; transition: var(--transition); }
-        ul { list-unstyled: none; padding: 0; }
-
-        /* SECTION 1: LEARNER SUPPORT */
-        .support-section {
-             padding: 60px 0;
-             position: relative;
-        }
-        .support-title{
-            font-size: 2.063rem;
-            font-weight: 500;
-        }
-        .support-title span {
-             color: var(--primary-color);
-            font-weight: 600; 
-        }
-        .support-subtitle { 
-            color: var(--text-primary); 
-            font-size: 1.375rem; 
-            font-weight: 500;
-             margin-bottom: 30px;
-             }
-        
-        .contact-row { 
-            display: flex;
-             align-items: center; 
-             flex-wrap: wrap;
-             margin-bottom: 24px;
-              gap: 20px; }
-        .contact-row >img{
-         height: 39px;
-         width: 39px;
-         object-fit: contain;
-         flex-shrink: 0;
-        }
-        .contact-label { 
-            font-weight: 500; 
-            font-size: 1.625rem; 
-            color: var(--text-primary); 
-            min-width: 170px;
-            flex-shrink: 0;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7fb;
         }
 
-        .phone-box {
-            border: 1px solid var(--border-color);
-            padding: 12px 30px;
-            border-radius: 5px;
+        /* =========================
+           SECTION
+        ========================== */
+
+        .tools-section {
+            padding: 90px 0;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            max-width: 700px;
+            margin: auto;
+            font-size: 16px;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 70px;
+        }
+
+        /* =========================
+           TOOL ITEM
+        ========================== */
+
+        .tool-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--text-primary);
-            font-size: 1.375rem;
-            font-weight: 400;
-            transition: var(--transition);
-            flex-wrap: wrap;
-            
-        }
-                .phone-box:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 4px 12px rgba(25, 153, 251, 0.1);
-        }
-        .phone-box >img{
-            height: 29px;
-            width: 29px;
-            object-fit: contain;
-        }
+            gap: 18px;
 
-        /* Floating Call Widget */
-        .call-widget {
-             position: fixed; 
-             right: 5%;
-              bottom: 30px; 
-              display: flex; 
-              align-items: center; 
-              z-index: 100; 
-             gap: 12px;
+            padding: 18px 20px;
+
+            border-radius: 18px;
+
             transition: all 0.3s ease;
-            }
-        .speech-bubble {
-            background: white;
-            border: 1px solid var(--border-light-color);
-            border-radius: 16px;
-            font-weight: 500;
-            padding: 16px 20px;
-            width: 355px;
-            font-size: 1.313rem;
-            box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.25);
-            position: relative;
-            margin-right: 15px;
-            transition: all 0.2s;
-            backdrop-filter: blur(0px);
+
+            cursor: pointer;
+
+            animation: fadeUp .8s ease forwards;
+            opacity: 0;
+
+            height: 100%;
         }
-        .speech-bubble::after {
-            content: '';
-             position: absolute; 
-             right: -25px; 
-             top: 50%;
-              transform: translateY(-50%);
-            border-top: 25px solid transparent; 
-            border-bottom: 25px solid transparent; 
-            border-left: 25px solid white;  
-            filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.25));
+
+        .tool-item:hover {
+            transform: translateY(-6px);
+
+            background: rgba(255, 255, 255, 0.8);
+
+            box-shadow:
+                0 15px 35px rgba(59, 130, 246, 0.12);
+
+            backdrop-filter: blur(10px);
         }
-                /* subtle border shadow on arrow companion */
-        .speech-bubble::before {
-            content: '';
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-top: 18px solid transparent;
-            border-bottom: 18px solid transparent;
-            border-left: 20px solid var(--border-light-color);
-            z-index: -1;
-        }
-        .close-btn {
-            position: absolute;
-             top: -10px; 
-             right: -10px;
-            background: #ef4444;
-             color: white; 
-             border: none;
-              border-radius: 50%;
-            width: 35px;
-             height: 35px; 
-             font-size: 32px;
-             font-weight: 100; 
-             cursor: pointer;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-                         transition: transform 0.2s, background 0.2s;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            line-height: 1;
-        }
-                .close-btn:hover {
-            background: #dc2626;
-            transform: scale(1.05);
-        }
-        .call-icon-btn {
-            background: var(--primary-color); 
-            color: white;
-             width: 60px;
-              height: 60px;
+
+        /* =========================
+           ICON CIRCLE
+        ========================== */
+
+        .tool-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+
             border-radius: 50%;
-             display: flex; 
-             align-items: center;
-              justify-content: center;
-            font-size: 20px;
-             box-shadow: 0 4px 10px rgba(25, 153, 251, 0.4);
-             border: 1px solid black;
-              transition: all 0.25s ease;
+
+            background: #ffffff;
+
+            border: 1px solid #e5e7eb;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.08);
+
+            transition: all .3s ease;
         }
-                .call-icon-btn:hover {
-            transform: scale(1.05);
-            background: var(--primary-dark);
-            box-shadow: 0 10px 24px rgba(25, 153, 251, 0.5);
+
+        .tool-item:hover .tool-icon {
+            transform: scale(1.08);
+
+            box-shadow:
+                0 10px 25px rgba(59, 130, 246, 0.22);
         }
-        .call-icon-btn >img{
-            height: 29px;
-            width: 29px;
+
+        /* =========================
+           ICON IMAGE
+        ========================== */
+
+        .tool-icon img {
+            width: 34px;
+            height: 34px;
+
             object-fit: contain;
+            display: block;
         }
-                /* ========== FULL RESPONSIVE BREAKPOINTS ========== */
-        /* Tablet landscape & medium screens */
-        @media (max-width: 992px) {
-            .support-section {
-                padding: 50px 0;
+
+        /* =========================
+           TOOL TEXT
+        ========================== */
+
+        .tool-name {
+            font-size: 26px;
+            font-weight: 500;
+            color: #111827;
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================== */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
             }
-            .support-title {
-                font-size: 1.85rem;
-            }
-            .support-subtitle {
-                font-size: 1.2rem;
-            }
-            .contact-label {
-                font-size: 1.4rem;
-                min-width: 150px;
-            }
-            .phone-box {
-                font-size: 1.2rem;
-                padding: 10px 22px;
-            }
-            .speech-bubble {
-                width: 320px;
-                font-size: 0.95rem;
-                padding: 14px 18px;
-            }
-            .call-widget {
-                right: 20px;
-                bottom: 25px;
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Tablet portrait */
-        @media (max-width: 768px) {
-            .support-title {
-                font-size: 1.65rem;
+        .tool-box:nth-child(1) .tool-item {
+            animation-delay: 0.1s;
+        }
+
+        .tool-box:nth-child(2) .tool-item {
+            animation-delay: 0.2s;
+        }
+
+        .tool-box:nth-child(3) .tool-item {
+            animation-delay: 0.3s;
+        }
+
+        .tool-box:nth-child(4) .tool-item {
+            animation-delay: 0.4s;
+        }
+
+        .tool-box:nth-child(5) .tool-item {
+            animation-delay: 0.5s;
+        }
+
+        .tool-box:nth-child(6) .tool-item {
+            animation-delay: 0.6s;
+        }
+
+        .tool-box:nth-child(7) .tool-item {
+            animation-delay: 0.7s;
+        }
+
+        .tool-box:nth-child(8) .tool-item {
+            animation-delay: 0.8s;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width:1200px) {
+            .tool-name {
+                font-size: 22px;
             }
-            .support-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 28px;
+        }
+
+        @media(max-width:992px) {
+
+            .section-title {
+                font-size: 34px;
             }
-            .contact-row {
-                gap: 14px;
-                margin-bottom: 20px;
+
+            .tool-name {
+                font-size: 22px;
             }
-            .contact-label {
-                font-size: 1.25rem;
-                min-width: 130px;
+        }
+
+        @media(max-width:768px) {
+
+            .tools-section {
+                padding: 70px 0;
             }
-            .phone-box {
-                font-size: 1rem;
-                padding: 8px 18px;
-                gap: 8px;
+
+            .section-title {
+                font-size: 28px;
+                line-height: 1.4;
             }
-            .phone-box > img {
-                height: 24px;
-                width: 24px;
+
+            .section-subtitle {
+                font-size: 14px;
+                margin-bottom: 50px;
             }
-            .contact-row > img {
-                height: 34px;
-                width: 34px;
+
+            .tool-item {
+                justify-content: flex-start;
             }
-            /* Widget adjustments */
-            .speech-bubble {
-                width: 280px;
-                font-size: 0.9rem;
-                padding: 12px 16px;
-            }
-            .call-icon-btn {
-                width: 56px;
-                height: 56px;
-            }
-            .call-icon-btn > img {
-                height: 28px;
-                width: 28px;
-            }
-            .close-btn {
-                width: 28px;
-                height: 28px;
+
+            .tool-name {
                 font-size: 20px;
-                top: -10px;
-                right: -10px;
-            }
-            .speech-bubble::after {
-                right: -16px;
-                border-left-width: 16px;
-                border-top-width: 14px;
-                border-bottom-width: 14px;
-            }
-            .speech-bubble::before {
-                right: -18px;
-                border-left-width: 18px;
-                border-top-width: 16px;
-                border-bottom-width: 16px;
             }
         }
 
-        /* Mobile Large (landscape & small) */
-        @media (max-width: 576px) {
-            .support-section {
-                padding: 40px 0 80px 0; /* extra bottom padding for floating widget not covering content */
+        @media(max-width:576px) {
+
+            .section-title {
+                font-size: 24px;
             }
-            .support-title {
-                font-size: 1.5rem;
-                text-align: center;
-            }
-            .support-subtitle {
-                font-size: 1rem;
-                text-align: center;
-                padding: 0 8px;
-            }
-            /* Convert contact rows into columns for better readability */
-            .contact-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-                background: var(--bg-light);
+
+            .tool-item {
                 padding: 16px;
-                border-radius: 20px;
-                margin-bottom: 16px;
-                box-shadow: 0 1px 2px rgba(0,0,0,0.03);
             }
-            .contact-label {
-                font-size: 1.125rem;
-                min-width: auto;
+
+            .tool-icon {
+                width: 65px;
+                height: 65px;
+                min-width: 65px;
             }
-            .phone-box {
-                width: 100%;
-                justify-content: center;
-                padding: 12px 16px;
-                font-size: 1rem;
+
+            .tool-icon img {
+                width: 30px;
+                height: 30px;
             }
-            .contact-row > img {
-                height: 32px;
-                width: 32px;
-            }
-            /* floating widget: center bottom for small devices */
-            .call-widget {
-                right: 50%;
-                transform: translateX(50%);
-                bottom: 16px;
-                gap: 10px;
-                width: auto;
-                justify-content: center;
-            }
-            .speech-bubble {
-                width: 260px;
-                font-size: 0.85rem;
-                padding: 12px 14px;
-                margin-right: 0;
-            }
-            .speech-bubble::after {
-                right: -14px;
-                border-left-width: 14px;
-                border-top-width: 12px;
-                border-bottom-width: 12px;
-            }
-            .speech-bubble::before {
-                right: -16px;
-                border-left-width: 16px;
-                border-top-width: 14px;
-                border-bottom-width: 14px;
-            }
-            .call-icon-btn {
-                width: 52px;
-                height: 52px;
-            }
-            .call-icon-btn > img {
-                height: 26px;
-                width: 26px;
-            }
-            .close-btn {
-                width: 26px;
-                height: 26px;
+
+            .tool-name {
                 font-size: 18px;
-                top: -8px;
-                right: -8px;
             }
         }
-
-        /* Extra small devices (<= 400px) */
-        @media (max-width: 400px) {
-            .speech-bubble {
-                width: 220px;
-                font-size: 0.8rem;
-                padding: 10px 12px;
-            }
-            .call-icon-btn {
-                width: 48px;
-                height: 48px;
-            }
-            .call-icon-btn > img {
-                height: 24px;
-                width: 24px;
-            }
-            .close-btn {
-                width: 24px;
-                height: 24px;
-                font-size: 16px;
-            }
-            .support-title {
-                font-size: 1.35rem;
-            }
-        }
-
- 
-
-
-
-        /* SECTION 2: CTA SECTION (BLUE) */
-        .cta-section { 
-            background-color: var(--primary-color); 
-            color: white; 
-            padding: 50px 0; 
-            text-align: center;
-
-        }
-        .offer-badge {
-            background: white; 
-            color: var(--primary-color);
-             padding: 5px 41px;
-            border-radius: 33px; 
-            font-weight: 600;
-             font-size: 1.125rem;
-              display: inline-block;
-               margin-bottom: 25px;
-               position: relative;
-        }
-        .offer-badge img{
-            height: 50px;
-            width: 50px;
-             object-fit: contain;
-              position: absolute;
-              bottom: -13%;
-              right:-5%;
-        }
-        .cta-title { 
-            font-weight: 500;
-             font-size: 2.813rem; 
-             margin-bottom: 15px; 
-            }
-        .cta-subtitle {
-             font-size: 1.875rem; 
-             font-weight: 500; 
-             margin: 0 auto 40px;  
-            }
-            .cta-btns {
-  flex-wrap: wrap;
-}
-        
-        .btn-white { 
-            background: white;
-             color: black;
-              font-weight: 500;
-              font-size: 1rem; 
-              border-radius: 10px;
-               padding: 12px 21px;
-                border: none;
-             }
-        .btn-outline-white { 
-            border: 2px solid white; 
-            color: white; 
-            font-weight: 500;
-            font-size: 1rem; 
-            border-radius: 10px;
-             padding: 10px 21px;
-              background: transparent; 
-            }
-        
-        .social-follow {
-             margin-top: 40px;
-             }
-        .social-follow span {
-             display: block; 
-             margin-bottom: 11px;
-              font-weight: 600;
-              font-size: 1.25rem; 
-            }
-        .social-icons a { 
-            margin: 0 10px;
-             transition: 0.3s; 
-            }
-            .social-icons img {
-  width: 38px;
-}
-@media (max-width: 992px) {
-  .cta-title {
-    font-size: 32px;
-  }
-
-  .cta-subtitle {
-    font-size: 16px;
-    max-width: 600px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .cta-section {
-    padding: 40px 15px;
-  }
-
-  .cta-title {
-    font-size: 26px;
-  }
-
-  .cta-subtitle {
-    font-size: 14px;
-    max-width: 100%;
-  }
-
-  .cta-btns {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn-white,
-  .btn-outline-white {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .offer-badge {
-    font-size: 14px;
-    padding: 6px 20px;
-  }
-
-  .offer-badge img {
-    height: 30px;
-    width: 30px;
-    right: -8%;
-  }
-
-  .social-follow span {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .cta-title {
-    font-size: 22px;
-  }
-
-  .cta-subtitle {
-    font-size: 13px;
-  }
-
-  .btn-white,
-  .btn-outline-white {
-    font-size: 14px;
-    padding: 10px 18px;
-  }
-}
-
-
-        /* SECTION 3: FOOTER (DARK) */
-        .main-footer { background-color: var(--text-dark); color: white; padding: 30px 0px; }
-        .footer-logo img {  margin-bottom: 20px; background: white; padding: 10px 5px; border-radius: 4px;}
-        .tagline { color: var(--bg-white); font-size: 1.125rem; margin-bottom: 25px;font-weight: 400; }
-        .footer-social-icons a{
-            margin-right: 8px;
-        }
-        .app-buttons .btn {
-            border: 1px solid var(--bg-white); color: white; border-radius: 34px;
-            font-size: 1.125rem; font-weight: 600; padding: 10px 25px; margin-bottom: 10px; width: 273px; text-align: center;
-        }
-        
-        .footer-col-title { font-weight: 600; margin-bottom: 25px; font-size: 1.25rem; }
-        .footer-links li { margin-bottom: 6px; list-style: none; }
-        .footer-links a { color: var(--border-color); font-size: 1.125rem;font-weight: 500; }
-        .footer-links a:hover { color: white; }
-
-        /* @media (max-width: 991px) {
-            .call-widget { position: relative; margin-top: 40px; justify-content: center; right: 0; }
-            .cta-title { font-size: 1.8rem; }
-        } */
-/* FOOTER */
-.main-footer {
-  background-color: var(--text-dark);
-  color: white;
-  padding: 50px 0;
-}
-
-/* LOGO */
-.footer-logo img {
-  margin-bottom: 20px;
-  background: white;
-  padding: 10px 5px;
-  border-radius: 4px;
-  max-width: 206px;
-}
-
-/* TAGLINE */
-.tagline {
-  color: var(--bg-white);
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-/* SOCIAL */
-.footer-social-icons a {
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.footer-social-icons img {
-  width: 38px;
-}
-
-/* APP BUTTONS */
-.app-buttons .btn {
-  border: 1px solid var(--bg-white);
-  color: white;
-  border-radius: 34px;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 20px;
-  width: 260px;
-  text-align: center;
-}
-
-/* TITLES */
-.footer-col-title {
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-/* LINKS */
-.footer-links {
-  padding: 0;
-}
-
-.footer-links li {
-  margin-bottom: 8px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--border-color);
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-        
     </style>
 </head>
+
 <body>
 
-    <!-- 1. LEARNER SUPPORT SECTION -->
-    <section class="support-section">
+    <!-- =========================
+         TOOLS SECTION
+    ========================== -->
+
+    <section class="tools-section">
+
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 col-12">
-                    <h2 class="support-title">EduLearn <span>Learner Support</span></h2>
-                    <p class="support-subtitle">Talk to our experts. We are available 7 days a week, 09 AM to 7 PM</p>
 
-                    <!-- Indian National -->
-                    <div class="contact-row">
-                        <img src="../assets/icons/Rectangle (4).svg"  alt="India">
-                        <span class="contact-label">Indian National</span>
-                        <div class="phone-box ms-lg-5 ms-sm-4">
-                            <img src="../assets/icons/Group 34.svg" alt=""> 1800 210 2026
+            <!-- Header -->
+
+            <div class="text-center">
+
+                <h2 class="section-title">
+                    Essential tools for aspiring AI professionals
+                </h2>
+
+                <p class="section-subtitle">
+                    Master AI tools that are currently relevant in the industry
+                </p>
+
+            </div>
+
+            <!-- Tools Grid -->
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Tool 1 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="ChatGPT">
                         </div>
+
+                        <h4 class="tool-name">ChatGPT</h4>
+
                     </div>
 
-                    <!-- Foreign National -->
-                    <div class="contact-row">
-                        <img src="../assets/icons/Group (5).svg"  alt="World">
-                        <span class="contact-label">Foreign Nationals</span>
-                        <div class="phone-box ms-lg-3">
-                           <img src="../assets/icons/Group 34.svg" alt=""> 1800 210 2026
-                        </div>
-                    </div>
                 </div>
+
+                <!-- Tool 2 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="SQL">
+                        </div>
+
+                        <h4 class="tool-name">SQL</h4>
+
+                    </div>
+
+                </div>
+
+                <!-- Tool 3 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="Hugging Face">
+                        </div>
+
+                        <h4 class="tool-name">Hugging Face</h4>
+
+                    </div>
+
+                </div>
+
+                <!-- Tool 4 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="Azure AI Services">
+                        </div>
+
+                        <h4 class="tool-name">Azure AI Services</h4>
+
+                    </div>
+
+                </div>
+
+                <!-- Tool 5 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="Python">
+                        </div>
+
+                        <h4 class="tool-name">Python</h4>
+
+                    </div>
+
+                </div>
+
+                <!-- Tool 6 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="NumPy">
+                        </div>
+
+                        <h4 class="tool-name">NumPy</h4>
+
+                    </div>
+
+                </div>
+
+                <!-- Tool 7 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="Pandas">
+                        </div>
+
+                        <h4 class="tool-name">Pandas</h4>
+
+                    </div>
+
+                </div>
+
+                <!-- Tool 8 -->
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12 tool-box">
+
+                    <div class="tool-item">
+
+                        <div class="tool-icon">
+                            <img src="#" alt="MidJourney">
+                        </div>
+
+                        <h4 class="tool-name">MidJourney</h4>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
 
-        <!-- Call Widget -->
-        <div class="call-widget gap-4" id="callWidget">
-            <div class="speech-bubble" id="speechBubble">
-                <button class="close-btn" id="closeWidgetBtn" aria-label="Close" onclick="closeWidget()">×</button>
-                Start your degree or diploma at 10k per month! Best-in-class courses in Data Science, Management and Technology
-                
-            </div>
-            <div class="call-icon-btn" id="callIconBtn">
-               <img src="../assets/icons/Group 32.svg" alt="">
-            </div>
-        </div>
     </section>
 
-    <!-- 2. CTA SECTION -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="offer-badge">Limited Time Offer <img src="../assets/icons/Rectangle (5).svg" alt=""></div>
-            <h1 class="cta-title">Start Your Learning Journey Today</h1>
-            <p class="cta-subtitle">Get access to 500+ courses with a special discount. Transform your career with expert-led training.</p>
-            
-            <div class="cta-btns d-flex justify-content-center gap-3">
-                <button class="btn-white">Get Started Now <img src="../assets/icons/Arrow 2.svg" alt=""></button>
-                <button class="btn-outline-white">Browse Courses <img src="../assets/icons/Arrow 3.svg" alt=""></button>
-            </div>
-
-            <div class="social-follow">
-                <span>Follow Us On</span>
-                <div class="social-icons">
-                    <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
-                    <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
-                    <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
-                    <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. FOOTER SECTION -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="footer-logo">
-                        <img src="../assets/icons/logo figma 2.svg" alt="Tuishala Logo"> 
-                    </div>
-                    <p class="tagline">Building Careers of Tomorrow</p>
-                    <div class="footer-social-icons mb-4 mb-lg-0">
-                    <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
-                    <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
-                    <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
-                    <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-lg-end mt-5">
-                    <div class="app-buttons d-flex flex-column align-items-lg-end">
-                        <a href="#" class="btn">GET THE ANDROID APP</a>
-                        <a href="#" class="btn">GET THE IOS APP</a>
-                    </div>
-                </div>
-            </div>
-
-            <hr style="border-color: #333;">
-
-            <div class="row mt-5">
-                <div class="col-6 col-md-3">
-                    <h5 class="footer-col-title">Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Instructors</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h5 class="footer-col-title">Category</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Business</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h5 class="footer-col-title">Support</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h5 class="footer-col-title">Support</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
- 
-
-    <!-- <script>
-        // function closeWidget() {
-        //     document.getElementById('callWidget').style.display = 'none';
-        // }
-    </script> -->
-        <script>
-        (function() {
-            // Fully responsive widget control with smooth close/open and localstorage persistence
-            const widget = document.getElementById('callWidget');
-            const closeBtn = document.getElementById('closeWidgetBtn');
-            const speechBubble = document.getElementById('speechBubble');
-            const callIcon = document.getElementById('callIconBtn');
-
-            // Check localStorage for widget state (closed or open)
-            let isWidgetVisible = true;
-            if (localStorage.getItem('supportWidgetClosed') === 'true') {
-                isWidgetVisible = false;
-                if (speechBubble) speechBubble.style.display = 'none';
-            }
-
-            // Function to close widget (hide bubble)
-            function closeWidget() {
-                if (speechBubble) {
-                    speechBubble.style.display = 'none';
-                    localStorage.setItem('supportWidgetClosed', 'true');
-                    isWidgetVisible = false;
-                }
-            }
-
-            // Function to reopen widget (show bubble) – optional, triggered by clicking call icon if needed
-            function openWidget() {
-                if (speechBubble) {
-                    speechBubble.style.display = 'block';
-                    localStorage.setItem('supportWidgetClosed', 'false');
-                    isWidgetVisible = true;
-                }
-            }
-
-            // Toggle: clicking on call icon reopens the widget if it was closed
-            if (callIcon) {
-                callIcon.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    if (!isWidgetVisible || (speechBubble && speechBubble.style.display === 'none')) {
-                        openWidget();
-                    } else {
-                        // If bubble is visible, you could also navigate to contact, but we keep as expand.
-                        // Optionally scroll into view for better UX.
-                        if (speechBubble) speechBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }
-                });
-            }
-
-            // Close button action
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    closeWidget();
-                });
-            }
-
-            // On window resize, ensure no overlapping issues (just enforce position)
-            window.addEventListener('resize', function() {
-                // simple reflow guard, but already CSS handles responsiveness.
-                if (window.innerWidth <= 576 && speechBubble && speechBubble.style.display !== 'none') {
-                    // ensure bubble still visible and not offscreen, but default css handles.
-                }
-            });
-
-            // For better UX: clicking on the call icon also makes call simulation if needed, but we simply reopen.
-            // Additionally we can add a smooth hover effect and optional ring, but that's fine.
-        })();
-    </script>
 </body>
+
 </html>

@@ -3,7 +3,8 @@
 :root {
     
   --font-family: 'Poppins', sans-serif;
-  --primary-color: #1999FB;
+  /* --primary-color: #1999FB; */
+  --primary-color: #1E3A8A;
   --primary-light:#5dadea;
   --text-color: #1e293b;
   --border-color: #e5e7eb;

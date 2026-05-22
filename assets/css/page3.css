@@ -1,0 +1,2233 @@
+
+/* ============================================
+    PAGE-3 GLOBAL RESET & VARIABLES
+    ============================================ */
+:root {
+--p3-primary: #1E3A8A;
+--p3-primary-light: #5dadea;
+--p3-primary-dark: #1d4ed8;
+--p3-font: 'Poppins', sans-serif;
+--p3-text-primary: #777777;
+--p3-text-secondary: #565656;
+--p3-text-dark: #000000;
+--p3-text-muted: #94a3b8;
+--p3-bg-white: #ffffff;
+--p3-bg-section: #FAFAFA;
+--p3-bg-card: #ffffff;
+--p3-border-color: #CCCCCC;
+--p3-border-light: #D7D7D7;
+--p3-indicator-color:#D9D9D9;
+--p3-indicator-muted:#8D8D8D;
+--p3-warning: #f59e0b;
+--p3-transition: all 0.3s ease;
+--p3-shadow-sm: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+--p3-shadow-md: 0px 8px 24px rgba(0, 0, 0, 0.08);
+--p3-shadow-lg: 0px 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; width: 100%; font-family: var(--p3-font); }
+/* overflow-x: hidden; */
+
+/* ============================================
+    P3 HERO SECTION
+    ============================================ */
+.p3-hero-section {
+padding: 60px 0 80px;  /* Increased bottom padding for card float space */
+background-color: var(--p3-bg-section);
+position: relative;
+    overflow: visible;
+}
+
+/* Subtle background pattern for depth */
+/* .p3-hero-section::before {
+content: '';
+position: absolute;
+top: -50%;
+right: -10%;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(30, 58, 138, 0.03) 0%, transparent 70%);
+pointer-events: none;
+animation: p3BgPulse 8s ease-in-out infinite;
+} 
+
+@keyframes p3BgPulse {
+0%, 100% { transform: scale(1); opacity: 0.5; }
+50% { transform: scale(1.1); opacity: 0.8; }
+}*/
+
+/* Entrance Animation */
+.p3-hero-content {
+animation: p3FadeSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes p3FadeSlideUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.p3-hero-title {
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--p3-text-dark);
+line-height: 1.3;
+margin-bottom: 24px;
+letter-spacing: -0.5px;
+}
+
+.p3-hero-title span {
+color: var(--p3-primary);
+position: relative;
+display: inline-block;
+}
+
+/* Animated underline on "Machine Learning" */
+/* .p3-hero-title span::after {
+content: '';
+position: absolute;
+bottom: 2px;
+left: 0;
+width: 0;
+height: 3px;
+background: linear-gradient(90deg, var(--p3-primary), var(--p3-primary-light));
+border-radius: 2px;
+animation: p3UnderlineExpand 1s ease 0.6s forwards;
+}
+
+@keyframes p3UnderlineExpand {
+to { width: 100%; }
+} */
+
+/* Description */
+.p3-hero-desc {
+font-size: 1.125rem;
+font-weight: 400;
+color: var(--p3-text-secondary);
+line-height: 1.7;
+margin-bottom: 28px;
+max-width: 790px;
+width: 100%;
+}
+
+.p3-hero-desc strong {
+color: var(--p3-primary);
+font-weight: 600;
+cursor: pointer;
+transition: var(--p3-transition);
+}
+
+.p3-hero-desc strong:hover {
+color: var(--p3-primary-dark);
+text-decoration: underline;
+}
+
+/* Enroll Button */
+.p3-enroll-btn {
+background-color: var(--p3-primary);
+color: white;
+border: none;
+border-radius: 10px;
+padding: 14px 40px;
+font-weight: 500;
+font-size: 1.063rem;
+font-family: var(--p3-font);
+transition: var(--p3-transition);
+position: relative;
+overflow: hidden;
+box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
+animation: p3FadeSlideUp 0.8s ease 0.2s both;
+}
+
+/* Shimmer sweep effect */
+.p3-enroll-btn::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+transition: left 0.6s ease;
+}
+
+.p3-enroll-btn:hover::before {
+left: 100%;
+}
+
+.p3-enroll-btn:hover {
+background-color: var(--p3-primary-dark);
+transform: translateY(-3px);
+box-shadow: 0 8px 25px rgba(30, 58, 138, 0.35);
+}
+
+.p3-enroll-btn:active {
+transform: translateY(-1px);
+}
+
+/* Enrollment Count */
+.p3-enroll-count {
+font-size: 0.938rem;
+font-weight: 400;
+color: var(--p3-text-muted);
+margin-top: 14px;
+margin-bottom: 0;
+animation: p3FadeSlideUp 0.8s ease 0.3s both;
+}
+
+/* ============================================
+    P3 INFO CARD - FLOATING OVERLAP
+    ============================================ */
+.p3-info-card {
+background: var(--p3-bg-card);
+border-radius: 16px;
+box-shadow: var(--p3-shadow-sm);
+border: 1px solid var(--p3-border-light);
+margin-top: 60px;
+margin-bottom: -140px;  /* Half outside the section - floating effect */
+overflow: hidden;
+animation: p3FadeSlideUp 0.8s ease 0.4s both;
+transition: var(--p3-transition);
+position: relative;
+z-index: 10;
+}
+
+.p3-info-card:hover {
+box-shadow: var(--p3-shadow-lg);
+transform: translateY(-2px);
+}
+
+/* Info Items */
+.p3-info-item {
+padding: 28px 24px;
+position: relative;
+transition: var(--p3-transition);
+}
+
+/* Vertical dividers */
+.p3-info-item:not(:last-child)::after {
+content: '';
+position: absolute;
+right: 0;
+top: 20%;
+height: 60%;
+width: 1px;
+background: var(--p3-border-light);
+transition: var(--p3-transition);
+}
+
+.p3-info-item:hover {
+background: rgba(30, 58, 138, 0.02);
+}
+
+.p3-info-item:hover::after {
+background: var(--p3-primary);
+opacity: 0.2;
+}
+
+/* Rating Block */
+.p3-rating {
+display: flex;
+align-items: center;
+gap: 8px;
+margin-bottom: 8px;
+}
+
+.p3-rating-number {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--p3-text-dark);
+line-height: 1;
+}
+
+.p3-rating-star {
+font-size: 1.25rem;
+color: var(--p3-warning);
+animation: p3StarPulse 2s ease-in-out infinite;
+}
+
+@keyframes p3StarPulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.15); }
+}
+
+/* Info Titles */
+.p3-info-title {
+font-size: 1.125rem;
+font-weight: 600;
+color: var(--p3-text-dark);
+margin-bottom: 6px;
+line-height: 1.4;
+}
+
+/* Info Descriptions */
+.p3-info-desc {
+font-size: 0.875rem;
+font-weight: 400;
+color: var(--p3-text-primary);
+line-height: 1.5;
+margin-bottom: 0;
+}
+
+/* Learn more link */
+.p3-info-desc a {
+color: var(--p3-primary);
+font-weight: 500;
+text-decoration: none;
+position: relative;
+transition: var(--p3-transition);
+}
+
+.p3-info-desc a::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 0;
+height: 1.5px;
+background: var(--p3-primary);
+transition: width 0.3s ease;
+}
+
+.p3-info-desc a:hover::after {
+width: 100%;
+}
+
+.p3-info-desc a:hover {
+color: var(--p3-primary-dark);
+}
+
+/* ============================================
+    RESPONSIVE BREAKPOINTS
+    ============================================ */
+@media (max-width: 991.98px) {
+.p3-hero-section {
+    padding: 50px 0 70px;
+}
+.p3-hero-title {
+    font-size: 2.125rem;
+}
+.p3-hero-desc {
+    font-size: 1rem;
+    max-width: 100%;
+}
+.p3-info-card {
+    margin-bottom: -40px;
+}
+.p3-info-item {
+    padding: 24px 20px;
+}
+.p3-info-title {
+    font-size: 1rem;
+}
+.p3-info-desc {
+    font-size: 0.813rem;
+}
+}
+
+@media (max-width: 767.98px) {
+.p3-hero-section {
+    padding: 40px 0 60px;
+}
+.p3-hero-title {
+    font-size: 1.875rem;
+    margin-bottom: 20px;
+}
+.p3-hero-desc {
+    font-size: 0.938rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+.p3-enroll-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 32px;
+}
+.p3-info-card {
+    margin-top: 32px;
+    margin-bottom: -30px;
+    border-radius: 12px;
+}
+/* 2x2 grid on mobile - remove vertical dividers, add horizontal */
+.p3-info-item:nth-child(1),
+.p3-info-item:nth-child(2) {
+    border-bottom: 1px solid var(--p3-border-light);
+}
+.p3-info-item:nth-child(1)::after,
+.p3-info-item:nth-child(3)::after {
+    display: none;
+}
+.p3-info-item:nth-child(2)::after {
+    display: block;
+    right: 0;
+    top: 15%;
+    height: 70%;
+}
+.p3-rating-number {
+    font-size: 1.25rem;
+}
+}
+
+@media (max-width: 575.98px) {
+.p3-hero-title {
+    font-size: 1.625rem;
+}
+.p3-hero-desc {
+    font-size: 0.875rem;
+}
+.p3-enroll-btn {
+    font-size: 0.938rem;
+    max-width: 100%;
+}
+.p3-info-card {
+    margin-bottom: -25px;
+}
+.p3-info-item {
+    padding: 20px 16px;
+}
+.p3-info-title {
+    font-size: 0.938rem;
+}
+.p3-info-desc {
+    font-size: 0.75rem;
+}
+.p3-rating-star {
+    font-size: 1rem;
+}
+}
+
+@media (max-width: 374.98px) {
+.p3-hero-title {
+    font-size: 1.4rem;
+}
+.p3-info-item {
+    padding: 16px 12px;
+}
+}
+/*   P3 HERO SECTION end */
+
+ /* ============================================
+         P3 LEARN SECTION start
+============================================ */
+
+.p3-learn-section {
+padding: 80px 0 70px;
+background-color: var(--p3-bg-white);
+position: relative;
+}
+
+/* ============================================
+    P3 TABS NAVIGATION
+    ============================================ */
+.p3-tabs-nav {
+border-bottom: none;
+margin-bottom: 40px;
+display: flex;
+gap: 32px;
+}
+
+.p3-tab-link {
+font-size: 1rem;
+font-weight: 500;
+color: var(--p3-text-muted);
+padding: 12px 0 0;
+border: none !important;
+background: none;
+position: relative;
+transition: var(--p3-transition);
+cursor: pointer;
+font-family: var(--p3-font);
+}
+
+.p3-tab-link:hover {
+color: var(--p3-text-dark);
+}
+
+/* Animated underline */
+.p3-tab-link::after {
+content: '';
+position: absolute;
+bottom: -1px;
+left: 0;
+width: 0;
+height: 2.5px;
+background: var(--p3-primary);
+border-radius: 2px;
+transition: width 0.3s ease;
+}
+
+.p3-tab-link:hover::after {
+width: 100%;
+}
+
+/* Active tab */
+.p3-tab-link.active {
+color: var(--p3-primary);
+font-weight: 600;
+}
+
+.p3-tab-link.active::after {
+width: 100%;
+}
+
+/* ============================================
+    P3 SECTION TITLE
+    ============================================ */
+.p3-learn-title {
+font-size: 1.5rem;
+font-weight: 600;
+color: var(--p3-text-dark);
+margin-bottom: 36px;
+line-height: 1.3;
+}
+
+/* ============================================
+    P3 FEATURE ITEMS
+    ============================================ */
+.p3-feature-item {
+display: flex;
+align-items: flex-start;
+gap: 16px;
+padding: 16px 20px;
+margin-bottom: 20px;
+border-radius: 12px;
+transition: var(--p3-transition);
+cursor: default;
+animation: p3FadeSlideUp 0.6s ease both;
+}
+
+/* Staggered entrance */
+.p3-feature-item:nth-child(1) { animation-delay: 0.1s; }
+.p3-feature-item:nth-child(2) { animation-delay: 0.2s; }
+.p3-feature-item:nth-child(3) { animation-delay: 0.3s; }
+.p3-feature-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes p3FadeSlideUp {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover: lift + shadow + bg highlight */
+.p3-feature-item:hover {
+transform: translateY(-4px);
+background: rgba(30, 58, 138, 0.03);
+box-shadow: 0 8px 24px rgba(30, 58, 138, 0.08);
+}
+
+/* ============================================
+    P3 CHECK ICON
+    ============================================ */
+.p3-check-icon {
+width: 25px;
+height: 25px;
+min-width: 25px;
+min-height: 25px;
+border: 2px solid var(--p3-text-dark);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+background: var(--p3-bg-white);
+transition: var(--p3-transition);
+margin-top: 2px;
+}
+
+.p3-check-icon i {
+font-size: 12px;
+color: var(--p3-text-dark);
+transition: var(--p3-transition);
+}
+
+/* Icon hover: dark bg + white check */
+.p3-feature-item:hover .p3-check-icon {
+background: var(--p3-text-dark);
+border-color: var(--p3-text-dark);
+}
+
+.p3-feature-item:hover .p3-check-icon i {
+color: var(--p3-bg-white);
+}
+
+/* ============================================
+    P3 FEATURE TEXT
+    ============================================ */
+.p3-feature-text {
+font-size: 1rem;
+font-weight: 400;
+color: var(--p3-text-secondary);
+line-height: 1.6;
+margin: 0;
+}
+
+/* ============================================
+    RESPONSIVE BREAKPOINTS
+    ============================================ */
+@media (max-width: 991.98px) {
+.p3-learn-section {
+    padding: 60px 0 50px;
+}
+.p3-tabs-nav {
+    gap: 24px;
+    margin-bottom: 32px;
+}
+.p3-learn-title {
+    font-size: 1.35rem;
+    margin-bottom: 28px;
+}
+.p3-feature-item {
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+}
+
+@media (max-width: 767.98px) {
+.p3-learn-section {
+    padding: 50px 0 40px;
+}
+.p3-tabs-nav {
+    gap: 20px;
+    margin-bottom: 28px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.p3-tabs-nav::-webkit-scrollbar {
+    display: none;
+}
+.p3-tab-link {
+    font-size: 0.938rem;
+    white-space: nowrap;
+}
+.p3-learn-title {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+}
+.p3-feature-item {
+    padding: 12px 14px;
+    margin-bottom: 14px;
+}
+.p3-feature-text {
+    font-size: 0.938rem;
+    line-height: 1.5;
+}
+}
+
+@media (max-width: 575.98px) {
+.p3-learn-section {
+    padding: 40px 0 30px;
+}
+.p3-tabs-nav {
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.p3-tab-link {
+    font-size: 0.875rem;
+    padding: 10px 0;
+}
+.p3-learn-title {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+}
+.p3-feature-item {
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+.p3-check-icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+}
+.p3-check-icon i {
+    font-size: 10px;
+}
+.p3-feature-text {
+    font-size: 0.875rem;
+}
+}
+
+/* P3 LEARN SECTION start */
+.p3-skills-section {
+  padding: 0 0 70px;
+  background-color: var(--p3-bg-white);
+}
+
+.p3-subsection {
+  margin-bottom: 40px;
+}
+
+.p3-subsection-last {
+  margin-bottom: 0;
+}
+
+.p3-subsection-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+/* ============================================
+   P3 SKILL TAGS
+   ============================================ */
+.p3-tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.p3-skill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background: #F0F4FF;
+  border: 1px solid #E0E7FF;
+  border-radius: 8px;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--p3-text-secondary);
+  transition: var(--p3-transition);
+  cursor: default;
+  animation: p3TagFadeIn 0.4s ease both;
+  flex: 0 0 auto;
+}
+
+.p3-skill-tag:nth-child(1) { animation-delay: 0.05s; }
+.p3-skill-tag:nth-child(2) { animation-delay: 0.10s; }
+.p3-skill-tag:nth-child(3) { animation-delay: 0.15s; }
+.p3-skill-tag:nth-child(4) { animation-delay: 0.20s; }
+.p3-skill-tag:nth-child(5) { animation-delay: 0.25s; }
+.p3-skill-tag:nth-child(6) { animation-delay: 0.30s; }
+.p3-skill-tag:nth-child(7) { animation-delay: 0.35s; }
+.p3-skill-tag:nth-child(8) { animation-delay: 0.40s; }
+.p3-skill-tag:nth-child(9) { animation-delay: 0.45s; }
+.p3-skill-tag:nth-child(10) { animation-delay: 0.50s; }
+.p3-skill-tag:nth-child(11) { animation-delay: 0.55s; }
+.p3-skill-tag:nth-child(12) { animation-delay: 0.60s; }
+.p3-skill-tag:nth-child(13) { animation-delay: 0.65s; }
+.p3-skill-tag:nth-child(14) { animation-delay: 0.70s; }
+
+@keyframes p3TagFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.p3-skill-tag:hover {
+  background: var(--p3-primary);
+  color: white;
+  border-color: var(--p3-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+.p3-tag-link {
+  background: transparent;
+  border: none;
+  color: var(--p3-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.p3-tag-link:hover {
+  background: transparent;
+  color: var(--p3-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* ============================================
+   P3 TOOL TAGS
+   ============================================ */
+.p3-tool-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #F0F4FF;
+  border: 1px solid #E0E7FF;
+  border-radius: 10px;
+  font-size: 0.938rem;
+  font-weight: 500;
+  color: var(--p3-text-secondary);
+  transition: var(--p3-transition);
+  cursor: default;
+  animation: p3TagFadeIn 0.4s ease both;
+   flex: 0 0 auto;
+}
+
+.p3-tool-tag:nth-child(1) { animation-delay: 0.1s; }
+.p3-tool-tag:nth-child(2) { animation-delay: 0.2s; }
+
+.p3-tool-tag:hover {
+  background: var(--p3-primary);
+  color: white;
+  border-color: var(--p3-primary);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.25);
+}
+
+.p3-tool-icon {
+  font-size: 0.875rem;
+  transition: var(--p3-transition);
+}
+
+.p3-tool-tag:hover .p3-tool-icon {
+  transform: rotate(15deg);
+}
+
+/* ============================================
+   P3 DETAIL ITEMS
+   ============================================ */
+.p3-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.p3-detail-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 32px;
+  background: #E8F0FE;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--p3-primary);
+  font-size: 0.875rem;
+  transition: var(--p3-transition);
+}
+.p3-detail-icon img{
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+.p3-detail-item:hover .p3-detail-icon {
+  background: var(--p3-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.p3-detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p3-detail-label {
+  font-size: 0.938rem;
+  font-weight: 500;
+  color: var(--p3-text-dark);
+  line-height: 1.4;
+}
+
+.p3-detail-sublabel {
+  font-size: 0.813rem;
+  font-weight: 400;
+  color: var(--p3-text-muted);
+  line-height: 1.4;
+}
+
+/* ============================================
+   P3 CERTIFICATE CONTENT
+   ============================================ */
+.p3-cert-content {
+  max-width: 800px;
+}
+
+.p3-cert-text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--p3-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.p3-cert-text:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+@media (max-width: 991.98px) {
+  .p3-skills-section {
+    padding: 0 0 60px;
+  }
+  .p3-subsection {
+    margin-bottom: 36px;
+  }
+  .p3-subsection-title {
+    font-size: 1.35rem;
+    margin-bottom: 18px;
+  }
+  .p3-tags-wrapper {
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .p3-skill-tag {
+    flex: 0 0 calc(25% - 0.75rem);
+    justify-content: center;
+    font-size: 0.875rem;
+    padding: 7px 12px;
+    min-width: 0;
+  }
+  .p3-tool-tag {
+    flex: 0 0 calc(25% - 0.75rem);
+    justify-content: center;
+    font-size: 0.875rem;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p3-skills-section {
+    padding: 0 0 50px;
+  }
+  .p3-subsection {
+    margin-bottom: 32px;
+  }
+  .p3-subsection-title {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+  .p3-tags-wrapper {
+    gap: 0.75rem;
+  }
+  .p3-skill-tag {
+    flex: 0 0 calc(33.333% - 0.5rem);
+    font-size: 0.813rem;
+    padding: 6px 10px;
+  }
+  .p3-tool-tag {
+    flex: 0 0 calc(33.333% - 0.5rem);
+    font-size: 0.813rem;
+    padding: 7px 12px;
+  }
+  .p3-cert-text {
+    font-size: 0.938rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .p3-skills-section {
+    padding: 0 0 40px;
+  }
+  .p3-subsection {
+    margin-bottom: 28px;
+  }
+  .p3-subsection-title {
+    font-size: 1.125rem;
+    margin-bottom: 14px;
+  }
+  .p3-tags-wrapper {
+    gap: 0.625rem;
+  }
+  .p3-skill-tag {
+    flex: 0 0 calc(50% - 0.3125rem);
+    font-size: 0.75rem;
+    padding: 5px 8px;
+    border-radius: 6px;
+  }
+  .p3-tool-tag {
+    flex: 0 0 calc(50% - 0.3125rem);
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  .p3-detail-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 0.75rem;
+  }
+  .p3-detail-label {
+    font-size: 0.875rem;
+  }
+  .p3-detail-sublabel {
+    font-size: 0.75rem;
+  }
+  .p3-cert-text {
+    font-size: 0.875rem;
+  }
+}
+/* Extra Small (below 420px): 2 per row, more compact */
+@media (max-width: 419.98px) {
+  .p3-tags-wrapper {
+    gap: 0.5rem;
+  }
+  .p3-skill-tag {
+    flex: 0 0 calc(50% - 0.25rem);
+    font-size: 0.688rem;
+    padding: 4px 6px;
+    border-radius: 5px;
+  }
+  .p3-tool-tag {
+    flex: 0 0 calc(50% - 0.25rem);
+    font-size: 0.688rem;
+    padding: 5px 8px;
+  }
+}
+/* P3 LEARN SECTION end */
+
+
+/* P3 COURSE ACCORDION SECTION start*/
+.p3-course-section {
+  padding: 0 0 70px;
+
+}
+.p3-course-section>.container{
+ background-color: #F9F9F9;
+ border-radius: 8px;
+ padding: 0px;
+
+
+}
+
+/* ============================================
+   P3 COURSE HEADER (Accordion Toggle)
+   ============================================ */
+.p3-course-card{
+ padding: 0 20px;
+}
+.p3-course-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0 16px;
+  cursor: pointer;
+  transition: var(--p3-transition);
+  border: none;
+  background: none;
+  width: 100%;
+}
+
+.p3-course-header:hover {
+  opacity: 0.85;
+}
+
+.p3-course-header:hover .p3-course-title {
+  color: var(--p3-primary);
+}
+
+.p3-course-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.p3-course-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  margin-bottom: 6px;
+  line-height: 1.4;
+  transition: var(--p3-transition);
+}
+
+.p3-course-meta {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--p3-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.p3-course-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.p3-toggle-label {
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--p3-text-muted);
+  transition: var(--p3-transition);
+}
+
+.p3-toggle-icon {
+  font-size: 0.875rem;
+  color: var(--p3-text-muted);
+  transition: transform 0.35s ease, color 0.3s ease;
+}
+
+.p3-course-header.collapsed .p3-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.p3-course-header.collapsed:hover .p3-toggle-icon {
+  color: var(--p3-primary);
+}
+
+/* ============================================
+   P3 COURSE BODY
+   ============================================ */
+.p3-course-body {
+  padding: 8px 0 24px;
+}
+
+.p3-learn-block {
+  margin-bottom: 24px;
+}
+
+.p3-learn-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.p3-learn-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.p3-learn-list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--p3-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.p3-learn-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  background: var(--p3-text-muted);
+  border-radius: 50%;
+}
+
+.p3-learn-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   P3 SKILLS BLOCK
+   ============================================ */
+.p3-skills-block {
+  margin-bottom: 20px;
+}
+
+.p3-skills-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+/* ============================================
+   P3 COURSE TAGS - DESKTOP ALIGNMENT FIX
+   ============================================ */
+.p3-course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.p3-course-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background: #F0F4FF;
+  border: 1px solid #E0E7FF;
+  border-radius: 8px;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--p3-text-secondary);
+  transition: var(--p3-transition);
+  cursor: default;
+  flex: 0 0 auto;  /* Natural sizing on desktop */
+}
+
+.p3-course-tag:hover {
+  background: var(--p3-primary);
+  color: white;
+  border-color: var(--p3-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+/* ============================================
+   P3 COURSE FOOTER & DIVIDER
+   ============================================ */
+.p3-course-footer {
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--p3-text-primary);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.p3-course-divider {
+  height: 1px;
+  background: var(--p3-border-light);
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Desktop (992px+): Default - tags auto size */
+@media (min-width: 992px) {
+  .p3-course-tags {
+    gap: 1.5rem;
+    max-width: 900px;
+  }
+}
+
+/* Tablet (768px - 991px): 4-4-4-2 */
+@media (max-width: 991.98px) {
+  .p3-course-section {
+    padding: 0 0 60px;
+  }
+  .p3-course-header {
+    padding: 20px 0 14px;
+  }
+  .p3-course-title {
+    font-size: 1.063rem;
+  }
+  .p3-course-tags {
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .p3-course-tag {
+    flex: 0 0 calc(25% - 0.75rem);
+    justify-content: center;
+    font-size: 0.875rem;
+    padding: 7px 12px;
+    min-width: 0;
+  }
+}
+
+/* Mobile Large (576px - 767px): 3-3-3-3-2 */
+@media (max-width: 767.98px) {
+  .p3-course-section {
+    padding: 0 0 50px;
+  }
+  .p3-course-header {
+    padding: 18px 0 12px;
+    gap: 16px;
+  }
+  .p3-course-toggle {
+    gap: 8px;
+  }
+  .p3-toggle-label {
+    font-size: 0.875rem;
+  }
+  .p3-course-body {
+    padding: 6px 0 20px;
+  }
+  .p3-learn-heading,
+  .p3-skills-heading {
+    font-size: 0.938rem;
+  }
+  .p3-learn-list li {
+    font-size: 0.875rem;
+    padding-left: 14px;
+  }
+  .p3-learn-list li::before {
+    top: 8px;
+    width: 4px;
+    height: 4px;
+  }
+  .p3-course-footer {
+    font-size: 0.875rem;
+  }
+  .p3-course-tags {
+    gap: 0.75rem;
+  }
+  .p3-course-tag {
+    flex: 0 0 calc(33.333% - 0.5rem);
+    font-size: 0.813rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Mobile Small (420px - 575px): 2 per row */
+@media (max-width: 575.98px) {
+  .p3-course-section {
+    padding: 0 0 40px;
+  }
+  .p3-course-header {
+    padding: 16px 0 10px;
+    gap: 12px;
+  }
+  .p3-course-title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  .p3-course-meta {
+    font-size: 0.813rem;
+  }
+  .p3-toggle-label {
+    display: none;
+  }
+  .p3-course-body {
+    padding: 4px 0 16px;
+  }
+  .p3-learn-block {
+    margin-bottom: 20px;
+  }
+  .p3-skills-block {
+    margin-bottom: 16px;
+  }
+  .p3-course-tags {
+    gap: 0.625rem;
+  }
+  .p3-course-tag {
+    flex: 0 0 calc(50% - 0.3125rem);
+    font-size: 0.75rem;
+    padding: 5px 8px;
+    border-radius: 6px;
+  }
+}
+
+/* Extra Small (below 420px): 2 per row compact */
+@media (max-width: 419.98px) {
+  .p3-course-header {
+    padding: 14px 0 8px;
+  }
+  .p3-course-title {
+    font-size: 0.938rem;
+  }
+  .p3-course-tags {
+    gap: 0.5rem;
+  }
+  .p3-course-tag {
+    flex: 0 0 calc(50% - 0.25rem);
+    font-size: 0.688rem;
+    padding: 4px 6px;
+    border-radius: 5px;
+  }
+  .p3-learn-list li {
+    font-size: 0.813rem;
+    margin-bottom: 6px;
+  }
+}
+/* P3 COURSE ACCORDION SECTION end*/
+
+
+/* P3 TESTIMONIAL CAROUSEL SECTION start*/
+.p3-testimonial-section {
+  padding: 0 0 80px;
+  background-color: var(--p3-bg-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Title */
+.p3-testimonial-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  margin-bottom: 40px;
+  line-height: 1.3;
+}
+
+.p3-testimonial-title span {
+  color: var(--p3-primary);
+  font-weight: 700;
+}
+
+/* ============================================
+   P3 TESTIMONIAL CAROUSEL
+   ============================================ */
+.p3-testimonial-carousel {
+  position: relative;
+}
+
+/* ============================================
+   P3 TESTIMONIAL IMAGE
+   ============================================ */
+.p3-testimonial-image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 340px;
+}
+
+.p3-testimonial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item:hover .p3-testimonial-image {
+  transform: scale(1.03);
+}
+
+/* ============================================
+   P3 TESTIMONIAL TEXT
+   ============================================ */
+.p3-testimonial-text-col {
+  padding-left: 40px;
+}
+
+.p3-testimonial-quote {
+  font-size: 1.063rem;
+  font-weight: 400;
+  color: var(--p3-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.p3-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p3-testimonial-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  line-height: 1.4;
+}
+
+.p3-testimonial-location {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--p3-text-muted);
+  line-height: 1.4;
+}
+
+/* ============================================
+   P3 CAROUSEL ARROWS
+   ============================================ */
+.p3-carousel-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--p3-border-light);
+  background: var(--p3-bg-white);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  color: var(--p3-text-dark) ;
+  transition: var(--p3-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.p3-carousel-arrow i {
+  font-size: 0.875rem;
+}
+/* ============================================
+   P3 CAROUSEL ARROW - HOVER FIX
+   Override Bootstrap default white color on hover/focus
+   ============================================ */
+
+.p3-carousel-arrow,
+.p3-carousel-arrow:focus,
+.p3-carousel-arrow:hover,
+.p3-carousel-arrow:active {
+  color: var(--p3-text-dark) !important;
+  background: var(--p3-bg-white) !important;
+  border-color: var(--p3-border-light) !important;
+  opacity: 1 !important;
+  outline: none !important; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.p3-carousel-arrow:hover {
+  color: white !important;
+  background: var(--p3-primary) !important;
+  border-color: var(--p3-primary) !important;
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.25) !important;
+}
+
+.p3-carousel-arrow:active {
+  color: white !important;
+  background: var(--p3-primary-dark) !important;
+  border-color: var(--p3-primary-dark) !important;
+}
+
+
+.p3-carousel-arrow.carousel-control-prev {
+  left: -60px;
+}
+
+.p3-carousel-arrow.carousel-control-next {
+  right: -60px;
+}
+
+
+/* ============================================
+   P3 CAROUSEL DOTS (Indicators)
+   ============================================ */
+.p3-carousel-dots {
+  position: static;
+  margin-top: 32px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.p3-carousel-dots button {
+  width: 8px !important;
+  height: 6px !important;
+  border-radius: 18px !important;
+  border: none !important;
+  background: var(--p3-indicator-color) !important;
+  opacity: 1 !important;
+  transition: var(--p3-transition) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.p3-carousel-dots button.active {
+  background: var(--p3-indicator-muted) !important;
+  width: 24px !important;
+  height: 6px !important;
+  border-radius: 18px !important;
+}
+
+/* .p3-carousel-dots button:hover {
+  background: var(--p3-primary) !important;
+} */
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .p3-carousel-arrow.carousel-control-prev {
+    left: -70px;
+  }
+  .p3-carousel-arrow.carousel-control-next {
+    right: -70px;
+  }
+}
+
+/* Tablet (768px - 991px) - Overlay Style */
+@media (max-width: 991.98px) {
+  .p3-testimonial-section {
+    padding: 50px 0 60px;
+  }
+  .p3-testimonial-title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .p3-testimonial-carousel .carousel-item {
+    min-height: 520px;
+    position: relative;
+  }
+
+  .p3-testimonial-image-col {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 0 !important;
+  }
+
+  .p3-testimonial-image-wrapper {
+    height: 100% !important;
+    border-radius: 0;
+  }
+
+  .p3-testimonial-image {
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  /* Gradient overlay for text readability */
+  .p3-testimonial-image-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.82) 100%);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 0;
+  }
+
+  .p3-testimonial-text-col {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 40px 24px 50px !important;
+    text-align: center;
+  }
+
+  .p3-testimonial-quote {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .p3-testimonial-name {
+    color: white !important;
+    font-size: 1.063rem;
+  }
+
+  .p3-testimonial-location {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.938rem;
+  }
+
+  /* Hide arrows on tablet/mobile */
+  .p3-carousel-arrow {
+    display: none;
+  }
+
+  .p3-carousel-dots {
+    margin-top: 20px;
+  }
+
+  .p3-carousel-dots button {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .p3-carousel-dots button.active {
+    background: white;
+  }
+}
+
+/* Mobile Landscape (768px and below) */
+@media (max-width: 767.98px) {
+  .p3-testimonial-section {
+    padding: 40px 0 50px;
+  }
+  .p3-testimonial-title {
+    font-size: 1.35rem;
+    margin-bottom: 28px;
+  }
+  .p3-testimonial-carousel .carousel-item {
+    min-height: 480px;
+  }
+  .p3-testimonial-text-col {
+    padding: 32px 20px 40px !important;
+  }
+  .p3-testimonial-quote {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .p3-testimonial-name {
+    font-size: 1rem;
+  }
+  .p3-testimonial-location {
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile Portrait (576px and below) */
+@media (max-width: 575.98px) {
+  .p3-testimonial-section {
+    padding: 30px 0 40px;
+  }
+  .p3-testimonial-title {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+  }
+  .p3-testimonial-carousel .carousel-item {
+    min-height: 440px;
+  }
+  .p3-testimonial-text-col {
+    padding: 28px 16px 36px !important;
+  }
+  .p3-testimonial-quote {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .p3-testimonial-name {
+    font-size: 0.938rem;
+  }
+  .p3-testimonial-location {
+    font-size: 0.813rem;
+  }
+  .p3-carousel-dots {
+    margin-top: 16px;
+    gap: 6px;
+  }
+  .p3-carousel-dots button {
+    width: 8px;
+    height: 8px;
+  }
+  .p3-carousel-dots button.active {
+    width: 20px;
+  }
+}
+
+/* Extra Small (400px and below) */
+@media (max-width: 400px) {
+  .p3-testimonial-carousel .carousel-item {
+    min-height: 400px;
+  }
+  .p3-testimonial-text-col {
+    padding: 24px 14px 32px !important;
+  }
+  .p3-testimonial-quote {
+    font-size: 0.8rem;
+  }
+  .p3-testimonial-name {
+    font-size: 0.875rem;
+  }
+  .p3-testimonial-location {
+    font-size: 0.75rem;
+  }
+}
+/* P3 TESTIMONIAL CAROUSEL SECTION end*/
+
+ /* P3 BUSINESS BANNER SECTION start */
+
+.p3-business-section {
+  padding: 0 0 70px;
+}
+
+/* ============================================
+   P3 BUSINESS CARD
+   ============================================ */
+.p3-business-card {
+  background: var(--p3-bg-white);
+  border: 1px solid var(--p3-border-light);
+  border-radius: 12px;
+  padding: 32px 40px;
+  transition: var(--p3-transition);
+}
+
+.p3-business-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   P3 BUSINESS CONTENT (Left)
+   ============================================ */
+.p3-business-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.p3-business-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.p3-business-link {
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--p3-text-muted);
+  text-decoration: none;
+  transition: var(--p3-transition);
+  display: inline-block;
+}
+
+.p3-business-link:hover {
+  color: var(--p3-primary);
+  text-decoration: underline;
+}
+
+/* ============================================
+   P3 BUSINESS LOGOS (Right)
+   ============================================ */
+.p3-business-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.p3-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--p3-transition);
+}
+
+.p3-logo-item:hover {
+  transform: scale(1.08);
+}
+
+.p3-logo-img {
+  object-fit: contain;
+  display: block;
+  transition: var(--p3-transition);
+}
+
+/* Exact Figma dimensions */
+.p3-logo-google {
+  width: 129px;
+  height: 44px;
+}
+
+.p3-logo-amazon {
+  width: 130px;
+  height: 39px;
+}
+
+.p3-logo-tata {
+  width: 71px;
+  height: 63px;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+@media (max-width: 991.98px) {
+  .p3-business-section {
+    padding: 0 0 60px;
+  }
+  .p3-business-card {
+    padding: 28px 32px;
+  }
+  .p3-business-title {
+    font-size: 1.125rem;
+  }
+  .p3-business-logos {
+    justify-content: center;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p3-business-section {
+    padding: 0 0 50px;
+  }
+  .p3-business-card {
+    padding: 24px 24px;
+  }
+  .p3-business-title {
+    font-size: 1.063rem;
+    text-align: center;
+  }
+  .p3-business-link {
+    font-size: 0.875rem;
+    text-align: center;
+    display: block;
+  }
+  .p3-business-content {
+    align-items: center;
+  }
+  .p3-business-logos {
+    justify-content: center;
+    gap: 28px;
+  }
+  .p3-logo-google {
+    width: 110px;
+    height: 38px;
+  }
+  .p3-logo-amazon {
+    width: 112px;
+    height: 34px;
+  }
+  .p3-logo-tata {
+    width: 60px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .p3-business-section {
+    padding: 0 0 40px;
+  }
+  .p3-business-card {
+    padding: 20px 20px;
+    border-radius: 10px;
+  }
+  .p3-business-title {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .p3-business-link {
+    font-size: 0.813rem;
+  }
+  .p3-business-logos {
+    gap: 20px;
+  }
+  .p3-logo-google {
+    width: 95px;
+    height: 32px;
+  }
+  .p3-logo-amazon {
+    width: 96px;
+    height: 29px;
+  }
+  .p3-logo-tata {
+    width: 52px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 400px) {
+  .p3-business-card {
+    padding: 18px 16px;
+  }
+  .p3-business-logos {
+    gap: 16px;
+  }
+  .p3-logo-google {
+    width: 85px;
+    height: 29px;
+  }
+  .p3-logo-amazon {
+    width: 86px;
+    height: 26px;
+  }
+  .p3-logo-tata {
+    width: 46px;
+    height: 41px;
+  }
+}
+ /* P3 BUSINESS BANNER SECTION end */
+
+
+/* P3 FAQ SECTION - start */
+/* ============================================
+   P3 FAQ SECTION - FIGMA ACCURATE (Gray Cards)
+   ============================================ */
+.p3-faq-section {
+  padding: 60px 0 70px;
+  background-color: var(--p3-bg-white);
+}
+
+.p3-faq-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--p3-text-dark);
+  margin-bottom: 32px;
+  line-height: 1.3;
+}
+
+/* ============================================
+   P3 FAQ ACCORDION - Gray Card Style
+   ============================================ */
+.p3-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p3-faq-accordion .accordion-item {
+  border: none !important;
+  background: #FAFAFA;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.p3-faq-accordion .accordion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+  background: #FFFFFF;
+}
+
+/* ============================================
+   P3 FAQ BUTTON
+   ============================================ */
+.p3-faq-button {
+  background: #FAFAFA !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 22px 26px;
+  font-size: 1.063rem;
+  font-weight: 500;
+  color: #6F6F6F;
+  transition: all 0.3s ease;
+  font-family: var(--p3-font);
+}
+
+.p3-faq-button:hover {
+  color: #111111;
+  background: #FAFAFA !important;
+}
+
+.p3-faq-button:not(.collapsed) {
+  background: #FAFAFA !important;
+  color: #111111;
+}
+
+/* Custom chevron using Bootstrap Icons */
+/* .p3-faq-button::after {
+  background-image: none !important;
+  content: "\F282";  
+  font-family: "bootstrap-icons";
+  font-size: 1.125rem;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+  color: #111111;
+  width: auto;
+  height: auto;
+}
+
+.p3-faq-button:not(.collapsed)::after {
+  transform: rotate(180deg);
+} */
+
+/* ============================================
+   P3 FAQ BODY
+   ============================================ */
+.p3-faq-body {
+  background: #FAFAFA;
+  padding: 0 26px 24px 26px;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #7B7B7B;
+  animation: p3FaqFadeIn 0.35s ease;
+}
+
+@keyframes p3FaqFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+@media (max-width: 991.98px) {
+  .p3-faq-section {
+    padding: 50px 0 60px;
+  }
+  .p3-faq-title {
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+  .p3-faq-button {
+    font-size: 1rem;
+    padding: 20px 22px;
+  }
+  .p3-faq-body {
+    padding: 0 22px 20px 22px;
+    font-size: 0.938rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p3-faq-section {
+    padding: 40px 0 50px;
+  }
+  .p3-faq-title {
+    font-size: 1.35rem;
+    margin-bottom: 24px;
+  }
+  .p3-faq-button {
+    font-size: 0.938rem;
+    padding: 18px 20px;
+  }
+  .p3-faq-body {
+    padding: 0 20px 18px 20px;
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .p3-faq-section {
+    padding: 30px 0 40px;
+  }
+  .p3-faq-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  .p3-faq-button {
+    font-size: 0.875rem;
+    padding: 16px 18px;
+  }
+  .p3-faq-body {
+    padding: 0 18px 16px 18px;
+    font-size: 0.813rem;
+  }
+}
+/* P3 FAQ SECTION - end */
+
+/* CTA SECTION (BLUE) section*/
+.cta-section { 
+    background-color: var(--primary-color); 
+    color: white; 
+    padding: 50px 0 40px; 
+    text-align: center;
+
+}
+.offer-badge {
+    background: white; 
+    color: var(--primary-color);
+        padding: 5px 41px;
+    border-radius: 33px; 
+    font-weight: 600;
+        font-size: 1.125rem;
+        display: inline-block;
+        margin-bottom: 25px;
+        position: relative;
+}
+.offer-badge img{
+    height: 50px;
+    width: 50px;
+        object-fit: contain;
+        position: absolute;
+        bottom: -13%;
+        right:-5%;
+}
+.cta-title { 
+    font-weight: 500;
+        font-size: 2.813rem; 
+        margin-bottom: 15px; 
+    }
+.cta-subtitle {
+        font-size: 1.875rem; 
+        font-weight: 500; 
+        margin: 0 auto 30px;  
+    }
+    .cta-btns {
+flex-wrap: wrap;
+}
+
+.cta-section .btn-white { 
+    background: white;
+        color: black;
+        font-weight: 500;
+        font-size: 1rem; 
+        border-radius: 10px;
+        padding: 12px 21px;
+        border: none;
+        }
+.cta-section .btn-outline-white { 
+    border: 2px solid white; 
+    color: white; 
+    font-weight: 500;
+    font-size: 1rem; 
+    border-radius: 10px;
+        padding: 10px 21px;
+        background: transparent; 
+    }
+
+.cta-section .social-follow {
+        margin-top: 30px;
+        }
+.cta-section .social-follow span {
+        display: block; 
+        margin-bottom: 11px;
+        font-weight: 600;
+        font-size: 1.25rem; 
+    }
+.cta-section .social-icons a { 
+    margin: 0 10px;
+        transition: 0.3s; 
+    }
+ .cta-section  .social-icons img {
+width: 38px;
+}
+@media (max-width: 992px) {
+  .cta-title {
+    font-size: 32px;
+  }
+
+  .cta-subtitle {
+    font-size: 16px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cta-section {
+    padding: 40px 15px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+  }
+
+  .cta-subtitle {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .cta-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .cta-section .btn-white,
+ .cta-section .btn-outline-white {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .offer-badge {
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+
+  .offer-badge img {
+    height: 30px;
+    width: 30px;
+    right: -8%;
+  }
+
+ .cta-section .social-follow span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-title {
+    font-size: 22px;
+  }
+
+  .cta-subtitle {
+    font-size: 13px;
+  }
+
+ .cta-section .btn-white,
+ .cta-section .btn-outline-white {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* CTA SECTION (BLUE) section end*/

@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuishala</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <!-- Index css -->
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/page3.css" />
+    <!-- symbols -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+        <img
+            src="../assets/icons/logo figma 2.svg"
+            alt="logo"
+            class="logo-img"
+        />
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Center Links -->
+        <ul class="navbar-nav me-auto ms-5 text-center">
+            <li class="nav-item">
+            <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Reviews</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+
+        <!-- Right Buttons -->
+        <div
+            class="d-flex gap-2 justify-content-center align-items-center mt-3 mt-lg-0"
+        >
+            <button class="btn btn-outline-custom">Sign in</button>
+            <button class="btn btn-primary-custom">Get Started</button>
+        </div>
+        </div>
+    </div>
+    </nav>
+    <!-- NAVBAR END -->
+    
+    <!-- P3 HERO SECTION START -->  
+    <section class="p3-hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="p3-hero-content">
+              <h1 class="p3-hero-title">
+                AI & <span>Machine Learning</span>
+              </h1>
+              <p class="p3-hero-desc">
+                Get on the fast track to a career in AI & <strong>Machine Learning</strong>. <br>In this certificate program, you'll learn in-demand skills, and get AI training from experts. Learn at your own pace, no degree or experience required.
+              </p>
+              <button class="btn p3-enroll-btn">Enroll Now</button>
+              <p class="p3-enroll-count">3,478,639 already enrolled</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card - Floating Half Outside -->
+        <div class="p3-info-card">
+          <div class="row g-0">
+
+            <!-- Rating -->
+            <div class="col-6 col-lg-3 p3-info-item">
+              <div class="p3-rating">
+                <span class="p3-rating-number">4.8</span>
+                <i class="fas fa-star p3-rating-star"></i>
+              </div>
+              <p class="p3-info-desc">from 179,455 reviews of courses in this program</p>
+            </div>
+
+            <!-- Level -->
+            <div class="col-6 col-lg-3 p3-info-item">
+              <h4 class="p3-info-title">Beginner level</h4>
+              <p class="p3-info-desc">Recommended experience</p>
+            </div>
+
+            <!-- Schedule -->
+            <div class="col-6 col-lg-3 p3-info-item">
+              <h4 class="p3-info-title">Flexible schedule</h4>
+              <p class="p3-info-desc">6 months at 10 hours a week<br>Learn at your own pace</p>
+            </div>
+
+            <!-- Degree -->
+            <div class="col-6 col-lg-3 p3-info-item">
+              <h4 class="p3-info-title">Build toward a degree</h4>
+              <p class="p3-info-desc">
+                <a href="#">Learn more</a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- P3 HERO SECTION END -->
+    
+     <!-- P3 LEARN SECTION start -->
+    <section class="p3-learn-section mt-lg-5">
+      <div class="container">
+
+        <!-- Bootstrap Dynamic Tabs -->
+        <ul class="nav nav-tabs p3-tabs-nav" id="p3LearnTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link p3-tab-link active" id="p3-about-tab" data-bs-toggle="tab" data-bs-target="#p3-about" type="button" role="tab" aria-selected="true">About</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link p3-tab-link" id="p3-outcomes-tab" data-bs-toggle="tab" data-bs-target="#p3-outcomes" type="button" role="tab" aria-selected="false">Outcomes</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link p3-tab-link" id="p3-courses-tab" data-bs-toggle="tab" data-bs-target="#p3-courses" type="button" role="tab" aria-selected="false">Courses</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link p3-tab-link" id="p3-testimonials-tab" data-bs-toggle="tab" data-bs-target="#p3-testimonials" type="button" role="tab" aria-selected="false">Testimonials</button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="p3LearnTabContent">
+
+          <!-- About Tab -->
+          <div class="tab-pane fade show active" id="p3-about" role="tabpanel" aria-labelledby="p3-about-tab">
+            <h3 class="p3-learn-title">What you'll learn</h3>
+
+            <div class="row g-4">
+              <!-- Column 1 -->
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <p class="p3-feature-text">Gain an immersive understanding of the practices and processes used by a junior or associate data analyst in their day-to-day job</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <p class="p3-feature-text">Gain an immersive understanding of the practices and processes used by a junior or associate data analyst in their day-to-day job</p>
+                </div>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <p class="p3-feature-text">Gain an immersive understanding of the practices and processes used by a junior or associate data analyst in their day-to-day job</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <p class="p3-feature-text">Learn how to visualize and present data findings in dashboards, presentations and commonly used visualization platforms</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Outcomes Tab -->
+          <div class="tab-pane fade" id="p3-outcomes" role="tabpanel" aria-labelledby="p3-outcomes-tab">
+            <h3 class="p3-learn-title">Program Outcomes</h3>
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Master data analysis tools including SQL, Python, and R for comprehensive data processing</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Build a professional portfolio with real-world projects that demonstrate your analytical capabilities</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Earn a recognized certificate that validates your skills to potential employers worldwide</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Get career support including resume reviews, interview prep, and job placement assistance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Courses Tab -->
+          <div class="tab-pane fade" id="p3-courses" role="tabpanel" aria-labelledby="p3-courses-tab">
+            <h3 class="p3-learn-title">Course Curriculum</h3>
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Foundations: Data, Data, Everywhere — Introduction to data analytics fundamentals</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Ask Questions to Make Data-Driven Decisions — Learn the art of analytical questioning</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Prepare Data for Exploration — Data cleaning, organization, and preparation techniques</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">Process Data from Dirty to Clean — Advanced data transformation and quality assurance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonials Tab -->
+          <div class="tab-pane fade" id="p3-testimonials" role="tabpanel" aria-labelledby="p3-testimonials-tab">
+            <h3 class="p3-learn-title">Student Success Stories</h3>
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">"This program transformed my career. I went from retail to a data analyst role at a Fortune 500 company within 6 months."</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">"The hands-on projects gave me real experience. Employers were impressed by my portfolio during interviews."</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">"Flexible schedule allowed me to learn while working full-time. The mentorship was invaluable for my growth."</p>
+                </div>
+                <div class="p3-feature-item">
+                  <div class="p3-check-icon"><i class="fas fa-check"></i></div>
+                  <p class="p3-feature-text">"Best investment I made in my career. The certificate opened doors I never thought possible."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- P3 LEARN SECTION END -->
+
+     <!-- P3 SKILLS TOOLS DETAILS SECTION --> 
+    <section class="p3-skills-section">
+      <div class="container">
+
+        <!-- 1. SKILLS YOU'LL GAIN -->
+        <div class="p3-subsection">
+          <h3 class="p3-subsection-title">Skills you'll gain</h3>
+          <div class="p3-tags-wrapper">
+            <span class="p3-skill-tag">Data Science</span>
+            <span class="p3-skill-tag">Digital Marketing</span>
+            <span class="p3-skill-tag">Web Designing</span>
+            <span class="p3-skill-tag">Data Science</span>
+            <span class="p3-skill-tag">Digital Marketing</span>
+            <span class="p3-skill-tag">Data Science</span>
+            <span class="p3-skill-tag">Digital Marketing</span>
+            <span class="p3-skill-tag">Web Designing</span>
+            <span class="p3-skill-tag">Data Science</span>
+            <span class="p3-skill-tag">Digital Marketing</span>
+            <span class="p3-skill-tag">Data Science</span>
+            <span class="p3-skill-tag">Digital Marketing</span>
+            <span class="p3-skill-tag">Web Designing</span>
+            <span class="p3-skill-tag p3-tag-link">Show all</span>
+          </div>
+        </div>
+
+        <!-- 2. TOOLS YOU'LL LEARN -->
+        <div class="p3-subsection">
+          <h3 class="p3-subsection-title">Tools you'll learn</h3>
+          <div class="p3-tags-wrapper">
+            <span class="p3-tool-tag">
+              <i class="fas fa-wand-magic-sparkles p3-tool-icon"></i>
+              Prompting
+            </span>
+            <span class="p3-tool-tag">
+              <i class="fas fa-bullhorn p3-tool-icon"></i>
+              Digital Marketing
+            </span>
+          </div>
+        </div>
+
+        <!-- 3. DETAILS TO KNOW -->
+        <div class="p3-subsection">
+          <h3 class="p3-subsection-title">Details to know</h3>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="p3-detail-item">
+                <div class="p3-detail-icon">
+                  <img src="./../assets/icons/Vector (7).svg" alt="">
+                </div>
+                <div class="p3-detail-text">
+                  <span class="p3-detail-label">Shareable certificate</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="p3-detail-item">
+                <div class="p3-detail-icon">
+                  <img src="./../assets/icons/discussion 1.svg" alt="">
+                </div>
+                <div class="p3-detail-text">
+                  <span class="p3-detail-label">Taught in English & Hindi</span>
+                  <span class="p3-detail-sublabel">Video Subtitles Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. PROFESSIONAL CERTIFICATE -->
+        <div class="p3-subsection p3-subsection-last">
+          <h3 class="p3-subsection-title">Professional Certificate – course series</h3>
+          <div class="p3-cert-content">
+            <p class="p3-cert-text">Kickstart your career in Digital Marketing with Tuishala — no prior experience required.</p>
+            <p class="p3-cert-text">Learn in-demand skills like SEO, Social Media Marketing, Meta Ads, Google Ads, Content Marketing, Email Marketing, and more through practical training and real-world projects. This career-focused program prepares you for roles in the fast-growing digital industry.</p>
+            <p class="p3-cert-text">With flexible learning and hands-on assignments, you can build job-ready skills and gain practical experience to confidently start your digital marketing career.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- P3 SKILLS TOOLS DETAILS SECTION end--> 
+
+
+    <!-- P3 COURSE ACCORDION SECTION start-->
+    <section class="p3-course-section">
+      <div class="container">
+
+        <!-- Course Card 1 -->
+        <div class="p3-course-card">
+          <div class="p3-course-header" data-bs-toggle="collapse" data-bs-target="#p3Course1" aria-expanded="true" aria-controls="p3Course1">
+            <div class="p3-course-info">
+              <h4 class="p3-course-title">Foundations of Digital Marketing</h4>
+              <p class="p3-course-meta">Course 1 • 13 Hours</p>
+            </div>
+            <div class="p3-course-toggle">
+              <span class="p3-toggle-label">Course Details</span>
+              <i class="fas fa-chevron-up p3-toggle-icon"></i>
+            </div>
+          </div>
+
+          <div class="collapse show" id="p3Course1">
+            <div class="p3-course-body">
+              
+              <div class="p3-learn-block">
+                <h5 class="p3-learn-heading">What You'll Learn</h5>
+                <ul class="p3-learn-list">
+                  <li>Understand how strategic problem-solving applies to digital marketing campaigns</li>
+                  <li>Learn how marketers use data to improve performance and audience targeting</li>
+                  <li>Work with spreadsheets to organize, analyze, and manage marketing data</li>
+                  <li>Explore structured thinking techniques for planning successful campaigns</li>
+                  <li>Understand customer behavior, campaign goals, and decision-making strategies</li>
+                </ul>
+              </div>
+
+              <div class="p3-skills-block">
+                <h5 class="p3-skills-heading">Skills You'll Gain</h5>
+                <div class="p3-course-tags">
+                  <span class="p3-course-tag">Data Science</span>
+                  <span class="p3-course-tag">Problem Solving</span>
+                  <span class="p3-course-tag">Web Designing</span>
+                  <span class="p3-course-tag">Data Science</span>
+                  <span class="p3-course-tag">Digital Marketing</span>
+                  <span class="p3-course-tag">Data Science</span>
+                  <span class="p3-course-tag">Digital Marketing</span>
+                  <span class="p3-course-tag">Meta Ads</span>
+                  <span class="p3-course-tag">Brand Strategy</span>
+                  <span class="p3-course-tag">Digital Marketing</span>
+                </div>
+              </div>
+
+              <p class="p3-course-footer">Start building practical digital skills with Tuishala and prepare for exciting career opportunities in the digital world.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="p3-course-divider"></div>
+
+        <!-- Course Card 2 -->
+        <div class="p3-course-card">
+          <div class="p3-course-header collapsed" data-bs-toggle="collapse" data-bs-target="#p3Course2" aria-expanded="false" aria-controls="p3Course2">
+            <div class="p3-course-info">
+              <h4 class="p3-course-title">Ask Questions to Make Marketing Decisions</h4>
+              <p class="p3-course-meta">Course 1 • 15 Hours</p>
+            </div>
+            <div class="p3-course-toggle">
+              <span class="p3-toggle-label">Course Details</span>
+              <i class="fas fa-chevron-up p3-toggle-icon"></i>
+            </div>
+          </div>
+
+          <div class="collapse" id="p3Course2">
+            <div class="p3-course-body">
+              
+              <div class="p3-learn-block">
+                <h5 class="p3-learn-heading">What You'll Learn</h5>
+                <ul class="p3-learn-list">
+                  <li>Understand the basics of Digital Marketing and online customer behavior</li>
+                  <li>Learn key concepts of SEO, Social Media, Content Marketing & Paid Advertising</li>
+                  <li>Explore how businesses use digital channels to build brand awareness and generate leads</li>
+                  <li>Understand the role of analytics, marketing tools, and performance tracking</li>
+                  <li>Learn about career opportunities and job roles in the Digital Marketing industry</li>
+                </ul>
+              </div>
+
+              <div class="p3-skills-block">
+                <h5 class="p3-skills-heading">Skills You'll Gain</h5>
+                <div class="p3-course-tags">
+                  <span class="p3-course-tag">Data Science</span>
+                  <span class="p3-course-tag">Content Marketing</span>
+                  <span class="p3-course-tag">Web Designing</span>
+                  <span class="p3-course-tag">Data Science</span>
+                  <span class="p3-course-tag">Digital Marketing</span>
+                  <span class="p3-course-tag">Data Science</span>
+                  <span class="p3-course-tag">Digital Marketing</span>
+                  <span class="p3-course-tag">Meta Ads</span>
+                  <span class="p3-course-tag">Brand Strategy</span>
+                  <span class="p3-course-tag">Digital Marketing</span>
+                </div>
+              </div>
+
+              <p class="p3-course-footer">Start building practical digital skills with Tuishala and prepare for exciting career opportunities in the digital world.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- P3 COURSE ACCORDION SECTION end-->
+    
+
+    <!-- P3 TESTIMONIAL CAROUSEL SECTION start-->
+    <section class="p3-testimonial-section">
+      <div class="container position-relative">
+
+        <!-- Section Title -->
+        <h2 class="p3-testimonial-title">
+          Why people choose <span>Tuishala</span> for their career
+        </h2>
+
+        <!-- Bootstrap Carousel -->
+        <div id="p3TestimonialCarousel" class="carousel slide p3-testimonial-carousel" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
+
+          <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row align-items-center">
+                <div class="col-lg-6 p3-testimonial-image-col">
+                  <div class="p3-testimonial-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" alt="Student testimonial" class="p3-testimonial-image">
+                  </div>
+                </div>
+                <div class="col-lg-6 p3-testimonial-text-col">
+                  <p class="p3-testimonial-quote">It is a beautifully crafted on-ramp to the world of data analytics. Using the tools I learned in the certificate, I created a portfolio of work samples that showcased my ability as an analyst, and I successfully transitioned out of education and secured a full-time position in data analytics.</p>
+                  <div class="p3-testimonial-author">
+                    <span class="p3-testimonial-name">John</span>
+                    <span class="p3-testimonial-location">Delhi, India</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-lg-6 p3-testimonial-image-col">
+                  <div class="p3-testimonial-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&h=400&fit=crop" alt="Student testimonial" class="p3-testimonial-image">
+                  </div>
+                </div>
+                <div class="col-lg-6 p3-testimonial-text-col">
+                  <p class="p3-testimonial-quote">The mentorship and curriculum helped me switch careers seamlessly. Coming from a non-tech background, I was worried about keeping up. But the structured approach and patient mentors made all the difference.</p>
+                  <div class="p3-testimonial-author">
+                    <span class="p3-testimonial-name">Priya Menon</span>
+                    <span class="p3-testimonial-location">Mumbai, India</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-lg-6 p3-testimonial-image-col">
+                  <div class="p3-testimonial-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop" alt="Student testimonial" class="p3-testimonial-image">
+                  </div>
+                </div>
+                <div class="col-lg-6 p3-testimonial-text-col">
+                  <p class="p3-testimonial-quote">From learning to earning in just 6 months. The Generative AI program was ahead of its time. While others were still figuring out the basics, I was already building LLM-powered applications.</p>
+                  <div class="p3-testimonial-author">
+                    <span class="p3-testimonial-name">Rahul Verma</span>
+                    <span class="p3-testimonial-location">Bangalore, India</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Custom Navigation Arrows -->
+          <button class="carousel-control-prev p3-carousel-arrow" type="button" data-bs-target="#p3TestimonialCarousel" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next p3-carousel-arrow" type="button" data-bs-target="#p3TestimonialCarousel" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+          <!-- Carousel Indicators (Dots) -->
+          <div class="carousel-indicators p3-carousel-dots">
+            <button type="button" data-bs-target="#p3TestimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#p3TestimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#p3TestimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- P3 TESTIMONIAL CAROUSEL SECTION end-->
+
+   
+    <!-- P3 BUSINESS BANNER SECTION start-->
+    <section class="p3-business-section">
+      <div class="container">
+        <div class="p3-business-card">
+          <div class="row align-items-center g-4">
+            
+            <!-- Left Content -->
+            <div class="col-lg-6">
+              <div class="p3-business-content">
+                <h3 class="p3-business-title">See how employees at top companies are mastering in-demand skills</h3>
+                <a href="#" class="p3-business-link">Learn more about Tuishala for Business</a>
+              </div>
+            </div>
+
+            <!-- Right Logos -->
+            <div class="col-lg-6">
+              <div class="p3-business-logos">
+                <div class="p3-logo-item">
+                  <img src="./../assets/icons/image 1.svg" alt="Google" class="p3-logo-img p3-logo-google" width="129" height="44">
+                </div>
+                <div class="p3-logo-item">
+                  <img src="./../assets/icons/image 2.svg" alt="Amazon" class="p3-logo-img p3-logo-amazon" width="130" height="39">
+                </div>
+                <div class="p3-logo-item">
+                  <img src="./../assets/icons/image 3.svg" alt="Tata" class="p3-logo-img p3-logo-tata" width="71" height="63">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- P3 BUSINESS BANNER SECTION end-->
+
+ 
+     <!-- P3 FAQ SECTION start -->
+    <section class="p3-faq-section">
+      <div class="container">
+        <h2 class="p3-faq-title">Frequently asked questions</h2>
+
+        <div class="accordion p3-faq-accordion" id="p3FaqAccordion">
+
+          <!-- Question 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button p3-faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3Faq1" aria-expanded="false" aria-controls="p3Faq1">
+                Can I just enroll in a single course?
+              </button>
+            </h2>
+            <div id="p3Faq1" class="accordion-collapse collapse" data-bs-parent="#p3FaqAccordion">
+              <div class="accordion-body p3-faq-body">
+                Yes! To get started, click the course card that interests you and enroll. You can enroll and complete the course to earn a shareable certificate, or you can audit it to view the course materials for free.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button p3-faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3Faq2" aria-expanded="false" aria-controls="p3Faq2">
+                Can I just enroll in a single course?
+              </button>
+            </h2>
+            <div id="p3Faq2" class="accordion-collapse collapse" data-bs-parent="#p3FaqAccordion">
+              <div class="accordion-body p3-faq-body">
+                Learn at your own pace and access course content anytime from your dashboard.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button p3-faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3Faq3" aria-expanded="false" aria-controls="p3Faq3">
+                What background knowledge is necessary?
+              </button>
+            </h2>
+            <div id="p3Faq3" class="accordion-collapse collapse" data-bs-parent="#p3FaqAccordion">
+              <div class="accordion-body p3-faq-body">
+                No prior experience is required. Beginner-friendly content is included.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button p3-faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3Faq4" aria-expanded="false" aria-controls="p3Faq4">
+                Can I just enroll in a single course?
+              </button>
+            </h2>
+            <div id="p3Faq4" class="accordion-collapse collapse" data-bs-parent="#p3FaqAccordion">
+              <div class="accordion-body p3-faq-body">
+                Yes, you can enroll in individual courses without purchasing a full program.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button p3-faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3Faq5" aria-expanded="false" aria-controls="p3Faq5">
+                Can I just enroll in a single course?
+              </button>
+            </h2>
+            <div id="p3Faq5" class="accordion-collapse collapse" data-bs-parent="#p3FaqAccordion">
+              <div class="accordion-body p3-faq-body">
+                Certificates can be downloaded after successful course completion.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 6 (Expanded by default) -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button p3-faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#p3Faq6" aria-expanded="true" aria-controls="p3Faq6">
+                Can I just enroll in a single course?
+              </button>
+            </h2>
+            <div id="p3Faq6" class="accordion-collapse collapse show" data-bs-parent="#p3FaqAccordion">
+              <div class="accordion-body p3-faq-body">
+                Yes! To get started, click the course card that interests you and enroll. You can enroll and complete the course to earn a shareable certificate, or you can audit it to view the course materials for free. When you subscribe to a course that is part of a Certificate, you're automatically subscribed to the full Certificate. Visit your learner dashboard to track your progress.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+     <!-- P3 FAQ SECTION end -->
+
+    <!--  CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="offer-badge">Limited Time Offer <img src="../assets/icons/Rectangle (5).svg" alt=""></div>
+            <h1 class="cta-title">Start Your Learning Journey Today</h1>
+            <p class="cta-subtitle">Get access to 500+ courses with a special discount. Transform your career with expert-led training.</p>
+            
+            <div class="cta-btns d-flex justify-content-center gap-3">
+                <button class="btn-white">Get Started Now <img src="../assets/icons/Arrow 2.svg" alt=""></button>
+                <button class="btn-outline-white">Browse Courses <img src="../assets/icons/Arrow 3.svg" alt=""></button>
+            </div>
+
+            <div class="social-follow">
+                <span>Follow Us On</span>
+                <div class="social-icons">
+                    <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
+                    <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
+                    <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
+                    <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  CTA SECTION end-->
+
+    <!--  FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="footer-logo">
+                        <img src="../assets/icons/logo figma 2.svg" alt="Tuishala Logo"> 
+                    </div>
+                    <p class="footer-tagline">Building Careers of Tomorrow</p>
+                    <div class="footer-social-icons mb-4 mb-lg-0">
+                    <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
+                    <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
+                    <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
+                    <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-lg-end mt-5">
+                    <div class="footer-app-buttons d-flex flex-column align-items-lg-end">
+                        <a href="#" class="btn">GET THE ANDROID APP</a>
+                        <a href="#" class="btn">GET THE IOS APP</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border-color: #333;">
+
+            <div class="row mt-5">
+                <div class="col-6 col-md-3">
+                    <h5 class="footer-col-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Instructors</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="footer-col-title">Category</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Business</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="footer-col-title">Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="footer-col-title">Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
