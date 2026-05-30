@@ -1,27 +1,35 @@
-// dark stats section number increase 0->50000
-const counters = document.querySelectorAll('.counter');
 
-counters.forEach(counter => {
-  const target = +counter.getAttribute('data-target');
-  let count = 0;
+  /* ── Scroll p4-reveal ── */
+  const revealEls = document.querySelectorAll('.p4-reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
 
-  const increment = target / 150; // speed control
+  /* ── Counter Animation ── */
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1400;
+    const step = 16;
+    const increment = target / (duration / step);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + increment, target);
+      el.textContent = Math.round(current);
+      if (current >= target) clearInterval(timer);
+    }, step);
+  }
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.p4-count-num').forEach(el => counterObs.observe(el));
 
-  const updateCounter = () => {
-    count += increment;
 
-    if (count < target) {
-      counter.innerText = Math.floor(count).toLocaleString();
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.innerText = target.toLocaleString();
-    }
-  };
-
-  updateCounter();
-});
-
-// phone icon
+  // phone icon
  (function() {
     // Fully responsive widget control with smooth close/open and localstorage persistence
     const widget = document.getElementById('callWidget');
@@ -85,71 +93,3 @@ counters.forEach(counter => {
     });
 
 })();
-
-
-//SING IN popup
-// STEP 1: enable continue when mobile is 10 digits
-const phoneInput = document.querySelector(".phone-input");
-const step1Btn = document.getElementById("step1Btn");
-
-phoneInput.addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
-
-    if (this.value.length === 10) {
-        step1Btn.disabled = false;
-    } else {
-        step1Btn.disabled = true;
-    }
-});
-
-
-// STEP CHANGE
-function goToStep2() {
-    document.querySelector(".tuishala-step-1").classList.add("d-none");
-    document.querySelector(".tuishala-step-2").classList.remove("d-none");
-
-    document.getElementById("step1Footer").style.display = "none";
-
-    initOTP(); // important
-}
-
-
-// STEP 2 OTP LOGIC
-function initOTP() {
-    const inputs = document.querySelectorAll(".otp-boxes input");
-    const otpBtn = document.getElementById("otpBtn");
-
-    inputs.forEach((input, index) => {
-
-        input.addEventListener("input", () => {
-
-            input.value = input.value.replace(/[^0-9]/g, '').slice(0, 1);
-
-            // auto move next
-            if (input.value && inputs[index + 1]) {
-                inputs[index + 1].focus();
-            }
-
-            checkOTP();
-        });
-    });
-
-    function checkOTP() {
-        let filled = 0;
-
-        inputs.forEach(i => {
-            if (i.value.length === 1) filled++;
-        });
-
-        otpBtn.disabled = filled !== 6;
-    }
-}
-
-
-// BACK
-function goBackStep1() {
-    document.querySelector(".tuishala-step-2").classList.add("d-none");
-    document.querySelector(".tuishala-step-1").classList.remove("d-none");
-
-    document.getElementById("step1Footer").style.display = "block";
-}

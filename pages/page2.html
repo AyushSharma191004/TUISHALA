@@ -27,59 +27,195 @@
   </head>
   <body>
     <!-- NAVBAR START -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+      <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="#">
-        <img
+        <a class="navbar-brand" href="index.html">
+          <img
             src="../assets/icons/logo figma 2.svg"
             alt="logo"
             class="logo-img"
-        />
+          />
         </a>
 
         <!-- Mobile Toggle -->
         <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarContent"
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
         >
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navbar Content -->
         <div class="collapse navbar-collapse" id="navbarContent">
-        <!-- Center Links -->
-        <ul class="navbar-nav me-auto ms-5 text-center">
+          <!-- Center Links -->
+          <ul class="navbar-nav mx-auto text-center">
             <li class="nav-item">
-            <a class="nav-link" href="#">Courses</a>
+              <a class="nav-link" href="page2.html">Courses</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+              <a class="nav-link" href="page3.html">Categories</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Reviews</a>
+              <a class="nav-link" href="page4.html">About</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="page5.html">Contact</a>
             </li>
-        </ul>
+          </ul>
 
-        <!-- Right Buttons -->
-        <div
+          <!-- Right Buttons -->
+          <div
             class="d-flex gap-2 justify-content-center align-items-center mt-3 mt-lg-0"
-        >
-            <button class="btn btn-outline-custom">Sign in</button>
-            <button class="btn btn-primary-custom">Get Started</button>
+          >
+            <!-- <button class="btn btn-outline-custom white-animi-btn">Sign in</button>
+            <button class="btn btn-primary-custom animi-btn">Get Started</button> -->
+            <button
+                class="btn btn-primary-custom animi-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#signInModal"
+                >
+                Sign In
+            </button>
+          </div>
         </div>
+      </div>
+    </nav>
+    <!-- SIGN IN MODAL -->
+    <div class="modal fade" id="signInModal" tabindex="-1">
+        <!-- <div class="modal-dialog modal-dialog-centered modal-lg modal-custom"> -->
+        <div class="modal-dialog modal-dialog-centered modal-upgrad"> 
+            <div class="modal-content tuishala-modal">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            <div class="row g-0">
+
+                <!-- LEFT PANEL -->
+                <div class="col-lg-5 tuishala-left d-none d-lg-block">
+
+                <div class="float-card c2">📈 Career Growth</div>
+                <div class="float-card c3">🏆 Certificate</div>
+                <div class="float-card c4">💼 Job Ready</div>
+                <div class="float-card c5">🚀 Mentorship</div>
+
+                <div class="text-center">
+                    <img src="../assets/icons/logo figma 2.svg" class="tuishala-logo">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                        class="tuishala-illustration">
+
+                    <h3>Learn Skills That Get You Hired</h3>
+                    <p>Join thousands of learners building successful careers with Tuishala.</p>
+                </div>
+
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="col-lg-7 tuishala-right">
+
+                <button class="back-btn" data-bs-dismiss="modal">←</button>
+
+                <div class="tuishala-right-inner">
+
+                    <!-- TOP CONTENT -->
+                    <div class="tuishala-step tuishala-step-1">
+                    
+                    <h2>Welcome to Tuishala</h2>
+                    <p class="subtext">Sign in to continue your learning journey</p>
+
+                    <!-- PHONE INPUT -->
+                    <div class="input-group phone-group mb-3">
+
+                        <button class="btn country-code dropdown-toggle" data-bs-toggle="dropdown">
+                        🇮🇳 +91
+                        </button>
+
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">🇮🇳 +91</a></li>
+                        <li><a class="dropdown-item">🇺🇸 +1</a></li>
+                        <li><a class="dropdown-item">🇬🇧 +44</a></li>
+                        </ul>
+
+                        <input type="tel"
+                        class="form-control phone-input"
+                        placeholder="Enter mobile number"
+                        maxlength="10"
+                        inputmode="numeric">
+
+                    </div>
+
+                    <!-- OR -->
+                    <div class="or-divider text-center">or</div>
+
+                    <a href="#" class="email-link">
+                        Sign up/Login with Email
+                    </a>
+
+                    </div>
+                    <!-- STEP 2 OTP -->
+                    <div class="tuishala-step tuishala-step-2 d-none ">
+                    <div>
+                    <h2>Verify OTP</h2>
+                    <p class="subtext">
+                        Enter the 6-digit code sent to <strong>+91 XXXXXXXX</strong>
+                    </p>
+
+                    <!-- OTP BOXES -->
+                    <div class="otp-boxes mb-3">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                    </div>
+
+                    <p class="resend-text">
+                        Didn’t receive OTP?
+                        <a href="#">Resend</a>
+                    </p>
+                    </div>
+                    <div>
+
+                    <button class="continue-btn animi-btn" id="otpBtn" disabled>
+                        Verify & Continue
+                    </button>
+
+                    <p class="edit-number">
+                        <a href="#" onclick="goBackStep1()">← Edit mobile number</a>
+                    </p>
+                    </div>
+
+                    </div>
+
+                    <!-- BOTTOM SECTION -->
+                    <div class="bottom-section" id="step1Footer">
+                    <button class="continue-btn animi-btn" id="step1Btn" disabled onclick="goToStep2()">
+                        Continue
+                    </button>
+
+                    <div class="privacy">
+                        By continuing, you agree to Tuishala Terms & Privacy Policy
+                    </div>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+            </div>
+
+            </div>
         </div>
     </div>
-    </nav>
     <!-- NAVBAR END -->
 
     <!-- COURSE HERO SECTION START -->
-    <section class="course-hero-section">
+    <section class="course-hero-section mt-lg-5 mt-4">
     <div class="container">
         <div class="row align-items-start">
         
@@ -101,7 +237,7 @@
             </li>
             </ul>
             
-            <a href="#" class="btn course-hero-btn mt-lg-4">Explore Programs</a>
+            <a href="#" class="btn course-hero-btn animi-btn mt-lg-4">Explore Programs</a>
         </div>
 
         <!-- Right Form Card -->
@@ -136,7 +272,7 @@
                 By submitting this form, you consent to our <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a> and to be contacted by us via Email/Call/Whatsapp/SMS.
                 </p>
                 
-                <button type="submit" class="btn course-form-submit">Schedule a 1:1 Call</button>
+                <button type="submit" class="btn course-form-submit animi-btn">Schedule a 1:1 Call</button>
             </form>
             </div>
         </div>
@@ -279,7 +415,7 @@
                         <h5 class="program-card-title">PGP in Data Science (with Specialization in Gen AI)</h5>
                         <p class="program-card-meta">6 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -293,7 +429,7 @@
                         <h5 class="program-card-title">PGP in Data Science (with Specialization in Gen AI)</h5>
                         <p class="program-card-meta">6 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -307,7 +443,7 @@
                         <h5 class="program-card-title">PGP in Data Science (with Specialization in Gen AI)</h5>
                         <p class="program-card-meta">6 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -321,7 +457,7 @@
                         <h5 class="program-card-title">PGP in Data Science (with Specialization in Gen AI)</h5>
                         <p class="program-card-meta">6 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -335,7 +471,7 @@
                         <h5 class="program-card-title">PGP in Data Science (with Specialization in Gen AI)</h5>
                         <p class="program-card-meta">6 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -349,7 +485,7 @@
                         <h5 class="program-card-title">PGP in Data Science (with Specialization in Gen AI)</h5>
                         <p class="program-card-meta">6 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -372,7 +508,7 @@
                         <h5 class="program-card-title">PGP in Full Stack Development (MERN Specialization)</h5>
                         <p class="program-card-meta">8 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -386,7 +522,7 @@
                         <h5 class="program-card-title">PGP in Full Stack Development (MERN Specialization)</h5>
                         <p class="program-card-meta">8 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -399,7 +535,7 @@
                         <h5 class="program-card-title">PGP in Full Stack Development (MERN Specialization)</h5>
                         <p class="program-card-meta">8 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -412,7 +548,7 @@
                         <h5 class="program-card-title">PGP in Full Stack Development (MERN Specialization)</h5>
                         <p class="program-card-meta">8 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -425,7 +561,7 @@
                         <h5 class="program-card-title">PGP in Full Stack Development (MERN Specialization)</h5>
                         <p class="program-card-meta">8 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -438,7 +574,7 @@
                         <h5 class="program-card-title">PGP in Full Stack Development (MERN Specialization)</h5>
                         <p class="program-card-meta">8 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -461,7 +597,7 @@
                         <h5 class="program-card-title">Professional Certificate in SEO & Content Strategy</h5>
                         <p class="program-card-meta">4 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -475,7 +611,7 @@
                         <h5 class="program-card-title">Professional Certificate in SEO & Content Strategy</h5>
                         <p class="program-card-meta">4 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -488,7 +624,7 @@
                         <h5 class="program-card-title">Professional Certificate in SEO & Content Strategy</h5>
                         <p class="program-card-meta">4 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -501,7 +637,7 @@
                         <h5 class="program-card-title">Professional Certificate in SEO & Content Strategy</h5>
                         <p class="program-card-meta">4 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -514,7 +650,7 @@
                         <h5 class="program-card-title">Professional Certificate in SEO & Content Strategy</h5>
                         <p class="program-card-meta">4 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -527,7 +663,7 @@
                         <h5 class="program-card-title">Professional Certificate in SEO & Content Strategy</h5>
                         <p class="program-card-meta">4 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -550,7 +686,7 @@
                         <h5 class="program-card-title">PGP in Social Media & Digital Marketing</h5>
                         <p class="program-card-meta">5 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -564,7 +700,7 @@
                         <h5 class="program-card-title">PGP in Social Media & Digital Marketing</h5>
                         <p class="program-card-meta">5 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -577,7 +713,7 @@
                         <h5 class="program-card-title">PGP in Social Media & Digital Marketing</h5>
                         <p class="program-card-meta">5 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -590,7 +726,7 @@
                         <h5 class="program-card-title">PGP in Social Media & Digital Marketing</h5>
                         <p class="program-card-meta">5 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -603,7 +739,7 @@
                         <h5 class="program-card-title">PGP in Social Media & Digital Marketing</h5>
                         <p class="program-card-meta">5 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -616,7 +752,7 @@
                         <h5 class="program-card-title">PGP in Social Media & Digital Marketing</h5>
                         <p class="program-card-meta">5 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -639,7 +775,7 @@
                         <h5 class="program-card-title">Professional Certificate in Sales & Business Development</h5>
                         <p class="program-card-meta">3 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -653,7 +789,7 @@
                         <h5 class="program-card-title">Professional Certificate in Sales & Business Development</h5>
                         <p class="program-card-meta">3 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -666,7 +802,7 @@
                         <h5 class="program-card-title">Professional Certificate in Sales & Business Development</h5>
                         <p class="program-card-meta">3 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -679,7 +815,7 @@
                         <h5 class="program-card-title">Professional Certificate in Sales & Business Development</h5>
                         <p class="program-card-meta">3 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -692,7 +828,7 @@
                         <h5 class="program-card-title">Professional Certificate in Sales & Business Development</h5>
                         <p class="program-card-meta">3 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -705,7 +841,7 @@
                         <h5 class="program-card-title">Professional Certificate in Sales & Business Development</h5>
                         <p class="program-card-meta">3 months · Online</p>
                         <span class="program-card-badge">DEDICATED PLACEMENT ASSISTANCE</span>
-                        <button class="btn program-card-btn">Download Brochure</button>
+                        <button class="btn program-card-btn animi-btn">Download Brochure</button>
                       </div>
                     </div>
                   </div>
@@ -895,8 +1031,8 @@
 
           </div>
 
-          <!-- BUTTON -->
-          <button class="brochure-btn">
+          <!-- BUTTON --> 
+          <button class="brochure-btn white-animi-btn">
             Download Brochure
           </button>
 
@@ -1399,7 +1535,7 @@
                               <div class="story-image-wrapper">
                                   <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Story" class="story-image">
                                   <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
-                                  <div class="story-section-play-text"><i class="fas fa-play"></i> Watch Story</div>
+                                  <div class="story-section-play-text animi-btn"><i class="fas fa-play"></i> Watch Story</div>
                               </div>
                           </div>
                       </div>
@@ -1418,7 +1554,7 @@
                               <div class="story-image-wrapper">
                                   <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Story" class="story-image">
                                   <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
-                                  <div class="story-section-play-text"><i class="fas fa-play" ></i> Watch Story</div>
+                                  <div class="story-section-play-text animi-btn"><i class="fas fa-play" ></i> Watch Story</div>
                               </div>
                           </div>
                       </div>
@@ -1437,7 +1573,7 @@
                               <div class="story-image-wrapper">
                                   <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="Story" class="story-image">
                                   <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
-                                  <div class="story-section-play-text"><i class="fas fa-play" ></i> Watch Story</div>
+                                  <div class="story-section-play-text animi-btn"><i class="fas fa-play" ></i> Watch Story</div>
                               </div>
                           </div>
                       </div>
@@ -1878,8 +2014,8 @@
             <p class="cta-subtitle">Get access to 500+ courses with a special discount. Transform your career with expert-led training.</p>
             
             <div class="cta-btns d-flex justify-content-center gap-3">
-                <button class="btn-white">Get Started Now <img src="../assets/icons/Arrow 2.svg" alt=""></button>
-                <button class="btn-outline-white">Browse Courses <img src="../assets/icons/Arrow 3.svg" alt=""></button>
+                <button class="btn-white white-animi-btn">Get Started Now <img src="../assets/icons/Arrow 2.svg" alt=""></button>
+                <button class="btn-outline-white animi-btn">Browse Courses <img src="../assets/icons/Arrow 3.svg" alt=""></button>
             </div>
 
             <div class="social-follow">
@@ -1913,8 +2049,8 @@
                 </div>
                 <div class="col-lg-6 text-lg-end mt-5">
                     <div class="footer-app-buttons d-flex flex-column align-items-lg-end">
-                        <a href="#" class="btn">GET THE ANDROID APP</a>
-                        <a href="#" class="btn">GET THE IOS APP</a>
+                        <a href="#" class="btn white-animi-btn">GET THE ANDROID APP</a>
+                        <a href="#" class="btn white-animi-btn">GET THE IOS APP</a>
                     </div>
                 </div>
             </div>

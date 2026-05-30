@@ -26,15 +26,71 @@
 .footer-tagline {
      color: var(--bg-white); 
      font-size: 1.125rem; 
-     margin-bottom: 25px;
+     margin-bottom: 20px;
      font-weight: 400; 
     }
-.footer-social-icons a{
+/* .footer-social-icons a{
     margin-right: 8px;
     display: inline-block;
-}
-.footer-social-icons img {
+} */
+/* .footer-social-icons img {
   width: 38px;
+} */
+/* Social icons container */
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icon button */
+.footer-social-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+
+    position: relative;
+}
+
+/* Icon image */
+.footer-social-icons img {
+    width: 38px;
+
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.footer-social-icons a:hover {
+    transform: translateY(-5px) scale(1.08);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.14),
+        0 4px 10px rgba(0,0,0,0.08);
+
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Slight icon zoom */
+.footer-social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+/* Active / click */
+.footer-social-icons a:active {
+    transform: translateY(-1px) scale(0.95);
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.10);
 }
 .footer-app-buttons .btn {
     border: 1px solid var(--bg-white);

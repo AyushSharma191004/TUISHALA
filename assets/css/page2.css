@@ -66,10 +66,10 @@ body {
   line-height: 1.3;
   margin-bottom: 20px;
 }
-
 .course-hero-title span {
   color: var(--primary-color);
   font-weight: 600;
+
 }
 
 .course-hero-desc {
@@ -79,6 +79,19 @@ body {
   /* line-height: 1.6; */
   margin-bottom: 2.5rem;
   max-width: 92%;
+
+   animation: fadeUp 1s ease forwards;
+}
+ @keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Bullet List */
@@ -96,6 +109,18 @@ body {
   font-weight: 400;
   /* line-height: 1.7; */
   margin-bottom: 2.5rem;
+
+  transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+
+  cursor: default;
+}
+/* Hover */
+.course-hero-list li:hover {
+    transform: translateX(8px);
+
+    color: var(--text-dark);
 }
 
 .course-hero-list li::before {
@@ -113,6 +138,22 @@ body {
   color: var(--text-dark);
   font-weight: 500;
 }
+/* Bullet glow */
+.course-hero-list li::before {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.course-hero-list li:hover::before {
+    background-color: var(--primary-color);
+
+    transform: scale(1.5);
+
+    box-shadow:
+        0 0 12px rgba(37,99,235,0.45);
+}
 
 /* CTA Button */
 .course-hero-btn {
@@ -126,10 +167,10 @@ body {
   transition: var(--transition);
 }
 
-.course-hero-btn:hover {
+/* .course-hero-btn:hover {
   background-color: var(--primary-light);
   color: white;
-}
+} */
 
 /* --- Right Form Card --- */
 .course-form-card {
@@ -138,7 +179,25 @@ body {
   box-shadow:-1px 0px 18px -2px rgba(0, 0, 0, 0.25);
   padding: 32px 38px;
   /* border: 1px solid var(--border-light-color); */
+
+      position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
+/* Hover */
+.course-form-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.12),
+        0 8px 18px rgba(37,99,235,0.08);
+}
+
+
+
 
 .course-form-title {
   font-size: 1.25rem;         /* 20px */
@@ -167,6 +226,12 @@ body {
   color: var(--text-secondary);
   padding: 10px 16px;
   font-family: var(--font-family);
+
+      transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+
 }
 
 /* .course-form-input::placeholder {
@@ -179,6 +244,10 @@ body {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.12);
   outline: none;
+  transform: translateY(-2px);
+
+    /* box-shadow:
+        0 8px 18px rgba(37,99,235,0.12); */
 }
 
 /* Custom Select Dropdown Arrow */
@@ -239,10 +308,11 @@ body {
   transition: var(--transition);
 }
 
-.course-form-submit:hover {
+/* .course-form-submit:hover {
   background-color: var(--primary-light);
   color: white;
-}
+} */
+
 
 /* ============================================
    RESPONSIVE BREAKPOINTS
@@ -875,7 +945,7 @@ body {
 }
 
 /* Shimmer sweep effect on hover */
-.program-card-btn::before {
+/* .program-card-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -894,7 +964,7 @@ body {
   background: var(--primary-light);
   color: white;
   box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
-}
+} */
 
 /* ============================================
    RESPONSIVE - Tablet & Mobile
@@ -1446,8 +1516,12 @@ body {
   flex-shrink: 0;
 }
 
-.brochure-btn:hover{
+/* .brochure-btn:hover{
   background: #f2f2f2;
+  transform: translateY(-2px);
+} */
+ .brochure-btn:active{
+  color: #000000;
   transform: translateY(-2px);
 }
 
@@ -2406,7 +2480,7 @@ opacity: 0;
 }
 
 .story-section-play-text:hover {
-    background: var(--primary-light);
+    background: var(--primary-dark);
     transform: translate(-50%, -50%) scale(1.05);
 }
 .story-section-play-text i{
@@ -2698,10 +2772,13 @@ box-shadow: 0 1px 14px 0 rgba(0,0,0,0.25);
 transition: var(--transition); 
 height: 100%;
 padding: 1rem;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .faculty-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.12),
+        0 4px 15px rgba(0,0,0,0.06);
 }
 .faculty-img-wrapper {
 width: 100%; 
@@ -2709,12 +2786,45 @@ height: 227px;
  overflow: hidden;
 background: #f0f0f0;
 border-radius: 10px;
+position: relative;
+overflow: hidden;
 }
 .faculty-img {
 width: 100%; 
 height: 100%; 
 object-fit: cover;
 border-radius: 10px;
+}
+/* Shimmer only on image */
+.faculty-img-wrapper::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transition: left 0.8s ease;
+
+    z-index: 2;
+}
+
+/* Move shimmer on card hover */
+.faculty-card:hover .faculty-img-wrapper::before {
+    left: 100%;
+}
+
+.faculty-card:hover .faculty-img {
+    transform: scale(1.08);
 }
 .faculty-body {
      padding-top: 0.6rem; 
@@ -2764,6 +2874,14 @@ font-weight: 500;
 .faculty-linkedin-link img {
 width: 22px; 
 height: 22px; 
+
+}
+.faculty-linkedin-link {
+    transition: all 0.3s ease;
+}
+
+.faculty-linkedin-link:hover {
+    color: var(--primary-color);
 
 }
 @media (max-width:1200px) {
@@ -3789,20 +3907,73 @@ flex-wrap: wrap;
     }
 
 .cta-section .social-follow {
-        margin-top: 30px;
-        }
+    margin-top: 30px;
+}
+
 .cta-section .social-follow span {
-        display: block; 
-        margin-bottom: 11px;
-        font-weight: 600;
-        font-size: 1.25rem; 
-    }
-.cta-section .social-icons a { 
-    margin: 0 10px;
-        transition: 0.3s; 
-    }
- .cta-section  .social-icons img {
-width: 38px;
+    display: block;
+    margin-bottom: 11px;
+
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+/* Social icons container */
+.cta-section .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Icon button */
+.cta-section .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+
+    position: relative;
+}
+
+/* Icon image */
+.cta-section .social-icons img {
+    width: 38px;
+
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.cta-section .social-icons a:hover {
+    transform: translateY(-5px) scale(1.08);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.14),
+        0 4px 10px rgba(0,0,0,0.08);
+
+    background-color: rgba(255,255,255,0.08);
+}
+
+/* Slight icon zoom */
+.cta-section .social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+/* Active / click */
+.cta-section .social-icons a:active {
+    transform: translateY(-1px) scale(0.95);
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.10);
 }
 @media (max-width: 992px) {
   .cta-title {
