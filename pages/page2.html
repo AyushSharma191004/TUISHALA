@@ -94,7 +94,7 @@
             <div class="row g-0">
 
                 <!-- LEFT PANEL -->
-                <div class="col-lg-5 tuishala-left d-none d-lg-block">
+                <div class="col-sm-5 tuishala-left d-none d-sm-block">
 
                 <div class="float-card c2">📈 Career Growth</div>
                 <div class="float-card c3">🏆 Certificate</div>
@@ -114,9 +114,9 @@
                 </div>
 
                 <!-- RIGHT PANEL -->
-                <div class="col-lg-7 tuishala-right">
+                <div class="col-sm-7 tuishala-right">
 
-                <button class="back-btn" data-bs-dismiss="modal">←</button>
+                <!-- <button class="back-btn" data-bs-dismiss="modal">←</button> -->
 
                 <div class="tuishala-right-inner">
 
@@ -127,7 +127,7 @@
                     <p class="subtext">Sign in to continue your learning journey</p>
 
                     <!-- PHONE INPUT -->
-                    <div class="input-group phone-group mb-3">
+                    <div class="input-group phone-group mb-3" id="phoneGroup">
 
                         <button class="btn country-code dropdown-toggle" data-bs-toggle="dropdown">
                         🇮🇳 +91
@@ -146,11 +146,19 @@
                         inputmode="numeric">
 
                     </div>
+                    <!-- EMAIL INPUT -->
+                    <div class="mb-3 d-none" id="emailGroup">
 
+                        <input
+                            type="email"
+                            class="form-control phone-input email-input"
+                            placeholder="Enter email address">
+
+                    </div>
                     <!-- OR -->
                     <div class="or-divider text-center">or</div>
 
-                    <a href="#" class="email-link">
+                    <a href="#" class="email-link" id="toggleLoginMode">
                         Sign up/Login with Email
                     </a>
 
@@ -2097,7 +2105,8 @@
             </div>
         </div>
     </footer>
-       
+    <!-- for signup popup add js code -->
+    <script src="../assets/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>   

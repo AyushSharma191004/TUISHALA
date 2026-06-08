@@ -17,6 +17,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     />
+     <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <!-- Index css -->
     <link rel="stylesheet" href="../assets/css/header.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
@@ -72,6 +76,60 @@
           >
             <!-- <button class="btn btn-outline-custom white-animi-btn">Sign in</button>
             <button class="btn btn-primary-custom animi-btn">Get Started</button> -->
+                    <!-- AFTER SIGN IN: Show User Profile Dropdown -->
+            <div class="nb-user-dropdown dropdown">
+            <!-- User Avatar (First Letter) -->
+            <button class="nb-user-avatar-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                <span class="nb-user-initial">A</span>
+                <i class="bi bi-chevron-down nb-dropdown-chevron"></i>
+            </button>
+
+            <!-- Dropdown Menu - Positioned Right -->
+            <ul class="dropdown-menu dropdown-menu-end nb-user-menu">
+                <!-- User Info Header -->
+                <li class="nb-user-menu-header">
+                <div class="nb-user-menu-avatar">A</div>
+                <div class="nb-user-menu-info">
+                    <div class="nb-user-menu-name">Ayush</div>
+                    <div class="nb-user-menu-email">ayushkamaldeep@gmail.com</div>
+                </div>
+                </li>
+                <li><hr class="dropdown-divider nb-menu-divider"></li>
+                
+                <!-- Menu Items -->
+                <li>
+                <a class="dropdown-item nb-menu-item" href="/pages/profilepage.html">
+                    <i class="bi bi-person"></i>
+                    <span>View Profile</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item nb-menu-item" href="#">
+                    <i class="bi bi-journal-text"></i>
+                    <span>My Courses</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item nb-menu-item" href="#">
+                    <i class="bi bi-award"></i>
+                    <span>My Certificates</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item nb-menu-item" href="#">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Applied Jobs</span>
+                </a>
+                </li>
+                <li><hr class="dropdown-divider nb-menu-divider"></li>
+                <li>
+                <a class="dropdown-item nb-menu-item nb-menu-logout" href="#">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </a>
+                </li>
+            </ul>
+            </div>
             <button
                 class="btn btn-primary-custom animi-btn"
                 data-bs-toggle="modal"
@@ -91,127 +149,446 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            <div class="row g-0">
+                <div class="row g-0">
 
-                <!-- LEFT PANEL -->
-                <div class="col-lg-5 tuishala-left d-none d-lg-block">
+                    <!-- LEFT PANEL -->
+                    <div class="col-sm-5 tuishala-left d-none d-sm-block">
 
-                <div class="float-card c2">📈 Career Growth</div>
-                <div class="float-card c3">🏆 Certificate</div>
-                <div class="float-card c4">💼 Job Ready</div>
-                <div class="float-card c5">🚀 Mentorship</div>
+                        <div class="float-card c2">📈 Career Growth</div>
+                        <div class="float-card c3">🏆 Certificate</div>
+                        <div class="float-card c4">💼 Job Ready</div>
+                        <div class="float-card c5">🚀 Mentorship</div>
 
-                <div class="text-center">
-                    <img src="../assets/icons/logo figma 2.svg" class="tuishala-logo">
+                        <div class="text-center">
+                            <img src="../assets/icons/logo figma 2.svg" class="tuishala-logo">
 
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
-                        class="tuishala-illustration">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                                class="tuishala-illustration">
 
-                    <h3>Learn Skills That Get You Hired</h3>
-                    <p>Join thousands of learners building successful careers with Tuishala.</p>
+                            <h3>Learn Skills That Get You Hired</h3>
+                            <p>Join thousands of learners building successful careers with Tuishala.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT PANEL -->
+                    <div class="col-sm-7 tuishala-right">
+
+                        <!-- <button class="back-btn" data-bs-dismiss="modal">←</button> -->
+
+                        <div class="tuishala-right-inner">
+
+                            <!-- TOP CONTENT -->                 
+                            <form id="signUpForm">
+                                 <!-- step 1 phone ,email -->
+                                <div class="tuishala-step tuishala-step-1">
+                                
+                                    <h2>Welcome to Tuishala</h2>
+                                    <p class="subtext">Sign in to continue your learning journey</p>
+
+                                    <!-- PHONE INPUT -->
+                                    <div class="input-group phone-group mb-3" id="phoneGroup">
+
+                                        <button class="btn country-code dropdown-toggle" data-bs-toggle="dropdown">
+                                        🇮🇳 +91
+                                        </button>
+
+                                        <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item">🇮🇳 +91</a></li>
+                                        <li><a class="dropdown-item">🇺🇸 +1</a></li>
+                                        <li><a class="dropdown-item">🇬🇧 +44</a></li>
+                                        </ul>
+
+                                        <input type="tel"
+                                        class="form-control phone-input"
+                                        placeholder="Enter mobile number"
+                                        maxlength="10"
+                                        inputmode="numeric">
+
+                                    </div>
+                                    <!-- EMAIL INPUT -->
+                                    <div class="mb-3 d-none" id="emailGroup">
+
+                                        <input
+                                            type="email"
+                                            class="form-control phone-input email-input"
+                                            placeholder="Enter email address">
+
+                                    </div>
+                                    <!-- OR -->
+                                    <div class="or-divider text-center">or</div>
+
+                                    <a href="#" class="email-link" id="toggleLoginMode">
+                                        Sign up/Login with Email
+                                    </a>
+
+                                </div>
+                                <!-- STEP 2 OTP -->
+                                <div class="tuishala-step tuishala-step-2 d-none ">
+                                    <div>
+                                        <h2>Verify OTP</h2>
+                                        <p class="subtext">
+                                            Enter the 6-digit code sent to <strong>+91 XXXXXXXX</strong>
+                                        </p>
+
+                                        <!-- OTP BOXES -->
+                                        <div class="otp-boxes mb-3">
+                                            <input type="text" maxlength="1">
+                                            <input type="text" maxlength="1">
+                                            <input type="text" maxlength="1">
+                                            <input type="text" maxlength="1">
+                                            <input type="text" maxlength="1">
+                                            <input type="text" maxlength="1">
+                                        </div>
+
+                                        <p class="resend-text">
+                                            Didn’t receive OTP?
+                                            <a href="#">Resend</a>
+                                        </p>
+                                    </div>
+                                <div>
+
+                                <button class="continue-btn animi-btn" id="otpBtn" disabled onclick="goToStep3()">
+                                    Verify & Continue
+                                </button>
+
+                                <p class="edit-number">
+                                    <a href="#" onclick="goBackStep1()">← Edit mobile number</a>
+                                </p>
+                                </div>
+
+                                </div>
+                                <!-- STEP 3 USER DETAILS -->
+                                <div class="tuishala-step tuishala-step-3  d-none">
+
+                                    <div>
+
+                                        <h2>Welcome to Tuishala</h2>
+
+                                        <p class="subtext">
+                                            Enter your details to get started
+                                        </p>
+                                        <div class="step3-scroll">
+                                                <!-- Full Name -->
+                                                <div class="mb-3">
+                                                    <input type="text"
+                                                        class="form-control phone-input"
+                                                        placeholder="Full Name"
+                                                        id="fullName">
+                                                </div>
+
+                                                <!-- Email -->
+                                                <div class="mb-3">
+                                                    <input type="email"
+                                                        class="form-control phone-input"
+                                                        placeholder="Email Address"
+                                                        id="userEmail">
+                                                    <small id="emailError" class="text-danger d-none">
+                                                        Please enter a valid email address
+                                                    </small>
+                                                </div>
+
+                                                <!-- Qualification -->
+                                                <div class="mb-3">
+
+                                                    <select class="form-select phone-input" id="qualification">
+
+                                                        <option selected disabled>
+                                                            Highest Qualification
+                                                        </option>
+
+                                                        <option>Completed Post Graduation</option>
+
+                                                        <option>Passed Graduation</option>
+
+                                                        <option>In Graduation</option>
+
+                                                        <option>In 12th or Below</option>
+
+                                                    </select>
+
+                                                </div>
+
+                                                <!-- Area of Interest -->
+                                                <div class="mb-3">
+
+                                                    <select class="form-select phone-input" id="interest">
+
+                                                        <option selected disabled>
+                                                            Area of Interest
+                                                        </option>
+
+                                                        <option>Data Science / AI ML</option>
+
+                                                        <option>Digital Marketing</option>
+
+                                                        <option>Software Development</option>
+
+                                                    </select>
+
+                                                </div>
+
+                                                <!-- Referral Link -->
+                                                <div class="mb-3">
+
+                                                    <a href="#"
+                                                    id="showReferral"
+                                                    class="email-link mb-2">
+
+                                                        Have a referral code?
+
+                                                    </a>
+
+                                                    <div class="d-none" id="referralBox">
+
+                                                        <input
+                                                            type="text"
+                                                            class="form-control phone-input"
+                                                            placeholder="Enter your referral code">
+
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div>
+                                        <!-- Whatsapp -->
+                                        <div class="form-check py-3">
+
+                                            <input class="form-check-input"
+                                                type="checkbox"
+                                                id="whatsappCheck">
+
+                                            <label class="form-check-label">
+
+                                                Send me updates on WhatsApp
+
+                                            </label>
+
+                                        </div>
+                                    <button
+                                            class="continue-btn animi-btn"
+                                            id="getStartedBtn"
+                                            disabled
+                                            onclick="goToStep4()"
+                                        >
+
+                                            Get Started
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                            <!-- STEP 4 additional info-->
+                                <div class="tuishala-step tuishala-step-4 d-none">
+
+                                    <div>
+
+                                        <!-- Top -->
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+
+                                            <div class="fw-semibold">
+                                                Additional Info
+                                            </div>
+
+                                            <a href="#" onclick="goToStep5()" class="text-decoration-none">
+                                                Skip
+                                            </a>
+
+                                        </div>
+
+                                        <h2>We would like to know more</h2>
+
+                                        <p class="subtext">
+                                            Help us tailor your experience by finding the right course expert
+                                        </p>
+
+                                        <div class="step3-scroll">
+
+                                            <div class="mb-3">
+                                                <select class="form-select phone-input">
+                                                    <option selected disabled>
+                                                        Interested in joining a course?
+                                                    </option>
+                                                    <option>Yes</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <select class="form-select phone-input">
+                                                    <option selected disabled>
+                                                        By when do you plan to enroll?
+                                                    </option>
+                                                    <option>Immediately</option>
+                                                    <option>Within 3 months</option>
+                                                    <option>Within 6 months</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <select class="form-select phone-input">
+                                                    <option selected disabled>
+                                                        Looking for expert career advice?
+                                                    </option>
+                                                    <option>Yes</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <select class="form-select phone-input">
+                                                    <option selected disabled>
+                                                        Work Experience
+                                                    </option>
+                                                    <option>Fresher</option>
+                                                    <option>1-3 Years</option>
+                                                    <option>3-5 Years</option>
+                                                    <option>5+ Years</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <select class="form-select phone-input">
+                                                    <option selected disabled>
+                                                        Work Function
+                                                    </option>
+                                                    <option>Software Development</option>
+                                                    <option>Marketing</option>
+                                                    <option>Finance</option>
+                                                    <option>Operations</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div>
+
+                                        <button
+                                            class="continue-btn animi-btn"
+                                            onclick="goToStep5()">
+
+                                            Next
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            <!-- STEP 5 call schedule-->
+                                <div class="tuishala-step tuishala-step-5 d-none">
+
+                                    <div>
+
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+
+                                            <button
+                                                class="btn border-0 p-0"
+                                                onclick="goBackStep4()">
+
+                                                ←
+
+                                            </button>
+
+                                            <a href="#" class="text-decoration-none" data-bs-dismiss="modal">
+                                                Skip
+                                            </a>
+
+                                        </div>
+
+                                        <h2>
+                                            Schedule a <span class="text-primary">free call</span>
+                                            with our course expert, now!
+                                        </h2>
+
+                                        <p class="subtext">
+
+                                            This is so that we can recommend programs
+                                            that suit you best.
+
+                                        </p>
+
+                                        <div class="text-center my-5">
+
+                                            <img
+                                                src="https://cdn-icons-png.flaticon.com/512/4300/4300059.png"
+                                                class="img-fluid"
+                                                width="100">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div>
+
+                                        <button class="continue-btn animi-btn" onclick="goToStep6()">
+
+                                            Schedule a Call
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- STEP 6 : THANK YOU -->
+                                <div class="tuishala-step tuishala-step-6 d-none">
+
+                                    <div class="thankyou-content text-center">
+
+                                        <div class="success-icon">
+                                            ✓
+                                        </div>
+
+                                        <h2 class="thank-title">
+                                            Thank You!
+                                        </h2>
+
+                                        <p class="thank-subtitle">
+                                            We have received your request.
+                                        </p>
+
+                                        <p class="thank-text">
+                                            Our course expert will connect with you soon and help you choose the best learning path for your career.
+                                        </p>
+
+                                        <div class="thank-badge">
+
+                                            🚀 Your learning journey starts here
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </form>
+                            <!-- BOTTOM SECTION -->
+                            <div class="bottom-section" id="step1Footer">
+                                <button class="continue-btn animi-btn" id="step1Btn" disabled onclick="goToStep2()">
+                                    Continue
+                                </button>
+
+                                <div class="privacy">
+                                    By continuing, you agree to Tuishala Terms & Privacy Policy
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-
-                </div>
-
-                <!-- RIGHT PANEL -->
-                <div class="col-lg-7 tuishala-right">
-
-                <button class="back-btn" data-bs-dismiss="modal">←</button>
-
-                <div class="tuishala-right-inner">
-
-                    <!-- TOP CONTENT -->
-                    <div class="tuishala-step tuishala-step-1">
-                    
-                    <h2>Welcome to Tuishala</h2>
-                    <p class="subtext">Sign in to continue your learning journey</p>
-
-                    <!-- PHONE INPUT -->
-                    <div class="input-group phone-group mb-3">
-
-                        <button class="btn country-code dropdown-toggle" data-bs-toggle="dropdown">
-                        🇮🇳 +91
-                        </button>
-
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">🇮🇳 +91</a></li>
-                        <li><a class="dropdown-item">🇺🇸 +1</a></li>
-                        <li><a class="dropdown-item">🇬🇧 +44</a></li>
-                        </ul>
-
-                        <input type="tel"
-                        class="form-control phone-input"
-                        placeholder="Enter mobile number"
-                        maxlength="10"
-                        inputmode="numeric">
-
-                    </div>
-
-                    <!-- OR -->
-                    <div class="or-divider text-center">or</div>
-
-                    <a href="#" class="email-link">
-                        Sign up/Login with Email
-                    </a>
-
-                    </div>
-                    <!-- STEP 2 OTP -->
-                    <div class="tuishala-step tuishala-step-2 d-none ">
-                    <div>
-                    <h2>Verify OTP</h2>
-                    <p class="subtext">
-                        Enter the 6-digit code sent to <strong>+91 XXXXXXXX</strong>
-                    </p>
-
-                    <!-- OTP BOXES -->
-                    <div class="otp-boxes mb-3">
-                        <input type="text" maxlength="1">
-                        <input type="text" maxlength="1">
-                        <input type="text" maxlength="1">
-                        <input type="text" maxlength="1">
-                        <input type="text" maxlength="1">
-                        <input type="text" maxlength="1">
-                    </div>
-
-                    <p class="resend-text">
-                        Didn’t receive OTP?
-                        <a href="#">Resend</a>
-                    </p>
-                    </div>
-                    <div>
-
-                    <button class="continue-btn animi-btn" id="otpBtn" disabled>
-                        Verify & Continue
-                    </button>
-
-                    <p class="edit-number">
-                        <a href="#" onclick="goBackStep1()">← Edit mobile number</a>
-                    </p>
-                    </div>
-
-                    </div>
-
-                    <!-- BOTTOM SECTION -->
-                    <div class="bottom-section" id="step1Footer">
-                    <button class="continue-btn animi-btn" id="step1Btn" disabled onclick="goToStep2()">
-                        Continue
-                    </button>
-
-                    <div class="privacy">
-                        By continuing, you agree to Tuishala Terms & Privacy Policy
-                    </div>
-
-                    </div>
-
-                </div>
-
-                </div>
-
-            </div>
 
             </div>
         </div>
     </div>
+    <!-- Page Backdrop Overlay -->
+    <div class="nb-page-backdrop" id="nbPageBackdrop"></div>
     <!-- NAVBAR END -->
 
     <!-- Hero section -->
@@ -1525,5 +1902,6 @@
     <!-- Bootstrap js -->
     <script src="../assets/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
   </body>
 </html>

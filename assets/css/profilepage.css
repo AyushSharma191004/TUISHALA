@@ -1,0 +1,896 @@
+/* ============================================
+    PROFILE DASHBOARD - GLOBAL STYLES
+    ============================================ */
+:root {
+  --pd-primary: #1E3A8A;
+  --pd-primary-light: #3b82f6;
+  --pd-primary-dark: #1e40af;
+  --pd-danger: #dc3545;
+  --pd-danger-light: #fef2f2;
+  --pd-text-dark: #1f2937;
+  --pd-text-secondary: #6b7280;
+  --pd-text-muted: #9ca3af;
+  --pd-bg-body: #f3f4f6;
+  --pd-bg-white: #ffffff;
+  --pd-bg-sidebar: #ffffff;
+  --pd-border-color: #e5e7eb;
+  --pd-border-light: #f3f4f6;
+  --pd-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --pd-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --pd-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --pd-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --pd-radius-sm: 8px;
+  --pd-radius-md: 12px;
+  --pd-radius-lg: 16px;
+}
+
+/* ============================================
+    ANIMATIONS
+    ============================================ */
+@keyframes pdFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pdSlideLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pdSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pdFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ============================================
+    DASHBOARD LAYOUT
+    ============================================ */
+.pd-dashboard {
+  background-color: var(--pd-bg-body);
+  min-height: calc(100vh - 70px);
+  padding: 20px 0 40px;
+  animation: pdFadeIn 0.6s ease;
+}
+
+.pd-container {
+  max-width: 1400px;
+  padding: 0 24px;
+}
+
+/* ============================================
+    MOBILE SIDEBAR TOGGLE
+    ============================================ */
+.pd-sidebar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pd-bg-white);
+  border: 1px solid var(--pd-border-color);
+  border-radius: var(--pd-radius-sm);
+  padding: 10px 20px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: var(--pd-text-dark);
+  transition: var(--pd-transition);
+}
+
+.pd-sidebar-toggle:hover {
+  background: var(--pd-primary);
+  color: white;
+  border-color: var(--pd-primary);
+}
+
+/* ============================================
+    BREADCRUMB
+    ============================================ */
+/* .pd-breadcrumb {
+  margin-bottom: 24px;
+  animation: pdSlideUp 0.5s ease 0.1s both;
+}
+
+.pd-breadcrumb .breadcrumb {
+  font-size: 0.875rem;
+}
+
+.pd-breadcrumb .breadcrumb-item a {
+  color: var(--pd-text-secondary);
+  text-decoration: none;
+  transition: var(--pd-transition);
+}
+
+.pd-breadcrumb .breadcrumb-item a:hover {
+  color: var(--pd-primary);
+}
+
+.pd-breadcrumb .breadcrumb-item.active {
+  color: var(--pd-text-dark);
+  font-weight: 500;
+}
+
+.pd-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  color: var(--pd-text-muted);
+} */
+
+/* ============================================
+    SIDEBAR
+    ============================================ */
+.pd-sidebar {
+  background: var(--pd-bg-sidebar);
+  border-radius: var(--pd-radius-lg);
+  box-shadow: var(--pd-shadow-md);
+  overflow: hidden;
+  animation: pdSlideLeft 0.6s ease 0.2s both;
+  position: sticky;
+  top: 90px;
+}
+
+/* ============================================
+    USER CARD
+    ============================================ */
+.pd-user-card {
+  padding: 32px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--pd-border-light);
+}
+
+.pd-avatar-wrapper {
+  margin-bottom: 16px;
+}
+
+.pd-avatar {
+  width: 80px;
+  height: 80px;
+  background: var(--pd-border-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: var(--pd-transition);
+  cursor: pointer;
+}
+
+.pd-avatar i {
+  font-size: 2.5rem;
+  color: var(--pd-text-muted);
+}
+
+.pd-avatar:hover {
+  animation: pdFloat 2s ease-in-out infinite;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.15);
+}
+
+.pd-user-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pd-text-dark);
+  margin-bottom: 4px;
+  text-transform: lowercase;
+}
+
+.pd-user-email {
+  font-size: 0.875rem;
+  color: var(--pd-text-secondary);
+  margin-bottom: 0;
+  word-break: break-all;
+}
+
+/* ============================================
+    SIDEBAR MENU
+    ============================================ */
+.pd-menu {
+  padding: 16px 0;
+}
+
+.pd-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pd-menu-item {
+  position: relative;
+}
+
+.pd-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  color: var(--pd-text-secondary);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: var(--pd-transition);
+  border-left: 3px solid transparent;
+}
+
+.pd-menu-icon {
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  transition: var(--pd-transition);
+}
+
+.pd-menu-text {
+  flex: 1;
+}
+
+.pd-menu-chevron {
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.pd-menu-item.active > .pd-menu-link,
+.pd-menu-link:hover {
+  background: var(--pd-danger-light);
+  color: var(--pd-primary);
+  border-left-color: var(--pd-primary);
+}
+
+.pd-menu-item.active > .pd-menu-link .pd-menu-icon,
+.pd-menu-link:hover .pd-menu-icon {
+  color: var(--pd-primary);
+}
+
+.pd-menu-item.active > .pd-menu-link {
+  font-weight: 600;
+}
+
+/* Submenu */
+.pd-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--pd-bg-body);
+}
+
+.pd-submenu-item {
+  position: relative;
+}
+
+.pd-submenu-link {
+  display: block;
+  padding: 12px 24px 12px 56px;
+  color: var(--pd-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--pd-transition);
+  border-left: 3px solid transparent;
+}
+
+.pd-submenu-item.active .pd-submenu-link,
+.pd-submenu-link:hover {
+  /* background: var(--pd-danger-light); */
+  color: var(--pd-primary);
+  border-left-color: var(--pd-primary);
+}
+
+.pd-submenu-item.active .pd-submenu-link {
+  font-weight: 600;
+}
+
+/* Logout special styling */
+.pd-menu-logout .pd-menu-link:hover {
+  background: #fef2f2;
+  color: #dc3545;
+  border-left-color: #dc3545;
+}
+
+/* ============================================
+    MOBILE OFFCANVAS
+    ============================================ */
+.pd-offcanvas {
+  width: 300px;
+  border-right: none;
+}
+
+.pd-offcanvas .offcanvas-header {
+  background: var(--pd-primary);
+  color: white;
+}
+
+.pd-offcanvas .offcanvas-title {
+  font-weight: 600;
+}
+
+.pd-offcanvas .btn-close {
+  filter: invert(1);
+}
+
+/* ============================================
+    RIGHT CONTENT AREA
+    ============================================ */
+.pd-content {
+  padding: 0 0 0 24px;
+  animation: pdSlideUp 0.6s ease 0.3s both;
+}
+
+.pd-page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--pd-text-dark);
+  margin-bottom: 24px;
+}
+
+/* ============================================
+    PROFILE CARD
+    ============================================ */
+.pd-profile-card {
+  background: var(--pd-bg-white);
+  border-radius: var(--pd-radius-lg);
+  box-shadow: var(--pd-shadow-md);
+  overflow: hidden;
+  transition: var(--pd-transition);
+  animation: pdSlideUp 0.6s ease 0.4s both;
+}
+
+.pd-profile-card:hover {
+  box-shadow: var(--pd-shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Card Header */
+.pd-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--pd-border-light);
+}
+
+.pd-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--pd-text-dark);
+  margin: 0;
+}
+
+.pd-missing-badge {
+  color: var(--pd-danger);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Edit Button */
+.pd-edit-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--pd-border-color);
+  background: var(--pd-bg-white);
+  color: var(--pd-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--pd-transition);
+}
+
+.pd-edit-btn:hover {
+  background: var(--pd-primary);
+  color: white;
+  border-color: var(--pd-primary);
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.pd-edit-btn i {
+  font-size: 1rem;
+}
+
+/* ============================================
+    INFO ROWS
+    ============================================ */
+.pd-info-rows {
+  padding: 8px 0;
+}
+
+.pd-info-row {
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--pd-border-light);
+  transition: var(--pd-transition);
+}
+
+.pd-info-row:last-child {
+  border-bottom: none;
+}
+
+.pd-info-row:hover {
+  background: #fafafa;
+  border-left: 3px solid var(--pd-primary);
+  padding-left: 29px;
+}
+
+.pd-info-label {
+  color: var(--pd-text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.pd-info-value {
+  color: var(--pd-text-dark);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+/* Add Button */
+.pd-add-btn {
+  background: none;
+  border: none;
+  color: var(--pd-danger);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--pd-transition);
+  position: relative;
+}
+
+.pd-add-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--pd-danger);
+  transition: width 0.3s ease;
+}
+
+.pd-add-btn:hover {
+  color: #b91c1c;
+}
+
+.pd-add-btn:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+    PERSONAL DETAILS MODAL STYLES
+    ============================================ */
+
+/* Modal Overlay */
+.pd-modal .modal-dialog {
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+.pd-modal .modal-content {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Modal Header */
+.pd-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px 16px;
+  border-bottom: 1px solid var(--pd-border-light);
+}
+
+.pd-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pd-text-dark);
+  margin: 0;
+}
+
+.pd-modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--pd-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--pd-transition);
+  font-size: 1.25rem;
+}
+
+.pd-modal-close:hover {
+  background: var(--pd-border-light);
+  color: var(--pd-text-dark);
+  transform: rotate(90deg);
+}
+
+/* Modal Body */
+.pd-modal-body {
+  padding: 24px 32px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Form Groups */
+.pd-form-group {
+  margin-bottom: 0;
+}
+
+.pd-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pd-text-secondary);
+  margin-bottom: 8px;
+}
+
+.pd-required {
+  color: var(--pd-danger);
+  font-weight: 600;
+}
+
+/* Form Controls */
+.pd-form-control,
+.pd-form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--pd-border-color);
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--pd-text-dark);
+  background: var(--pd-bg-white);
+  transition: var(--pd-transition);
+  outline: none;
+}
+
+.pd-form-control::placeholder {
+  color: var(--pd-text-muted);
+}
+
+.pd-form-control:focus,
+.pd-form-select:focus {
+  border-color: var(--pd-primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.pd-form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+/* Input Group (Referral Code + Apply) */
+.pd-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.pd-input-group .pd-form-control {
+  flex: 1;
+}
+
+.pd-apply-btn {
+  padding: 12px 20px;
+  background: transparent;
+  border: 1px solid var(--pd-border-color);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pd-text-muted);
+  cursor: pointer;
+  transition: var(--pd-transition);
+  white-space: nowrap;
+}
+
+.pd-apply-btn:hover {
+  border-color: var(--pd-primary);
+  color: var(--pd-primary);
+  background: rgba(30, 58, 138, 0.05);
+}
+
+/* Modal Footer */
+.pd-modal-footer {
+  padding: 16px 32px 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pd-save-btn {
+  background: var(--pd-primary);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--pd-transition);
+}
+
+/* .pd-save-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+} */
+
+.pd-save-btn:active {
+  transform: translateY(0);
+}
+/* ============================================
+    REFERRAL CODE INPUT WITH APPLY LINK
+    ============================================ */
+
+.pd-referral-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--pd-border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--pd-transition);
+}
+
+.pd-referral-wrapper:focus-within {
+  border-color: var(--pd-primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.pd-referral-input {
+  flex: 1;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 12px 16px !important;
+  box-shadow: none !important;
+}
+
+.pd-referral-input:focus {
+  box-shadow: none !important;
+}
+
+.pd-apply-link {
+  padding: 12px 20px;
+  color: var(--pd-text-muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--pd-transition);
+  border-left: 1px solid var(--pd-border-color);
+  background: transparent;
+}
+
+.pd-apply-link:hover {
+  color: var(--pd-primary);
+  background: rgba(30, 58, 138, 0.05);
+}
+
+.pd-apply-link:active {
+  background: rgba(30, 58, 138, 0.1);
+}
+
+/* ============================================
+    MODAL RESPONSIVE (Updated)
+    ============================================ */
+@media (max-width: 767.98px) {
+  .pd-referral-wrapper {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  .pd-referral-input {
+    width: 100%;
+    border-bottom: 1px solid var(--pd-border-color) !important;
+  }
+  
+  .pd-apply-link {
+    width: 100%;
+    text-align: center;
+    border-left: none;
+    border-top: 1px solid var(--pd-border-color);
+    padding: 10px;
+  }
+}
+
+/* ============================================
+    MODAL ANIMATIONS
+    ============================================ */
+.pd-modal.fade .modal-dialog {
+  transform: scale(0.95) translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.pd-modal.show .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* ============================================
+    MODAL RESPONSIVE
+    ============================================ */
+@media (max-width: 767.98px) {
+  .pd-modal .modal-dialog {
+    max-width: calc(100% - 32px);
+    margin: 1rem auto;
+  }
+  
+  .pd-modal-header,
+  .pd-modal-body,
+  .pd-modal-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .pd-modal-title {
+    font-size: 1.125rem;
+  }
+  
+  .pd-form-control,
+  .pd-form-select {
+    padding: 10px 14px;
+    font-size: 0.875rem;
+  }
+  
+  .pd-save-btn {
+    width: 100%;
+    padding: 14px;
+  }
+  
+  .pd-modal-footer {
+    justify-content: stretch;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pd-modal .modal-content {
+    border-radius: 16px;
+  }
+  
+  .pd-modal-header {
+    padding-top: 20px;
+  }
+  
+  .pd-modal-body {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  
+  .pd-input-group {
+    flex-direction: column;
+  }
+  
+  .pd-apply-btn {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* ============================================
+    RESPONSIVE BREAKPOINTS
+    ============================================ */
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199.98px) {
+  .pd-sidebar {
+    position: relative;
+    top: 0;
+  }
+  
+  .pd-content {
+    padding-left: 16px;
+  }
+  
+  .pd-card-header,
+  .pd-info-row {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767.98px) {
+  .pd-dashboard {
+    padding-top: 16px;
+  }
+  
+  .pd-container {
+    padding: 0 16px;
+  }
+  
+  .pd-content {
+    padding-left: 0;
+  }
+  
+  .pd-page-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  
+  .pd-card-header {
+    padding: 20px 24px;
+  }
+  
+  .pd-card-title {
+    font-size: 1rem;
+  }
+  
+  .pd-info-row {
+    padding: 16px 24px;
+  }
+  
+  .pd-info-row:hover {
+    padding-left: 21px;
+  }
+  
+  .pd-info-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+  }
+  
+  .pd-add-btn {
+    font-size: 0.875rem;
+  }
+}
+
+/* Extra Small (< 576px) */
+@media (max-width: 575.98px) {
+  .pd-user-card {
+    padding: 24px 16px;
+  }
+  
+  .pd-avatar {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .pd-avatar i {
+    font-size: 2rem;
+  }
+  
+  .pd-user-name {
+    font-size: 1.125rem;
+  }
+  
+  .pd-menu-link {
+    padding: 12px 16px;
+    font-size: 0.875rem;
+  }
+  
+  .pd-submenu-link {
+    padding: 10px 16px 10px 48px;
+  }
+  
+  .pd-card-header,
+  .pd-info-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .pd-edit-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Very Small (< 400px) */
+@media (max-width: 399.98px) {
+  .pd-page-title {
+    font-size: 1.25rem;
+  }
+  
+  .pd-missing-badge {
+    display: block;
+    margin-top: 4px;
+    margin-left: 0;
+  }
+}

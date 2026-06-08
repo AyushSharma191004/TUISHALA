@@ -31,7 +31,7 @@ html, body { height: 100%; width: 100%; font-family: var(--p5-font); }
     p5 ABOUT HERO SECTION
     ============================================ */
 .p5-about-hero-section {
-  padding: 40px 0 10px;
+  /* padding: 40px 0 10px; */
   background-color: var(--p5-bg-section);
   position: relative;
   overflow: hidden;
@@ -137,7 +137,7 @@ html, body { height: 100%; width: 100%; font-family: var(--p5-font); }
     ============================================ */
 @media (max-width: 991.98px) {
   .p5-about-hero-section {
-    padding: 80px 0;
+    padding: 60px 0;
   }
   .p5-about-title {
     font-size: 2.25rem;
@@ -145,6 +145,11 @@ html, body { height: 100%; width: 100%; font-family: var(--p5-font); }
   .p5-about-desc {
     font-size: 1rem;
     max-width: 100%;
+  }
+}
+@media (min-width:1000px) and (max-width:1200px) {
+  .p5-about-hero-section {
+    padding: 20px 0;
   }
 }
 

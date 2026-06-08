@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuishala - Profile Dashboard</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- Global + Component CSS -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  
+  <!-- Page-Specific CSS -->
+  <link rel="stylesheet" href="../assets/css/profilepage.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+<!-- NAVBAR START -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="../assets/icons/logo figma 2.svg" alt="logo" class="logo-img" />
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Center Links -->
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/page2.html">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/page3.html">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/page4.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/page5.html">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Right Side -->
+      <div class="d-flex gap-2 justify-content-center align-items-center mt-3 mt-lg-0">
+        
+        <!-- BEFORE SIGN IN: Show Sign In Button -->
+        <!-- <button class="btn btn-primary-custom animi-btn" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</button> -->
+
+        <!-- AFTER SIGN IN: Show User Profile Dropdown -->
+        <div class="nb-user-dropdown dropdown">
+          <!-- User Avatar (First Letter) -->
+          <button class="nb-user-avatar-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span class="nb-user-initial">A</span>
+            <i class="bi bi-chevron-down nb-dropdown-chevron"></i>
+          </button>
+
+          <!-- Dropdown Menu - Positioned Right -->
+          <ul class="dropdown-menu dropdown-menu-end nb-user-menu">
+            <!-- User Info Header -->
+            <li class="nb-user-menu-header">
+              <div class="nb-user-menu-avatar">A</div>
+              <div class="nb-user-menu-info">
+                <div class="nb-user-menu-name">Ayush</div>
+                <div class="nb-user-menu-email">ayushkamaldeep@gmail.com</div>
+              </div>
+            </li>
+            <li><hr class="dropdown-divider nb-menu-divider"></li>
+            
+            <!-- Menu Items -->
+            <li>
+              <a class="dropdown-item nb-menu-item" href="/pages/profile.html">
+                <i class="bi bi-person"></i>
+                <span>View Profile</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item nb-menu-item" href="#">
+                <i class="bi bi-journal-text"></i>
+                <span>My Courses</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item nb-menu-item" href="#">
+                <i class="bi bi-award"></i>
+                <span>My Certificates</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item nb-menu-item" href="#">
+                <i class="bi bi-briefcase"></i>
+                <span>Applied Jobs</span>
+              </a>
+            </li>
+            <li><hr class="dropdown-divider nb-menu-divider"></li>
+            <li>
+              <a class="dropdown-item nb-menu-item nb-menu-logout" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Backdrop Overlay -->
+<div class="nb-page-backdrop" id="nbPageBackdrop"></div>
+<!-- NAVBAR END -->
+
+
+
+<!-- ============================================
+     PROFILE DASHBOARD START
+     ============================================ -->
+  <main class="pd-dashboard mt-lg-5 mt-4">
+    <div class="container-fluid pd-container pt-5">
+      <div class="row g-0">
+
+        <!-- Mobile Toggle Button -->
+        <button class="pd-sidebar-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#pdSidebarOffcanvas">
+          <i class="bi bi-list"></i> Menu
+        </button>
+
+        <!-- Breadcrumb -->
+        <!-- <nav class="pd-breadcrumb" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Profile</li>
+          </ol>
+        </nav> -->
+
+        <!-- LEFT SIDEBAR (Desktop) -->
+        <aside class="col-lg-3 col-xl-3 d-none d-lg-block">
+          <div class="pd-sidebar">
+            
+            <!-- User Card -->
+            <div class="pd-user-card">
+              <div class="pd-avatar-wrapper">
+                <div class="pd-avatar">
+                  <i class="bi bi-person-fill"></i>
+                </div>
+              </div>
+              <h3 class="pd-user-name">ayush</h3>
+              <p class="pd-user-email">ayushkamaldeep@gmail.com</p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="pd-menu">
+              <ul class="pd-menu-list">
+                
+                <!-- Profile (Active with Submenu) -->
+                <li class="pd-menu-item active">
+                  <a href="#" class="pd-menu-link" data-bs-toggle="collapse" data-bs-target="#pdProfileSubmenu">
+                    <span class="pd-menu-icon"><i class="bi bi-person"></i></span>
+                    <span class="pd-menu-text">Profile</span>
+                    <span class="pd-menu-chevron"><i class="bi bi-chevron-down"></i></span>
+                  </a>
+                  <ul class="pd-submenu collapse show" id="pdProfileSubmenu">
+                    <li class="pd-submenu-item active">
+                      <a href="#" class="pd-submenu-link">Personal details</a>
+                    </li>
+                    <li class="pd-submenu-item">
+                      <a href="#" class="pd-submenu-link">Educational details</a>
+                    </li>
+                  </ul>
+                </li>
+
+
+                <!-- My Courses -->
+                <li class="pd-menu-item">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-journal-text"></i></span>
+                    <span class="pd-menu-text">My courses</span>
+                  </a>
+                </li>
+
+
+                <!-- My Certificates -->
+                <li class="pd-menu-item">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-award"></i></span>
+                    <span class="pd-menu-text">My certificates</span>
+                  </a>
+                </li>
+
+                <!-- Applied Jobs -->
+                <li class="pd-menu-item">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-briefcase"></i></span>
+                    <span class="pd-menu-text">Applied jobs</span>
+                  </a>
+                </li>
+
+                <!-- Logout -->
+                <li class="pd-menu-item pd-menu-logout">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="pd-menu-text">Logout</span>
+                  </a>
+                </li>
+
+              </ul>
+            </nav>
+
+          </div>
+        </aside>
+
+        <!-- MOBILE SIDEBAR (Offcanvas) -->
+        <div class="offcanvas offcanvas-start pd-offcanvas" tabindex="-1" id="pdSidebarOffcanvas">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body p-0">
+            <div class="pd-user-card">
+              <div class="pd-avatar-wrapper">
+                <div class="pd-avatar">
+                  <i class="bi bi-person-fill"></i>
+                </div>
+              </div>
+              <h3 class="pd-user-name">ayush</h3>
+              <p class="pd-user-email">ayushkamaldeep@gmail.com</p>
+            </div>
+            <nav class="pd-menu">
+              <ul class="pd-menu-list">
+                <li class="pd-menu-item active">
+                  <a href="#" class="pd-menu-link" data-bs-toggle="collapse" data-bs-target="#pdProfileSubmenuMobile">
+                    <span class="pd-menu-icon"><i class="bi bi-person"></i></span>
+                    <span class="pd-menu-text">Profile</span>
+                    <span class="pd-menu-chevron"><i class="bi bi-chevron-down"></i></span>
+                  </a>
+                  <ul class="pd-submenu collapse show" id="pdProfileSubmenuMobile">
+                    <li class="pd-submenu-item active"><a href="#" class="pd-submenu-link">Personal details</a></li>
+                    <li class="pd-submenu-item"><a href="#" class="pd-submenu-link">Educational details</a></li>
+                  </ul>
+                </li>
+                <li class="pd-menu-item">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-journal-text"></i></span>
+                    <span class="pd-menu-text">My courses</span>
+                  </a>
+                </li>
+                <li class="pd-menu-item">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-award"></i></span>
+                    <span class="pd-menu-text">My certificates</span>
+                  </a>
+                </li>
+                <li class="pd-menu-item">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-briefcase"></i></span>
+                    <span class="pd-menu-text">Applied jobs</span>
+                  </a>
+                </li>
+                <li class="pd-menu-item pd-menu-logout">
+                  <a href="#" class="pd-menu-link">
+                    <span class="pd-menu-icon"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="pd-menu-text">Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- RIGHT CONTENT AREA -->
+        <div class="col-lg-9 col-xl-9">
+          <div class="pd-content">
+            
+            <!-- Page Title -->
+            <h1 class="pd-page-title">Profile</h1>
+
+            <!-- Profile Card -->
+            <div class="pd-profile-card">
+              
+              <!-- Card Header -->
+              <div class="pd-card-header">
+                <div class="pd-header-left">
+                  <h2 class="pd-card-title">Personal details <span class="pd-missing-badge">(11 details missing)</span></h2>
+                </div>
+                <button class="pd-edit-btn" title="Edit Profile" onclick="pdOpenEditModal()">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </div>
+
+              <!-- Profile Info Rows -->
+              <div class="pd-info-rows">
+
+                <!-- Row 1: First Name (Filled) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">First Name</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <span class="pd-info-value">ayush</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: Last Name (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Last Name</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: Date of Birth (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Date of Birth</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 4: Gender (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Gender</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 5: Highest Qualification (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Highest Qualification</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 6: Area of Interest (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Area of Interest</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 7: Work Experience (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Work Experience</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 8: Marital Status (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Marital Status</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 12: Nationality (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Nationality</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 13: Applied Referral Code (Add) -->
+                <div class="pd-info-row">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-sm-5 col-md-4">
+                      <span class="pd-info-label">Applied Referral Code</span>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8">
+                      <button class="pd-add-btn" onclick="pdOpenEditModal()">Add</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ============================================
+       PERSONAL DETAILS EDIT MODAL
+       ============================================ -->
+  <div class="modal fade pd-modal" id="pdPersonalDetailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="pd-modal-header">
+          <h5 class="pd-modal-title">Personal Details</h5>
+          <button type="button" class="pd-modal-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="pd-modal-body">
+          <form id="pdPersonalDetailsForm">
+            
+            <!-- Row 1: First Name + Last Name -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">First Name <span class="pd-required">*</span></label>
+                  <input type="text" class="pd-form-control" name="firstName" value="ayush" placeholder="Enter first name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Last Name <span class="pd-required">*</span></label>
+                  <input type="text" class="pd-form-control" name="lastName" placeholder="Enter last name">
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2: Date of Birth + Gender -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Date of Birth <span class="pd-required">*</span></label>
+                  <input type="text" class="pd-form-control" name="dob" placeholder="DD / MM / YYYY" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Gender</label>
+                  <select class="pd-form-select" name="gender">
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not">Prefer not to say</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3: Highest Qualification + Area of Interest -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Highest Qualification</label>
+                  <select class="pd-form-select" name="qualification">
+                    <option value="" disabled selected>Select qualification</option>
+                    <option value="10th">10th</option>
+                    <option value="12th">12th</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="bachelors">Bachelors</option>
+                    <option value="masters">Masters</option>
+                    <option value="phd">PhD</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Area of Interest</label>
+                  <select class="pd-form-select" name="areaOfInterest">
+                    <option value="" disabled selected>Select area</option>
+                    <option value="data-science">Data Science</option>
+                    <option value="ai-ml">AI & Machine Learning</option>
+                    <option value="web-dev">Web Development</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="cloud-computing">Cloud Computing</option>
+                    <option value="cyber-security">Cyber Security</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4: Work Experience + Marital Status -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Work Experience</label>
+                  <select class="pd-form-select" name="workExperience">
+                    <option value="" disabled selected>Select experience</option>
+                    <option value="fresher">Fresher</option>
+                    <option value="1-2">1 - 2 Years</option>
+                    <option value="3-5">3 - 5 Years</option>
+                    <option value="5-10">5 - 10 Years</option>
+                    <option value="10+">10+ Years</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Marital Status</label>
+                  <select class="pd-form-select" name="maritalStatus">
+                    <option value="" disabled selected>Select status</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 5: Country of Residence + Country of Birth -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Country of Residence</label>
+                  <select class="pd-form-select" name="countryResidence">
+                    <option value="" disabled selected>Select country</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="canada">Canada</option>
+                    <option value="australia">Australia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Country of Birth</label>
+                  <input type="text" class="pd-form-control" name="countryBirth" placeholder="Enter country of birth">
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 6: Timezone + Nationality -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Timezone <span class="pd-required">*</span></label>
+                  <select class="pd-form-select" name="timezone">
+                    <option value="" disabled selected>Select timezone</option>
+                    <option value="IST">IST (UTC+5:30)</option>
+                    <option value="GMT">GMT (UTC+0)</option>
+                    <option value="EST">EST (UTC-5)</option>
+                    <option value="PST">PST (UTC-8)</option>
+                    <option value="CST">CST (UTC+8)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Nationality</label>
+                  <select class="pd-form-select" name="nationality">
+                    <option value="" disabled selected>Select nationality</option>
+                    <option value="indian">Indian</option>
+                    <option value="american">American</option>
+                    <option value="british">British</option>
+                    <option value="canadian">Canadian</option>
+                    <option value="australian">Australian</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 7: Applied Referral Code (Full Width with Apply Link) -->
+            <div class="row g-3 mb-3">
+              <div class="col-12">
+                <div class="pd-form-group">
+                  <label class="pd-form-label">Applied Referral Code</label>
+                  <div class="pd-referral-wrapper">
+                    <input type="text" class="pd-form-control pd-referral-input" name="referralCode" placeholder="Enter referral code">
+                    <a href="#" class="pd-apply-link" onclick="pdApplyReferral(event)">Apply</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="pd-modal-footer">
+          <button type="button" class="pd-save-btn animi-btn" onclick="pdSavePersonalDetails()">Save Changes</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- PROFILE DASHBOARD END -->
+
+
+  <!-- Add Field Modal -->
+  <!-- <div class="modal fade pd-modal" id="pdAddFieldModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pdModalTitle">Add Field</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control pd-modal-input" id="pdModalInput" placeholder="Enter value...">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn pd-modal-save" onclick="pdSaveField()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Footer -->
+  <div data-partial="footer.html"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../assets/js/profilepage.js"></script>
+  <script src="../assets/js/usernavbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuishala</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <!-- Index css -->
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/page7.css" />
+    <!-- symbols -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+    <body>
+        <!-- NAVBAR START -->
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+            <img
+                src="../assets/icons/logo figma 2.svg"
+                alt="logo"
+                class="logo-img"
+            />
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Center Links -->
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                <a class="nav-link" href="page2.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="page3.html">Categories</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="page4.html">About</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="page5.html">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Right Buttons -->
+            <div
+                class="d-flex gap-2 justify-content-center align-items-center mt-3 mt-lg-0"
+            >
+                <!-- <button class="btn btn-outline-custom white-animi-btn">Sign in</button>
+                <button class="btn btn-primary-custom animi-btn">Get Started</button> -->
+                <button
+                    class="btn btn-primary-custom animi-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signInModal"
+                    >
+                    Sign In
+                </button>
+            </div>
+            </div>
+        </div>
+        </nav>
+        <!-- SIGN IN MODAL -->
+        <div class="modal fade" id="signInModal" tabindex="-1">
+            <!-- <div class="modal-dialog modal-dialog-centered modal-lg modal-custom"> -->
+            <div class="modal-dialog modal-dialog-centered modal-upgrad"> 
+                <div class="modal-content tuishala-modal">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="row g-0">
+
+                    <!-- LEFT PANEL -->
+                    <div class="col-sm-5 tuishala-left d-none d-sm-block">
+
+                    <div class="float-card c2">📈 Career Growth</div>
+                    <div class="float-card c3">🏆 Certificate</div>
+                    <div class="float-card c4">💼 Job Ready</div>
+                    <div class="float-card c5">🚀 Mentorship</div>
+
+                    <div class="text-center">
+                        <img src="../assets/icons/logo figma 2.svg" class="tuishala-logo">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                            class="tuishala-illustration">
+
+                        <h3>Learn Skills That Get You Hired</h3>
+                        <p>Join thousands of learners building successful careers with Tuishala.</p>
+                    </div>
+
+                    </div>
+
+                    <!-- RIGHT PANEL -->
+                    <div class="col-sm-7 tuishala-right">
+
+                    <!-- <button class="back-btn" data-bs-dismiss="modal">←</button> -->
+
+                    <div class="tuishala-right-inner">
+
+                        <!-- TOP CONTENT -->
+                        <div class="tuishala-step tuishala-step-1">
+                        
+                        <h2>Welcome to Tuishala</h2>
+                        <p class="subtext">Sign in to continue your learning journey</p>
+
+                        <!-- PHONE INPUT -->
+                        <div class="input-group phone-group mb-3" id="phoneGroup">
+
+                            <button class="btn country-code dropdown-toggle" data-bs-toggle="dropdown">
+                            🇮🇳 +91
+                            </button>
+
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item">🇮🇳 +91</a></li>
+                            <li><a class="dropdown-item">🇺🇸 +1</a></li>
+                            <li><a class="dropdown-item">🇬🇧 +44</a></li>
+                            </ul>
+
+                            <input type="tel"
+                            class="form-control phone-input"
+                            placeholder="Enter mobile number"
+                            maxlength="10"
+                            inputmode="numeric">
+
+                        </div>
+                        <!-- EMAIL INPUT -->
+                        <div class="mb-3 d-none" id="emailGroup">
+
+                            <input
+                                type="email"
+                                class="form-control phone-input email-input"
+                                placeholder="Enter email address">
+
+                        </div>
+                        <!-- OR -->
+                        <div class="or-divider text-center">or</div>
+
+                        <a href="#" class="email-link" id="toggleLoginMode">
+                            Sign up/Login with Email
+                        </a>
+
+                        </div>
+                        <!-- STEP 2 OTP -->
+                        <div class="tuishala-step tuishala-step-2 d-none ">
+                        <div>
+                        <h2>Verify OTP</h2>
+                        <p class="subtext">
+                            Enter the 6-digit code sent to <strong>+91 XXXXXXXX</strong>
+                        </p>
+
+                        <!-- OTP BOXES -->
+                        <div class="otp-boxes mb-3">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                        </div>
+
+                        <p class="resend-text">
+                            Didn’t receive OTP?
+                            <a href="#">Resend</a>
+                        </p>
+                        </div>
+                        <div>
+
+                        <button class="continue-btn animi-btn" id="otpBtn" disabled>
+                            Verify & Continue
+                        </button>
+
+                        <p class="edit-number">
+                            <a href="#" onclick="goBackStep1()">← Edit mobile number</a>
+                        </p>
+                        </div>
+
+                        </div>
+
+                        <!-- BOTTOM SECTION -->
+                        <div class="bottom-section" id="step1Footer">
+                        <button class="continue-btn animi-btn" id="step1Btn" disabled onclick="goToStep2()">
+                            Continue
+                        </button>
+
+                        <div class="privacy">
+                            By continuing, you agree to Tuishala Terms & Privacy Policy
+                        </div>
+
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- NAVBAR END -->
+         
+         <!-- term condition start -->
+        <!-- Background Effects -->
+        <div class="blur blur1"></div>
+        <div class="blur blur2"></div>
+
+        <div class="term-condition mt-lg-5 mt-4">
+            <div class="container">
+
+                <h1>Terms & Conditions – Tuishala</h1>
+
+                <p class="intro">
+                    Welcome to Tuishala. By accessing or using our website, courses,
+                    and services, you agree to the following Terms & Conditions.
+                </p>
+
+                <div class="term">
+                    <h3>1. Use of Services</h3>
+                    <p>
+                        Tuishala provides online educational content, courses,
+                        and learning resources. Users must use the platform
+                        lawfully and responsibly.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>2. Account Registration</h3>
+                    <p>
+                        You are responsible for maintaining the confidentiality
+                        of your account information and ensuring that the details
+                        provided are accurate and up to date.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>3. Course Access</h3>
+                    <p>
+                        Access to courses and learning materials is granted for
+                        personal educational use only. Sharing, reproducing,
+                        or reselling course content is strictly prohibited.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>4. Payments & Refunds</h3>
+                    <p>
+                        Course fees, if applicable, must be paid through approved
+                        payment methods. Refunds will be processed according to
+                        Tuishala’s Refund Policy.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>5. Intellectual Property</h3>
+                    <p>
+                        All content on Tuishala, including videos, study materials,
+                        logos, graphics, and website content, is owned by Tuishala
+                        and protected by applicable copyright laws.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>6. User Conduct</h3>
+                    <p>
+                        Users must not misuse the platform, attempt unauthorized
+                        access, distribute harmful content, or engage in any activity
+                        that may disrupt services.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>7. Disclaimer</h3>
+                    <p>
+                        Tuishala makes reasonable efforts to provide accurate and
+                        updated educational content but does not guarantee specific
+                        academic, professional, or employment outcomes.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>8. Limitation of Liability</h3>
+                    <p>
+                        Tuishala shall not be liable for any indirect losses,
+                        damages, or interruptions arising from the use of the platform.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>9. Changes to Terms</h3>
+                    <p>
+                        We reserve the right to update these Terms & Conditions at
+                        any time. Continued use of the platform constitutes acceptance
+                        of any changes.
+                    </p>
+                </div>
+
+                <div class="term">
+                    <h3>10. Contact</h3>
+
+                    <p>
+                        For any questions regarding these Terms & Conditions,
+                        contact us using the information below.
+                    </p>
+
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> support@tuishala.com</p>
+                        <p><strong>Website:</strong> www.tuishala.com</p>
+                    </div>
+                </div>
+
+                <p class="footer-text">
+                    By using Tuishala, you acknowledge that you have read,
+                    understood, and agreed to these Terms & Conditions.
+                </p>
+
+            </div>
+        </div>
+        <!-- term condition end -->
+
+                <!--  LEARNER SUPPORT SECTION -->
+        <section class="support-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <h2 class="support-title mb-3">EduLearn <span>Learner Support</span></h2>
+                        <p class="support-subtitle">Talk to our experts. We are available 7 days a week, 09 AM to 7 PM</p>
+                        <div class="contact-row-wrapper">
+                            <!-- Indian National -->
+                            <div class="contact-row">
+                                <img src="../assets/icons/Rectangle (4).svg"  alt="India">
+                                <span class="contact-label">Indian National</span>
+                                <div class="phone-box ms-lg-5 ms-sm-4">
+                                    <img src="../assets/icons/Group 34.svg" alt=""> 1800 210 2026
+                                </div>
+                            </div>
+
+                            <!-- Foreign National -->
+                            <div class="contact-row">
+                                <img src="../assets/icons/Group (5).svg"  alt="World">
+                                <span class="contact-label">Foreign Nationals</span>
+                                <div class="phone-box ms-lg-3">
+                                <img src="../assets/icons/Group 34.svg" alt=""> 1800 210 2026
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call Widget -->
+            <div class="call-widget gap-4" id="callWidget">
+                <div class="speech-bubble" id="speechBubble">
+                    <button class="close-btn" id="closeWidgetBtn" aria-label="Close" onclick="closeWidget()">×</button>
+                    Start your degree or diploma at 10k per month! Best-in-class courses in Data Science, Management and Technology
+                    
+                </div>
+                <div class="call-icon-btn" id="callIconBtn">
+                <img src="../assets/icons/Group 32.svg" alt="">
+                </div>
+            </div>
+        </section>
+        <!--  LEARNER SUPPORT SECTION end-->
+
+        <!--  CTA SECTION -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="offer-badge">Limited Time Offer <img src="../assets/icons/Rectangle (5).svg" alt=""></div>
+                <h1 class="cta-title">Start Your Learning Journey Today</h1>
+                <p class="cta-subtitle">Get access to 500+ courses with a special discount. Transform your career with expert-led training.</p>
+                
+                <div class="cta-btns d-flex justify-content-center gap-3">
+                    <button class="btn-white white-animi-btn">Get Started Now <img src="../assets/icons/Arrow 2.svg" alt=""></button>
+                    <button class="btn-outline-white animi-btn">Browse Courses <img src="../assets/icons/Arrow 3.svg" alt=""></button>
+                </div>
+
+                <div class="social-follow">
+                    <span>Follow Us On</span>
+                    <div class="social-icons">
+                        <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  CTA SECTION end-->
+
+        <!--  FOOTER SECTION -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="footer-logo">
+                            <img src="../assets/icons/logo figma 2.svg" alt="Tuishala Logo"> 
+                        </div>
+                        <p class="footer-tagline">Building Careers of Tomorrow</p>
+                        <div class="footer-social-icons mb-4 mb-lg-0">
+                        <a href="#"><img src="../assets/icons/logo 4.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/linkedin 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/instagram 3.svg" alt=""></a>
+                        <a href="#"><img src="../assets/icons/communication (1) 3.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-end mt-5">
+                        <div class="footer-app-buttons d-flex flex-column align-items-lg-end">
+                            <a href="#" class="btn white-animi-btn">GET THE ANDROID APP</a>
+                            <a href="#" class="btn white-animi-btn">GET THE IOS APP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border-color: #333;">
+
+                <div class="row mt-5">
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Instructors</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Category</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Business</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Support</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h5 class="footer-col-title">Support</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- for signup popup add js code -->
+        <script src="../assets/js/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html> 

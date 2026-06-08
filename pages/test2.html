@@ -1,602 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Tuishala - Student Stories | Professional Carousel</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 (for play icon) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* ========== RESET & VARIABLES (FIGMA SPECS - NO CHANGE) ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions - Tuishala</title>
 
-        :root {
-            --font-family: 'Poppins', sans-serif;
-            --primary-color: #1999FB;
-            --primary-light: #5dadea;
-            --primary-dark: #1d4ed8;
-            --primary-link: #0A66C2;
-            --text-primary: #777777;
-            --text-secondary: #565656;
-            --text-muted: #94a3b8;
-            --text-dark: #000000;
-            --bg-white: #ffffff;
-            --bg-light: #F6F6F6;
-            --bg-section: #FAFAFA;
-            --bg-dark: #0f172a;
-            --border-color: #CCCCCC;
-            --border-light-color: #D7D7D7;
-            --transition: all 0.3s ease;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: var(--font-family);
-            background-color: var(--bg-white);
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* ========== STORY SECTION - FIGMA DESIGN PRESERVED ========== */
-        .story-section { 
-            padding: 80px 0; 
-            background-color: var(--bg-section);
-        }
+body{
+    font-family: Arial, sans-serif;
+    background:#ffffff;
+    color:#555;
+    line-height:1.8;
+    overflow-x:hidden;
+    position:relative;
+}
 
-        /* Carousel Fade Effect */
-        .story-carousel.carousel-fade .carousel-item {
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-        }
+/* Floating Background Effects */
+.blur{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(100px);
+    z-index:-1;
+}
 
-        .story-carousel.carousel-fade .carousel-item.active {
-            opacity: 1;
-        }
+.blur1{
+    background:#6366f1;
+    top:-120px;
+    left:-120px;
+    opacity:.15;
+    animation:float1 12s ease-in-out infinite;
+}
 
-        /* Hide text on non-active slides */
-        .story-carousel .carousel-item:not(.active) .quote-text,
-        .story-carousel .carousel-item:not(.active) .quote-desc,
-        .story-carousel .carousel-item:not(.active) .quote-author-name,
-        .story-carousel .carousel-item:not(.active) .quote-author-role {
-            opacity: 0;
-        }
+.blur2{
+    background:#8b5cf6;
+    right:-120px;
+    bottom:-120px;
+    opacity:.15;
+    animation:float2 15s ease-in-out infinite;
+}
 
-        .story-carousel .carousel-inner {
-            position: relative;
-        }
+@keyframes float1{
+    50%{
+        transform:translateY(50px) translateX(30px);
+    }
+}
 
-        /* Quote Text Styles - FIGMA */
-        .story-section-quote-text {
-            font-size: 1.938rem; 
-            font-weight: 600; 
-            color: var(--text-dark);
-            line-height: 1.5; 
-            margin-bottom: 20px; 
-            max-width: 90%;
-        }
+@keyframes float2{
+    50%{
+        transform:translateY(-50px) translateX(-30px);
+    }
+}
 
-        .story-section-quote-desc {
-            color: var(--text-primary); 
-            font-size: 1.125rem;
-            font-weight: 400;
-            line-height: 1.8; 
-            margin-bottom: 28px; 
-            max-width: 90%;
-        }
+/* Main Container */
+.container{
+    max-width:900px;
+    margin:60px auto;
+    padding:0 20px;
 
-        .story-section-quote-author-name { 
-            font-weight: 600;
-            color: var(--primary-color); 
-            font-size: 1.188rem; 
-            margin-bottom: 4px;
-        }
+    animation:fadeUp 0.8s ease;
+}
 
-        .story-section-quote-author-role { 
-            color: var(--text-muted); 
-            font-size: 1.125rem; 
-            font-weight: 400;
-        }
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-        /* Image Wrapper - FIGMA */
-        .story-image-wrapper {
-            position: relative; 
-            border-radius: 20px;
-            overflow: hidden; 
-            height: 380px;
-        }
+/* Animated Heading */
+h1{
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:20px;
 
-        .story-image { 
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-        }
+    background:linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed,
+        #06b6d4,
+        #4f46e5
+    );
 
-        /* Play Button Styles */
-        .story-section-play-button {
-            position: absolute; 
-            top: 50%; 
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px; 
-            height: 70px;
-            background: rgba(25, 153, 251, 0.95);
-            border-radius: 50%; 
-            display: flex;
-            align-items: center; 
-            justify-content: center;
-            color: white; 
-            font-size: 20px; 
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 8px 30px rgba(25, 153, 251, 0.4);
-        }
+    background-size:300% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
-        .story-section-play-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            background: var(--primary-dark);
-        }
+    animation:gradientMove 8s linear infinite;
+}
 
-        .story-section-play-text {
-            position: absolute; 
-            top: 50%; 
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(25, 153, 251, 0.95);
-            color: white;
-            padding: 0.72em 2.68em;
-            border-radius: 10px; 
-            font-size: 1.188rem;
-            font-weight: 400; 
-            display: flex;
-            align-items: center; 
-            justify-content: center;
-            gap: 8px; 
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 5;
-        }
+@keyframes gradientMove{
+    to{
+        background-position:300% center;
+    }
+}
 
-        .story-section-play-text:hover {
-            background: var(--primary-dark);
-            transform: translate(-50%, -50%) scale(1.05);
-        }
+.intro{
+    margin-bottom:35px;
+    color:#666;
+    font-size:15px;
+}
 
-        .story-section-play-text i {
-            font-size: 1.6rem;
-        }
+/* Terms Sections */
+.term{
+    margin-bottom:20px;
+    padding:18px 22px;
+    border-radius:14px;
 
-        /* Custom Carousel Arrows - FIGMA */
-        .story-carousel .carousel-control-prev,
-        .story-carousel .carousel-control-next {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px solid var(--border-color);
-            background: white;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 1;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    transition:all .35s ease;
+}
 
-        .story-carousel .carousel-control-prev {
-            left: -5%;
-        }
+.term:hover{
+    background:#fafaff;
+    transform:translateX(8px);
 
-        .story-carousel .carousel-control-next {
-            right: -5%;
-        }
+    box-shadow:0 12px 30px rgba(79,70,229,0.08);
+}
 
-        .story-carousel .carousel-control-prev:hover,
-        .story-carousel .carousel-control-next:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-        }
+/* Heading Design */
+.term h3{
+    font-size:18px;
+    color:#222;
+    margin-bottom:10px;
+    font-weight:600;
+    position:relative;
+    padding-left:15px;
+}
 
-        .story-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
-        .story-carousel .carousel-control-next:hover .carousel-control-next-icon {
-            filter: brightness(0) invert(1);
-        }
+.term h3::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
 
-        .story-carousel .carousel-control-prev-icon,
-        .story-carousel .carousel-control-next-icon {
-            width: 18px;
-            height: 18px;
-            background-size: 18px 18px;
-        }
+    width:4px;
+    height:100%;
 
-        /* ========== RESPONSIVE BREAKPOINTS - PROFESSIONAL & FULLY RESPONSIVE ========== */
-        
-        /* Tablet (992px and below) - Great Learning Style Overlay */
-        @media (max-width: 991.98px) {
-            .story-section {
-                padding: 50px 0;
-            }
+    border-radius:20px;
 
-            /* Each carousel item becomes relative for absolute positioning of children */
-            .story-carousel .carousel-item {
-                min-height: 600px;
-                position: relative;
-            }
+    background:linear-gradient(
+        #4f46e5,
+        #7c3aed
+    );
 
-            /* Image column becomes absolute background */
-            .story-image-col {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                padding: 0 !important;
-            }
+    transition:.3s;
+}
 
-            .story-image-wrapper {
-                height: 100% !important;
-                border-radius: 0;
-            }
+.term:hover h3::before{
+    height:120%;
+}
 
-            .story-image {
-                height: 100% !important;
-                object-fit: cover;
-            }
+.term p{
+    font-size:15px;
+    color:#666;
+}
 
-            /* Gradient Overlay for text readability (dark gradient from bottom) */
-            .story-image-wrapper::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 75%;
-                background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
-                z-index: 2;
-                pointer-events: none;
-                border-radius: 0;
-            }
+/* Contact Box */
+.contact-info{
+    margin-top:15px;
+    padding:18px;
+    background:#f8faff;
+    border-left:4px solid #4f46e5;
+    border-radius:10px;
+    transition:.3s;
+}
 
-            /* Text column overlay on top of image */
-            .story-text-col {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                z-index: 10;
-                padding: 40px 24px 50px !important;
-                text-align: center;
-            }
+.contact-info:hover{
+    box-shadow:0 10px 25px rgba(79,70,229,.08);
+}
 
-            /* Text color changes for dark background */
-            .story-section-quote-text {
-                color: #ffffff !important;
-                font-size: 1.5rem;
-                max-width: 100%;
-                margin-bottom: 12px;
-            }
+.contact-info p{
+    margin:6px 0;
+}
 
-            .story-section-quote-desc {
-                color: rgba(255, 255, 255, 0.85) !important;
-                font-size: 0.95rem;
-                max-width: 100%;
-                margin-bottom: 18px;
-                display: -webkit-box;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
+/* Footer */
+.footer-text{
+    margin-top:30px;
+    font-size:15px;
+    color:#666;
+}
 
-            .story-section-quote-author-name {
-                color: var(--primary-color) !important;
-                font-size: 1rem;
-            }
+/* Responsive */
+@media(max-width:768px){
 
-            .story-section-quote-author-role {
-                color: rgba(255, 255, 255, 0.7) !important;
-                font-size: 0.85rem;
-            }
+    .container{
+        margin:40px auto;
+    }
 
-            /* Play button adjustment for tablet/mobile */
-            .story-section-play-text {
-                top: 40% !important;
-                padding: 0.6em 2em;
-                font-size: 1rem;
-                white-space: nowrap;
-                z-index: 15;
-            }
+    h1{
+        font-size:28px;
+    }
 
-            /* Hide arrows on tablet/mobile - use swipe instead */
-            .story-carousel .carousel-control-prev,
-            .story-carousel .carousel-control-next {
-                display: none;
-            }
-        }
+    .term{
+        padding:15px;
+    }
 
-        /* Mobile Landscape (768px and below) */
-        @media (max-width: 768px) {
-            .story-section {
-                padding: 40px 0;
-            }
+    .term h3{
+        font-size:16px;
+    }
 
-            .story-carousel .carousel-item {
-                min-height: 550px;
-            }
-
-            .story-text-col {
-                padding: 30px 20px 40px !important;
-            }
-
-            .story-section-quote-text {
-                font-size: 1.35rem;
-            }
-
-            .story-section-quote-desc {
-                font-size: 0.9rem;
-                -webkit-line-clamp: 3;
-            }
-
-            .story-section-play-text {
-                top: 38% !important;
-                padding: 0.5em 1.5em;
-                font-size: 0.9rem;
-            }
-
-            .story-section-play-text i {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Mobile Portrait (576px and below) */
-        @media (max-width: 576px) {
-            .story-section {
-                padding: 30px 0;
-            }
-
-            .story-carousel .carousel-item {
-                min-height: 520px;
-            }
-
-            .story-text-col {
-                padding: 25px 16px 35px !important;
-            }
-
-            .story-section-quote-text {
-                font-size: 1.2rem;
-                line-height: 1.4;
-            }
-
-            .story-section-quote-desc {
-                font-size: 0.85rem;
-                line-height: 1.5;
-                -webkit-line-clamp: 3;
-            }
-
-            .story-section-quote-author-name {
-                font-size: 0.95rem;
-            }
-
-            .story-section-quote-author-role {
-                font-size: 0.8rem;
-            }
-
-            .story-section-play-text {
-                top: 35% !important;
-                padding: 0.45em 1.2em;
-                font-size: 0.85rem;
-                white-space: nowrap;
-            }
-
-            .story-section-play-text i {
-                font-size: 1rem;
-            }
-        }
-
-        /* Extra Small Devices (400px and below) */
-        @media (max-width: 400px) {
-            .story-carousel .carousel-item {
-                min-height: 480px;
-            }
-
-            .story-text-col {
-                padding: 20px 14px 30px !important;
-            }
-
-            .story-section-quote-text {
-                font-size: 1.05rem;
-            }
-
-            .story-section-quote-desc {
-                font-size: 0.8rem;
-                -webkit-line-clamp: 3;
-            }
-
-            .story-section-play-text {
-                top: 32% !important;
-                padding: 0.4em 1em;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Desktop adjustments for better arrow positioning */
-        @media (min-width: 992px) and (max-width: 1400px) {
-            .story-carousel .carousel-control-prev {
-                left: -3%;
-            }
-            .story-carousel .carousel-control-next {
-                right: -3%;
-            }
-        }
-
-        @media (min-width: 1400px) {
-            .story-carousel .carousel-control-prev {
-                left: -4%;
-            }
-            .story-carousel .carousel-control-next {
-                right: -4%;
-            }
-        }
-
-    </style>
+    .term p{
+        font-size:14px;
+    }
+}
+</style>
 </head>
 <body>
 
-    <!-- STORY CAROUSEL SECTION - FIGMA DESIGN PRESERVED, FULLY RESPONSIVE -->
-    <section class="story-section">
-        <div class="container position-relative">
-            <div id="storyCarousel" class="carousel slide story-carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
-                <div class="carousel-inner">
-                    
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <div class="row align-items-start">
-                            <div class="col-lg-6 story-text-col">
-                                <h3 class="story-section-quote-text quote-text">&ldquo;I worked on hands-on projects that introduced me to real-world problems&rdquo;</h3>
-                                <p class="story-section-quote-desc quote-desc">I had a really enjoyable learning experience. The program covered tools and topics I use in modern-day analytics. The mentors and Program Manager were always there to guide me. I was able to build strong foundational skills in Python, SQL, and Tableau and these skills are helping in my current role. I was able to land an amazing job as a business analyst in Amazon.</p>
-                                <div class="story-section-quote-author-name quote-author-name">Saanjey Shankhadhar</div>
-                                <div class="story-section-quote-author-role quote-author-role">PG Graduate Program in Data Science and Business Analytics</div>
-                            </div>
-                            <div class="col-lg-6 story-image-col">
-                                <div class="story-image-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Student Story" class="story-image">
-                                    <div class="story-section-play-text">
-                                        <i class="fas fa-play"></i> Watch Story
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 story-text-col">
-                                <h3 class="story-section-quote-text quote-text">&ldquo;The mentorship and curriculum helped me switch careers seamlessly&rdquo;</h3>
-                                <p class="story-section-quote-desc quote-desc">Coming from a non-tech background, I was worried about keeping up. But the structured approach and patient mentors made all the difference. The projects were industry-relevant and the career support team helped me crack interviews at multiple Fortune 500 companies.</p>
-                                <div class="story-section-quote-author-name quote-author-name">Priya Menon</div>
-                                <div class="story-section-quote-author-role quote-author-role">PG Graduate Program in Full Stack Development</div>
-                            </div>
-                            <div class="col-lg-6 story-image-col">
-                                <div class="story-image-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Student Story" class="story-image">
-                                    <div class="story-section-play-text">
-                                        <i class="fas fa-play"></i> Watch Story
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 story-text-col">
-                                <h3 class="story-section-quote-text quote-text">&ldquo;From learning to earning in just 6 months&rdquo;</h3>
-                                <p class="story-section-quote-desc quote-desc">The Generative AI program was ahead of its time. While others were still figuring out the basics, I was already building LLM-powered applications. The capstone project directly led to my current role as an AI Product Manager at a leading startup.</p>
-                                <div class="story-section-quote-author-name quote-author-name">Rahul Verma</div>
-                                <div class="story-section-quote-author-role quote-author-role">PG Graduate Program in Generative AI</div>
-                            </div>
-                            <div class="col-lg-6 story-image-col">
-                                <div class="story-image-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="Student Story" class="story-image">
-                                    <div class="story-section-play-text">
-                                        <i class="fas fa-play"></i> Watch Story
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Custom Arrows (Desktop Only - Hidden on Tablet/Mobile) -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#storyCarousel" data-bs-slide="prev">
-                    <img src="../assets/icons/Vector (4).svg" alt="">
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#storyCarousel" data-bs-slide="next">
-                    <img src="../assets/icons/Vector (5).svg" alt="">
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
+<!-- Background Effects -->
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Optional: Video Modal for Watch Story (Professional Enhancement) -->
-    <!-- <script>
-        (function() {
-            // Professional enhancement: Add video modal functionality for "Watch Story" buttons
-            // This maintains Figma design while adding real interactivity
-            
-            // Create modal dynamically (if not exists)
-            if (!document.getElementById('storyVideoModal')) {
-                const modalHTML = `
-                    <div class="modal fade" id="storyVideoModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content bg-dark border-0">
-                                <div class="modal-header border-0 pb-0">
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body p-0">
-                                    <div class="ratio ratio-16x9">
-                                        <iframe id="storyVideoIframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                document.body.insertAdjacentHTML('beforeend', modalHTML);
-            }
-            
-            // Video URLs for each slide (demo videos - replace with actual story videos)
-            const videoUrls = [
-                'https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1',
-                'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1',
-                'https://www.youtube.com/embed/8dG7u0g9Y2A?autoplay=1'
-            ];
-            
-            const playButtons = document.querySelectorAll('.story-section-play-text');
-            const modalElement = document.getElementById('storyVideoModal');
-            
-            if (modalElement && playButtons.length) {
-                let modal = null;
-                
-                playButtons.forEach((btn, index) => {
-                    btn.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        const slide = btn.closest('.carousel-item');
-                        const slideIndex = Array.from(document.querySelectorAll('.carousel-item')).indexOf(slide);
-                        const videoUrl = videoUrls[slideIndex % videoUrls.length];
-                        
-                        const iframe = document.getElementById('storyVideoIframe');
-                        if (iframe) {
-                            iframe.src = videoUrl;
-                        }
-                        
-                        if (!modal) {
-                            modal = new bootstrap.Modal(modalElement);
-                        }
-                        modal.show();
-                    });
-                });
-                
-                // Reset iframe when modal is hidden
-                modalElement.addEventListener('hidden.bs.modal', function() {
-                    const iframe = document.getElementById('storyVideoIframe');
-                    if (iframe) {
-                        iframe.src = '';
-                    }
-                });
-            }
-        })();
-    </script> -->
+<div class="container">
+
+    <h1>Terms & Conditions – Tuishala</h1>
+
+    <p class="intro">
+        Welcome to Tuishala. By accessing or using our website, courses,
+        and services, you agree to the following Terms & Conditions.
+    </p>
+
+    <div class="term">
+        <h3>1. Use of Services</h3>
+        <p>
+            Tuishala provides online educational content, courses,
+            and learning resources. Users must use the platform
+            lawfully and responsibly.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>2. Account Registration</h3>
+        <p>
+            You are responsible for maintaining the confidentiality
+            of your account information and ensuring that the details
+            provided are accurate and up to date.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>3. Course Access</h3>
+        <p>
+            Access to courses and learning materials is granted for
+            personal educational use only. Sharing, reproducing,
+            or reselling course content is strictly prohibited.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>4. Payments & Refunds</h3>
+        <p>
+            Course fees, if applicable, must be paid through approved
+            payment methods. Refunds will be processed according to
+            Tuishala’s Refund Policy.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>5. Intellectual Property</h3>
+        <p>
+            All content on Tuishala, including videos, study materials,
+            logos, graphics, and website content, is owned by Tuishala
+            and protected by applicable copyright laws.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>6. User Conduct</h3>
+        <p>
+            Users must not misuse the platform, attempt unauthorized
+            access, distribute harmful content, or engage in any activity
+            that may disrupt services.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>7. Disclaimer</h3>
+        <p>
+            Tuishala makes reasonable efforts to provide accurate and
+            updated educational content but does not guarantee specific
+            academic, professional, or employment outcomes.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>8. Limitation of Liability</h3>
+        <p>
+            Tuishala shall not be liable for any indirect losses,
+            damages, or interruptions arising from the use of the platform.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>9. Changes to Terms</h3>
+        <p>
+            We reserve the right to update these Terms & Conditions at
+            any time. Continued use of the platform constitutes acceptance
+            of any changes.
+        </p>
+    </div>
+
+    <div class="term">
+        <h3>10. Contact</h3>
+
+        <p>
+            For any questions regarding these Terms & Conditions,
+            contact us using the information below.
+        </p>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> support@tuishala.com</p>
+            <p><strong>Website:</strong> www.tuishala.com</p>
+        </div>
+    </div>
+
+    <p class="footer-text">
+        By using Tuishala, you acknowledge that you have read,
+        understood, and agreed to these Terms & Conditions.
+    </p>
+
+</div>
+
 </body>
 </html>
