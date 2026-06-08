@@ -230,7 +230,7 @@
 
 .pd-menu-item.active > .pd-menu-link,
 .pd-menu-link:hover {
-  background: var(--pd-danger-light);
+  background: rgb(230 238 250);
   color: var(--pd-primary);
   border-left-color: var(--pd-primary);
 }
@@ -406,7 +406,7 @@
 }
 
 .pd-info-row:hover {
-  background: #fafafa;
+  background: rgb(230 238 250);
   border-left: 3px solid var(--pd-primary);
   padding-left: 29px;
 }
