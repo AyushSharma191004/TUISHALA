@@ -142,7 +142,12 @@ body {
 
 
 /* NAV LINKS */
+.nav-item{
+  position: relative;
+}
 .navbar-nav .nav-link {
+  position: relative;
+
   color: var(--text-color) !important;
   font-weight: 400;
   font-size: 1.188rem;
@@ -155,7 +160,7 @@ body {
   transform: translateY(-2px);
 }
 /* Animated Underline */
-.navbar-nav .nav-link::after {
+.nav-item .nav-link::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -528,7 +533,7 @@ body {
 }
 
 /* Safe area for notched phones */
-@supports (padding: max(0px)) {
+/* @supports (padding: max(0px)) {
   @media (max-width: 575.98px) {
     .nb-user-menu {
       left: max(16px, env(safe-area-inset-left)) !important;
@@ -543,7 +548,7 @@ body {
       transform: translateX(0) scale(1) !important;
     }
   }
-}
+} */
 
 /* =========================
   SIgn up modal MODAL BACKDROP BLUR
