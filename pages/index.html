@@ -135,7 +135,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#signInModal"
                 >
-                Sign In
+                Get Started
             </button>
           </div>
         </div>
@@ -153,18 +153,17 @@
 
                     <!-- LEFT PANEL -->
                     <div class="col-sm-5 tuishala-left d-none d-sm-block">
-
+                        <div class="tuishala-modal-left position-relative text-center">
+                        <img src="../assets/icons/logo figma 2.svg" class="tuishala-logo">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                        class="tuishala-illustration">
                         <div class="float-card c2">📈 Career Growth</div>
                         <div class="float-card c3">🏆 Certificate</div>
                         <div class="float-card c4">💼 Job Ready</div>
                         <div class="float-card c5">🚀 Mentorship</div>
-
+                        </div>
                         <div class="text-center">
-                            <img src="../assets/icons/logo figma 2.svg" class="tuishala-logo">
-
-                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
-                                class="tuishala-illustration">
-
+                        
                             <h3>Learn Skills That Get You Hired</h3>
                             <p>Join thousands of learners building successful careers with Tuishala.</p>
                         </div>
@@ -180,9 +179,121 @@
 
                             <!-- TOP CONTENT -->                 
                             <form id="signUpForm">
+                                <!-- step 0 student or employer -->
+                                <div class="tuishala-step tuishala-step-0">
+
+                                    <h2 class="text-center mb-0">Join Our</h2>
+                                    <h2 class="text-center text-primary fw-bold">
+                                        Learning Community
+                                    </h2>
+
+                                    <p class="subtext-0 text-center">
+                                        Choose how you'd like to continue.
+                                    </p>
+                                   <div class="role-option">
+                                        <input
+                                            type="radio"
+                                            name="role"
+                                            class="role-radio"
+                                            id="student"
+                                            value="student"
+                                            checked
+                                            >
+
+                                        <label for="student" class="role-card">
+
+                                            <div class="d-flex align-items-center">
+
+                                                <img src="/assets/icons/Untitled-3 1.svg" width="65" alt="Student">
+
+                                                <div class="ms-3">
+
+                                                    <h5 class="mb-1 fs-6">
+                                                        Student
+                                                    </h5>
+
+                                                    <p class="mb-0">
+                                                        Explore courses, apply for jobs,
+                                                        and build your career.
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+
+                                            <!-- <span class="check-icon">
+
+                                                <i class="bi bi-circle icon-radio"></i>
+
+                                                <i class="bi bi-check-circle-fill icon-check"></i>
+
+                                            </span> -->
+                                            <span class="custom-radio">
+                                                <i class="fa-solid fa-check"></i>
+                                            </span>
+
+                                        </label>
+                                    </div>
+                                    <div class="role-option">
+                                        <input
+                                            type="radio"
+                                            name="role"
+                                            id="employer"
+                                            value="employer"
+                                             class="role-radio"
+                                            >
+
+                                        <label for="employer" class="role-card mt-4">
+
+                                            <div class="d-flex align-items-center">
+
+                                                <img src="/assets/icons/Untitled-4 1.svg" width="65" alt="Employer">
+
+                                                <div class="ms-3">
+
+                                                    <h5 class="mb-1 fs-6">
+                                                        Employer
+                                                    </h5>
+
+                                                    <p class="mb-0">
+                                                        Post jobs, manage applicants,
+                                                        and hire talented students.
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+                                            <!-- <span class="check-icon">
+
+                                                <i class="bi bi-circle icon-radio"></i>
+
+                                                <i class="bi bi-check-circle-fill icon-check"></i>
+
+                                            </span> -->
+                                             <span class="custom-radio">
+                                                <i class="fa-solid fa-check"></i>
+                                            </span>
+
+                                        </label>
+                                   </div>
+                                    <button
+                                        class="continue-btn mt-5"
+                                        id="roleContinue"
+                                        type="button">
+
+                                        Continue
+
+                                    </button>
+
+                                </div>
                                  <!-- step 1 phone ,email -->
-                                <div class="tuishala-step tuishala-step-1">
-                                
+                                <div class="tuishala-step tuishala-step-1 d-none">
+                                <button
+                                    type="button"
+                                    class="back-btn"
+                                    onclick="goBackStep0()">
+                                    ←
+                                </button>
                                     <h2>Welcome to Tuishala</h2>
                                     <p class="subtext">Sign in to continue your learning journey</p>
 
@@ -568,7 +679,7 @@
                                 </div>
                             </form>
                             <!-- BOTTOM SECTION -->
-                            <div class="bottom-section" id="step1Footer">
+                            <div class="bottom-section" id="step1Footer" style="display: none;">
                                 <button class="continue-btn animi-btn" id="step1Btn" disabled onclick="goToStep2()">
                                     Continue
                                 </button>

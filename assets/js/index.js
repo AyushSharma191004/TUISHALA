@@ -154,6 +154,46 @@ counters.forEach(counter => {
 
 //SING IN popup
 
+// step 0:
+
+//continue button
+document
+.getElementById("roleContinue")
+.addEventListener("click",()=>{
+
+    const selectedRole =
+        document.querySelector(
+            'input[name="role"]:checked'
+        ).value;
+
+    console.log(selectedRole);
+
+    document
+        .querySelector(".tuishala-step-0")
+        .classList.add("d-none");
+
+    document
+        .querySelector(".tuishala-step-1")
+        .classList.remove("d-none");
+
+    document.getElementById("step1Footer").style.display="block";
+
+});
+function goBackStep0(){
+
+    document
+        .querySelector(".tuishala-step-1")
+        .classList.add("d-none");
+
+    document
+        .querySelector(".tuishala-step-0")
+        .classList.remove("d-none");
+
+    // Hide footer again
+    document.getElementById("step1Footer").style.display="none";
+
+}
+
 // STEP 1: enable continue when mobile is 10 digits
 const phoneInput = document.querySelector(".phone-input");
 const step1Btn = document.getElementById("step1Btn");
@@ -438,13 +478,13 @@ function resetModal() {
 
     // Show first step again
     document
-        .querySelector(".tuishala-step-1")
+        .querySelector(".tuishala-step-0")
         .classList.remove("d-none");
 
     // Reset complete form
     document.getElementById("signUpForm").reset();
 
     // Restore footer
-    document.getElementById("step1Footer").style.display = "block";
+    document.getElementById("step1Footer").style.display = "none";
 
  }
