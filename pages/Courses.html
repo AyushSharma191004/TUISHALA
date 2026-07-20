@@ -1,0 +1,3030 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuishala</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <!-- Index css -->
+    <link rel="stylesheet" href="../assets/css/front/student/header.css" />
+    <link rel="stylesheet" href="../assets/css/front/student/footer.css" />
+    <link rel="stylesheet" href="../assets/css/front/student/Courses.css" />
+    <!-- symbols -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="../assets/icons/front/student/logo figma 2.svg"
+            alt="logo"
+            class="logo-img"
+          />
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Center Links -->
+          <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="Courses.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Categories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contact.html">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Right Buttons -->
+          <div
+            class="d-flex gap-2 justify-content-center align-items-center mt-3 mt-lg-0"
+          >
+            <!-- <button class="btn btn-outline-custom white-animi-btn">Sign in</button>
+            <button class="btn btn-primary-custom animi-btn">Get Started</button> -->
+            <button
+              class="btn btn-primary-custom animi-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#signInModal"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- SIGN IN MODAL -->
+    <div class="modal fade" id="signInModal" tabindex="-1">
+      <!-- <div class="modal-dialog modal-dialog-centered modal-lg modal-custom"> -->
+      <div class="modal-dialog modal-dialog-centered modal-upgrad">
+        <div class="modal-content tuishala-modal">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="row g-0">
+            <!-- LEFT PANEL -->
+            <div class="col-sm-5 tuishala-left d-none d-sm-block">
+              <div class="float-card c2">📈 Career Growth</div>
+              <div class="float-card c3">🏆 Certificate</div>
+              <div class="float-card c4">💼 Job Ready</div>
+              <div class="float-card c5">🚀 Mentorship</div>
+
+              <div class="text-center">
+                <img
+                  src="../assets/icons/front/student/logo figma 2.svg"
+                  class="tuishala-logo"
+                />
+
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                  class="tuishala-illustration"
+                />
+
+                <h3>Learn Skills That Get You Hired</h3>
+                <p>
+                  Join thousands of learners building successful careers with
+                  Tuishala.
+                </p>
+              </div>
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="col-sm-7 tuishala-right">
+              <!-- <button class="back-btn" data-bs-dismiss="modal">←</button> -->
+
+              <div class="tuishala-right-inner">
+                <!-- TOP CONTENT -->
+                <div class="tuishala-step tuishala-step-1">
+                  <h2>Welcome to Tuishala</h2>
+                  <p class="subtext">
+                    Sign in to continue your learning journey
+                  </p>
+
+                  <!-- PHONE INPUT -->
+                  <div class="input-group phone-group mb-3" id="phoneGroup">
+                    <button
+                      class="btn country-code dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                    >
+                      🇮🇳 +91
+                    </button>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item">🇮🇳 +91</a></li>
+                      <li><a class="dropdown-item">🇺🇸 +1</a></li>
+                      <li><a class="dropdown-item">🇬🇧 +44</a></li>
+                    </ul>
+
+                    <input
+                      type="tel"
+                      class="form-control phone-input"
+                      placeholder="Enter mobile number"
+                      maxlength="10"
+                      inputmode="numeric"
+                    />
+                  </div>
+                  <!-- EMAIL INPUT -->
+                  <div class="mb-3 d-none" id="emailGroup">
+                    <input
+                      type="email"
+                      class="form-control phone-input email-input"
+                      placeholder="Enter email address"
+                    />
+                  </div>
+                  <!-- OR -->
+                  <div class="or-divider text-center">or</div>
+
+                  <a href="#" class="email-link" id="toggleLoginMode">
+                    Sign up/Login with Email
+                  </a>
+                </div>
+                <!-- STEP 2 OTP -->
+                <div class="tuishala-step tuishala-step-2 d-none">
+                  <div>
+                    <h2>Verify OTP</h2>
+                    <p class="subtext">
+                      Enter the 6-digit code sent to
+                      <strong>+91 XXXXXXXX</strong>
+                    </p>
+
+                    <!-- OTP BOXES -->
+                    <div class="otp-boxes mb-3">
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                    </div>
+
+                    <p class="resend-text">
+                      Didn’t receive OTP?
+                      <a href="#">Resend</a>
+                    </p>
+                  </div>
+                  <div>
+                    <button class="continue-btn animi-btn" id="otpBtn" disabled>
+                      Verify & Continue
+                    </button>
+
+                    <p class="edit-number">
+                      <a href="#" onclick="goBackStep1()"
+                        >← Edit mobile number</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- BOTTOM SECTION -->
+                <div class="bottom-section" id="step1Footer">
+                  <button
+                    class="continue-btn animi-btn"
+                    id="step1Btn"
+                    disabled
+                    onclick="goToStep2()"
+                  >
+                    Continue
+                  </button>
+
+                  <div class="privacy">
+                    By continuing, you agree to Tuishala Terms & Privacy Policy
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- NAVBAR END -->
+
+    <!-- COURSE HERO SECTION START -->
+    <section class="course-hero-section mt-lg-5 mt-4">
+      <div class="container">
+        <div class="row align-items-start">
+          <!-- Left Content -->
+          <div class="col-lg-7 order-2 order-lg-1">
+            <h1 class="course-hero-title">
+              AI & <span>Machine Learning</span>
+            </h1>
+            <p class="course-hero-desc">
+              Enroll in Great Learning's online data science courses and
+              professional certificates to analyze data and make data-driven
+              decisions. Master Python, explore machine learning techniques.
+            </p>
+
+            <ul class="course-hero-list">
+              <li>
+                <strong>Generative AI & Hands-On Projects:</strong> Master
+                Generative AI and apply your knowledge through practical
+                projects.
+              </li>
+              <li>
+                <strong>Expert Mentorship:</strong> Learn from industry leaders
+                and esteemed university faculty through recorded and live
+                sessions.
+              </li>
+            </ul>
+
+            <a href="#" class="btn course-hero-btn animi-btn mt-lg-4"
+              >Explore Programs</a
+            >
+          </div>
+
+          <!-- Right Form Card -->
+          <div class="col-lg-5 order-1 order-lg-2">
+            <div class="course-form-card">
+              <h3 class="course-form-title">
+                Get a FREE 1:1 career counselling
+              </h3>
+              <p class="course-form-subtitle">
+                Schedule a session for free with our experts
+              </p>
+
+              <form>
+                <div class="mb-4">
+                  <input
+                    type="text"
+                    class="form-control course-form-input"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <input
+                    type="email"
+                    class="form-control course-form-input"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <input
+                    type="tel"
+                    class="form-control course-form-input"
+                    placeholder="Mobile Number"
+                    required
+                  />
+                </div>
+                <div class="mb-4 select-box">
+                  <select class="form-select course-form-select" required>
+                    <option value="" selected disabled>
+                      Work Experience in Years
+                    </option>
+                    <option value="0">0 years</option>
+                    <option value="1-3">1-3 years</option>
+                    <option value="3-5">3-5 years</option>
+                    <option value="5-10">5-10 years</option>
+                    <option value="10+">10+ years</option>
+                  </select>
+                  <img src="./../assets/icons/front/student/Shape.svg" alt="" />
+                </div>
+
+                <p class="course-form-disclaimer py-md-2">
+                  By submitting this form, you consent to our
+                  <a href="#">Terms of Use</a> &
+                  <a href="#">Privacy Policy</a> and to be contacted by us via
+                  Email/Call/Whatsapp/SMS.
+                </p>
+
+                <button type="submit" class="btn course-form-submit animi-btn">
+                  Schedule a 1:1 Call
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COURSE HERO SECTION END -->
+
+    <!-- Course Review section -->
+    <section class="review-section">
+      <div class="container">
+        <h2 class="review-title">
+          Empowering millions through professional learning
+        </h2>
+
+        <div class="row g-4 justify-content-center px-lg-5 mx-lg-5">
+          <!-- CARD 1 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="review-card">
+              <span class="review-number">4.6</span>
+              <i class="fa-solid fa-star review-star"></i>
+              <img
+                src="./../assets/icons/front/student/google-logo-icon-png-svg 1.svg"
+                alt="Google"
+                class="google-logo"
+              />
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="review-card">
+              <span class="review-number">4.6</span>
+              <i class="fa-solid fa-star review-star"></i>
+              <img
+                src="./../assets/icons/front/student/google-logo-icon-png-svg 1.svg"
+                alt="Google"
+                class="google-logo"
+              />
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="review-card">
+              <span class="review-number">4.6</span>
+              <i class="fa-solid fa-star review-star"></i>
+              <img
+                src="./../assets/icons/front/student/google-logo-icon-png-svg 1.svg"
+                alt="Google"
+                class="google-logo"
+              />
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="review-card">
+              <span class="review-number">4.6</span>
+              <i class="fa-solid fa-star review-star"></i>
+              <img
+                src="./../assets/icons/front/student/google-logo-icon-png-svg 1.svg"
+                alt="Google"
+                class="google-logo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Course Review section END -->
+
+    <!-- PROGRAMS BY CATEGORY SECTION START -->
+    <section class="programs-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-4">
+          <span class="programs-section-label">FIND YOUR PROGRAM</span>
+          <h2 class="programs-section-title">
+            Learn data science from leading global universities
+          </h2>
+        </div>
+
+        <div class="row g-4">
+          <!-- Sidebar Tabs (Bootstrap Nav Pills) -->
+          <div class="col-lg-3">
+            <ul
+              class="nav nav-pills flex-column category-sidebar"
+              id="programTab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="designing-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#designing-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                >
+                  <span class="tab-icon"><i class="fas fa-pen-nib"></i></span>
+                  <span class="tab-text">Designing</span>
+                  <span class="tab-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="development-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#development-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  <span class="tab-icon"><i class="fas fa-code"></i></span>
+                  <span class="tab-text">Development</span>
+                  <span class="tab-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="seo-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#seo-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  <span class="tab-icon"><i class="fas fa-search"></i></span>
+                  <span class="tab-text">SEO</span>
+                  <span class="tab-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="smo-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#smo-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  <span class="tab-icon"
+                    ><i class="fas fa-share-nodes"></i
+                  ></span>
+                  <span class="tab-text">SMO</span>
+                  <span class="tab-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="sales-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#sales-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  <span class="tab-icon"
+                    ><i class="fas fa-chart-line"></i
+                  ></span>
+                  <span class="tab-text">Sales</span>
+                  <span class="tab-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tab Content Area -->
+          <div class="col-lg-9">
+            <div class="tab-content" id="programTabContent">
+              <!-- DESIGNING PANE -->
+              <div
+                class="tab-pane fade show active"
+                id="designing-pane"
+                role="tabpanel"
+                aria-labelledby="designing-tab"
+                tabindex="0"
+              >
+                <div class="category-content-header">
+                  <h3 class="category-active-title">Designing</h3>
+                  <div class="category-header-line"></div>
+                </div>
+                <div class="row g-4">
+                  <!-- Card 1 -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Data Science"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Data Science (with Specialization in Gen AI)
+                        </h5>
+                        <p class="program-card-meta">6 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Data Science"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Data Science (with Specialization in Gen AI)
+                        </h5>
+                        <p class="program-card-meta">6 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 3 -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Data Science"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Data Science (with Specialization in Gen AI)
+                        </h5>
+                        <p class="program-card-meta">6 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 4 -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Data Science"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Data Science (with Specialization in Gen AI)
+                        </h5>
+                        <p class="program-card-meta">6 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 5 -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Data Science"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Data Science (with Specialization in Gen AI)
+                        </h5>
+                        <p class="program-card-meta">6 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 6 -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Data Science"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Data Science (with Specialization in Gen AI)
+                        </h5>
+                        <p class="program-card-meta">6 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DEVELOPMENT PANE -->
+              <div
+                class="tab-pane fade"
+                id="development-pane"
+                role="tabpanel"
+                aria-labelledby="development-tab"
+                tabindex="0"
+              >
+                <div class="category-content-header">
+                  <h3 class="category-active-title">Development</h3>
+                  <div class="category-header-line"></div>
+                </div>
+                <div class="row g-4">
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Development"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Full Stack Development (MERN Specialization)
+                        </h5>
+                        <p class="program-card-meta">8 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Duplicate cards 2-6 with Development content -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Development"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Full Stack Development (MERN Specialization)
+                        </h5>
+                        <p class="program-card-meta">8 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Development"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Full Stack Development (MERN Specialization)
+                        </h5>
+                        <p class="program-card-meta">8 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Development"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Full Stack Development (MERN Specialization)
+                        </h5>
+                        <p class="program-card-meta">8 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Development"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Full Stack Development (MERN Specialization)
+                        </h5>
+                        <p class="program-card-meta">8 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Development"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Full Stack Development (MERN Specialization)
+                        </h5>
+                        <p class="program-card-meta">8 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SEO PANE -->
+              <div
+                class="tab-pane fade"
+                id="seo-pane"
+                role="tabpanel"
+                aria-labelledby="seo-tab"
+                tabindex="0"
+              >
+                <div class="category-content-header">
+                  <h3 class="category-active-title">SEO</h3>
+                  <div class="category-header-line"></div>
+                </div>
+                <div class="row g-4">
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SEO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in SEO & Content Strategy
+                        </h5>
+                        <p class="program-card-meta">4 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Repeat 5 more cards for SEO -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SEO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in SEO & Content Strategy
+                        </h5>
+                        <p class="program-card-meta">4 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SEO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in SEO & Content Strategy
+                        </h5>
+                        <p class="program-card-meta">4 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SEO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in SEO & Content Strategy
+                        </h5>
+                        <p class="program-card-meta">4 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SEO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in SEO & Content Strategy
+                        </h5>
+                        <p class="program-card-meta">4 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SEO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in SEO & Content Strategy
+                        </h5>
+                        <p class="program-card-meta">4 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SMO PANE -->
+              <div
+                class="tab-pane fade"
+                id="smo-pane"
+                role="tabpanel"
+                aria-labelledby="smo-tab"
+                tabindex="0"
+              >
+                <div class="category-content-header">
+                  <h3 class="category-active-title">SMO</h3>
+                  <div class="category-header-line"></div>
+                </div>
+                <div class="row g-4">
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SMO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Social Media & Digital Marketing
+                        </h5>
+                        <p class="program-card-meta">5 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Repeat 5 more cards for SMO -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SMO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Social Media & Digital Marketing
+                        </h5>
+                        <p class="program-card-meta">5 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SMO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Social Media & Digital Marketing
+                        </h5>
+                        <p class="program-card-meta">5 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SMO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Social Media & Digital Marketing
+                        </h5>
+                        <p class="program-card-meta">5 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SMO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Social Media & Digital Marketing
+                        </h5>
+                        <p class="program-card-meta">5 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="SMO"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          PGP in Social Media & Digital Marketing
+                        </h5>
+                        <p class="program-card-meta">5 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SALES PANE -->
+              <div
+                class="tab-pane fade"
+                id="sales-pane"
+                role="tabpanel"
+                aria-labelledby="sales-tab"
+                tabindex="0"
+              >
+                <div class="category-content-header">
+                  <h3 class="category-active-title">Sales</h3>
+                  <div class="category-header-line"></div>
+                </div>
+                <div class="row g-4">
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Sales"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in Sales & Business
+                          Development
+                        </h5>
+                        <p class="program-card-meta">3 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Repeat 5 more cards for Sales -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Sales"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in Sales & Business
+                          Development
+                        </h5>
+                        <p class="program-card-meta">3 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Sales"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in Sales & Business
+                          Development
+                        </h5>
+                        <p class="program-card-meta">3 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Sales"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in Sales & Business
+                          Development
+                        </h5>
+                        <p class="program-card-meta">3 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Sales"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in Sales & Business
+                          Development
+                        </h5>
+                        <p class="program-card-meta">3 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="program-card">
+                      <div class="program-card-img-wrapper">
+                        <img
+                          src="../assets/images/front/student/Home/Rectangle 4.png"
+                          alt="Sales"
+                          class="program-card-img"
+                        />
+                      </div>
+                      <div class="program-card-body">
+                        <h5 class="program-card-title">
+                          Professional Certificate in Sales & Business
+                          Development
+                        </h5>
+                        <p class="program-card-meta">3 months · Online</p>
+                        <span class="program-card-badge"
+                          >DEDICATED PLACEMENT ASSISTANCE</span
+                        >
+                        <button class="btn program-card-btn animi-btn">
+                          Download Brochure
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PROGRAMS BY CATEGORY SECTION END -->
+
+    <!-- COMPARISON SECTION START -->
+    <section class="comparison-section">
+      <div class="comparison-wrapper">
+        <h2 class="section-title">
+          Upskill with the best programs in the world
+        </h2>
+
+        <div class="comparison-table">
+          <!-- HEADER -->
+
+          <div class="comparison-header">
+            <div class="empty-space"></div>
+
+            <div class="program-header">Tuishala Learning Programs</div>
+
+            <div class="other-header">Other Courses</div>
+          </div>
+
+          <!-- ROW 1 -->
+
+          <div class="comparison-row">
+            <div class="feature-col">Certificate</div>
+
+            <div class="program-col">
+              <span class="mobile-label">Certificate</span>
+              Dual certificates from Texas McCombs and Great Lakes
+            </div>
+
+            <div class="other-col">
+              <span class="mobile-label">Certificate</span>
+              No university certificate
+            </div>
+          </div>
+
+          <!-- ROW 2 -->
+
+          <div class="comparison-row">
+            <div class="feature-col">Curriculum</div>
+
+            <div class="program-col">
+              <span class="mobile-label">Curriculum</span>
+              Extensive coverage of Agentic AI, Agents, GenAI topics
+            </div>
+
+            <div class="other-col">
+              <span class="mobile-label">Curriculum</span>
+              Limited coverage
+            </div>
+          </div>
+
+          <!-- ROW 3 -->
+
+          <div class="comparison-row">
+            <div class="feature-col">Live Mentored Learning</div>
+
+            <div class="program-col">
+              <span class="mobile-label">Live Mentored Learning</span>
+              Live interactive online classes with industry professionals
+            </div>
+
+            <div class="other-col">
+              <span class="mobile-label">Live Mentored Learning</span>
+              Limited to no live classes
+            </div>
+          </div>
+
+          <!-- ROW 4 -->
+
+          <div class="comparison-row">
+            <div class="feature-col">Career Support</div>
+
+            <div class="program-col">
+              <span class="mobile-label">Career Support</span>
+              Dedicated career guidance and interview preparation support
+            </div>
+
+            <div class="other-col">
+              <span class="mobile-label">Career Support</span>
+              No career support
+            </div>
+          </div>
+
+          <!-- ROW 5 -->
+
+          <div class="comparison-row">
+            <div class="feature-col">Hands-on projects</div>
+
+            <div class="program-col">
+              <span class="mobile-label">Hands-on projects</span>
+              Real-world capstone projects and practical implementation
+            </div>
+
+            <div class="other-col">
+              <span class="mobile-label">Hands-on projects</span>
+              Fewer projects and no capstone project
+            </div>
+          </div>
+
+          <!-- ROW 6 -->
+
+          <div class="comparison-row last-row">
+            <div class="feature-col">Program support</div>
+
+            <div class="program-col">
+              <span class="mobile-label">Program support</span>
+              Personalized mentorship and continuous learner support
+            </div>
+
+            <div class="other-col">
+              <span class="mobile-label">Program support</span>
+              Limited support
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COMPARISON SECTION END -->
+
+    <!-- QUESTION SECTION start-->
+    <section class="question-section">
+      <div class="container">
+        <div class="question-box">
+          <!-- LEFT CONTENT -->
+          <div class="question-content">
+            <h2>Got more questions?</h2>
+
+            <p class="mt-lg-4">
+              Let our program advisor help you out with the right program based
+              on your goals.
+            </p>
+          </div>
+
+          <!-- BUTTON -->
+          <button class="brochure-btn white-animi-btn">
+            Download Brochure
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- QUESTION SECTION end-->
+
+    <!-- CAREER GROWTH SECTION START -->
+    <section class="career-growth-section">
+      <div class="container">
+        <h2 class="career-section-title text-center">
+          Career growth & earning potential
+        </h2>
+
+        <!-- Top Stats Cards Row -->
+        <div class="row g-3 g-lg-4 justify-content-center mb-4">
+          <!-- Card 1 - Green -->
+          <div class="col-6 col-md-3">
+            <div class="career-stat-card card-green">
+              <div class="stat-content">
+                <h3 class="stat-number">1.5 million</h3>
+                <p class="stat-label">jobs in india (2026)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 - Yellow -->
+          <div class="col-6 col-md-3">
+            <div class="career-stat-card card-yellow">
+              <div class="stat-content">
+                <h3 class="stat-number">1.5 million</h3>
+                <p class="stat-label">jobs in india (2026)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 - Orange -->
+          <div class="col-6 col-md-3">
+            <div class="career-stat-card card-orange">
+              <div class="stat-content">
+                <h3 class="stat-number">1.5 million</h3>
+                <p class="stat-label">jobs in india (2026)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 - Blue -->
+          <div class="col-6 col-md-3">
+            <div class="career-stat-card card-blue">
+              <div class="stat-content">
+                <h3 class="stat-number">1.5 million</h3>
+                <p class="stat-label">jobs in india (2026)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Career Box -->
+        <div class="career-box">
+          <div class="row g-4">
+            <!-- Column 1 -->
+            <div class="col-md-6">
+              <div class="career-column">
+                <h4 class="career-column-title">Careers in AI</h4>
+                <ul class="career-list">
+                  <li>AI Engineer</li>
+                  <li>Robotics Engineer</li>
+                  <li>AI Research Scientist</li>
+                  <li>AI Ethics Specialist</li>
+                  <li>AI/ML Ops Engineer</li>
+                  <li>Prompt Engineer</li>
+                  <li>Generative Designer</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="col-md-6">
+              <div class="career-column">
+                <h4 class="career-column-title">Careers in AI</h4>
+                <ul class="career-list">
+                  <li>AI Engineer</li>
+                  <li>Robotics Engineer</li>
+                  <li>AI Research Scientist</li>
+                  <li>AI Ethics Specialist</li>
+                  <li>AI/ML Ops Engineer</li>
+                  <li>Prompt Engineer</li>
+                  <li>Generative Designer</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CAREER GROWTH SECTION END -->
+
+    <!-- company section start -->
+    <section class="companies-section">
+      <div class="container">
+        <h3 class="companies-title">
+          Join <span>Tuishala</span> graduates at top-tier companies
+        </h3>
+      </div>
+
+      <div class="company-marquee-container">
+        <!-- Top Row - Moves Right -->
+        <div class="company-marquee-wrapper">
+          <div class="company-track track-right">
+            <!-- Set 1 -->
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/google-logo-icon-png-svg 1.svg"
+                alt="Google"
+                class="company-logo google"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/pngimg.com - amazon_PNG12 1.svg"
+                alt="Amazon"
+                class="company-logo amazon"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Adobe-logo 1.svg"
+                alt="Adobe"
+                class="company-logo adobe"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Accenture.svg 1.svg"
+                alt="Accenture"
+                class="company-logo accenture"
+              />
+            </div>
+            <!-- Set 2 (Duplicate for seamless loop) -->
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/google-logo-icon-png-svg 1.svg"
+                alt="Google"
+                class="company-logo google"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/pngimg.com - amazon_PNG12 1.svg"
+                alt="Amazon"
+                class="company-logo amazon"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Adobe-logo 1.svg"
+                alt="Adobe"
+                class="company-logo adobe"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Accenture.svg 1.svg"
+                alt="Accenture"
+                class="company-logo accenture"
+              />
+            </div>
+            <!-- Set 3 (Extra for safety, avoids gap) -->
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/google-logo-icon-png-svg 1.svg"
+                alt="Google"
+                class="company-logo google"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/pngimg.com - amazon_PNG12 1.svg"
+                alt="Amazon"
+                class="company-logo amazon"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Adobe-logo 1.svg"
+                alt="Adobe"
+                class="company-logo adobe"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Accenture.svg 1.svg"
+                alt="Accenture"
+                class="company-logo accenture"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row - Moves Left -->
+        <div class="company-marquee-wrapper">
+          <div class="company-track track-left">
+            <!-- Set 1 -->
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Intel-logo-2022 1.svg"
+                alt="Intel"
+                class="company-logo intel"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/microsoft_logo_icon_168102 1.svg"
+                alt="Microsoft"
+                class="company-logo microsoft"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Cognizant_logo_2022.svg 1.svg"
+                alt="Cognizant"
+                class="company-logo cognizant"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/oracle_logo_icon_168919 1.svg"
+                alt="Oracle"
+                class="company-logo oracle"
+              />
+            </div>
+            <!-- Set 2 (Duplicate) -->
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Intel-logo-2022 1.svg"
+                alt="Intel"
+                class="company-logo intel"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/microsoft_logo_icon_168102 1.svg"
+                alt="Microsoft"
+                class="company-logo microsoft"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Cognizant_logo_2022.svg 1.svg"
+                alt="Cognizant"
+                class="company-logo cognizant"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/oracle_logo_icon_168919 1.svg"
+                alt="Oracle"
+                class="company-logo oracle"
+              />
+            </div>
+            <!-- Set 3 (Extra) -->
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Intel-logo-2022 1.svg"
+                alt="Intel"
+                class="company-logo intel"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/microsoft_logo_icon_168102 1.svg"
+                alt="Microsoft"
+                class="company-logo microsoft"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/Cognizant_logo_2022.svg 1.svg"
+                alt="Cognizant"
+                class="company-logo cognizant"
+              />
+            </div>
+            <div class="company-logo-item">
+              <img
+                src="../assets/icons/front/student/oracle_logo_icon_168919 1.svg"
+                alt="Oracle"
+                class="company-logo oracle"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- company section end -->
+
+    <!-- CAREER SUPPORT SECTION START -->
+    <section class="career-support-section">
+      <div class="container">
+        <h2 class="career-support-title text-center">
+          Get dedicated career support
+        </h2>
+
+        <div class="row g-4 g-lg-5">
+          <!-- Card 1 -->
+          <div class="col-md-6">
+            <div class="support-card">
+              <div class="support-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="1:1 career sessions"
+                  class="support-img"
+                />
+              </div>
+              <h4 class="support-card-title">1:1 career sessions</h4>
+              <p class="support-card-desc">
+                Interact personally with industry professionals to get valuable
+                insights and guidance
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6">
+            <div class="support-card">
+              <div class="support-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="Interview preparation"
+                  class="support-img"
+                />
+              </div>
+              <h4 class="support-card-title">Interview preparation</h4>
+              <p class="support-card-desc">
+                Interact personally with industry professionals to get valuable
+                insights and guidance
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6">
+            <div class="support-card">
+              <div class="support-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="Resume & Profile review"
+                  class="support-img"
+                />
+              </div>
+              <h4 class="support-card-title">Resume & Profile review</h4>
+              <p class="support-card-desc">
+                Interact personally with industry professionals to get valuable
+                insights and guidance
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6">
+            <div class="support-card">
+              <div class="support-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="E-portfolio"
+                  class="support-img"
+                />
+              </div>
+              <h4 class="support-card-title">E-portfolio</h4>
+              <p class="support-card-desc">
+                Interact personally with industry professionals to get valuable
+                insights and guidance
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CAREER SUPPORT SECTION END -->
+
+    <!-- Testimonials Marquee section -->
+    <section class="marquee-testimonials-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="marquee-testimonials-section-title">
+            What are <span>Students Says</span>
+          </h2>
+          <p class="marquee-testimonials-subtitle">
+            Join thousands of successful learners who transformed their careers
+          </p>
+        </div>
+      </div>
+
+      <div class="marquee-container">
+        <div class="marquee-track" id="testimonialTrack">
+          <!-- Cards duplicated for seamless loop -->
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Edu-learn transformed my career! The web development course was
+                very excellent and the instructors were amazing. I landed my
+                dream job within 3 months of completing the course.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=1"
+                  alt="Ritika Roy"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ritika Roy</div>
+                  <div class="author-role">Web Developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Edu-learn transformed my career! The web development course was
+                very excellent and the instructors were amazing. I landed my
+                dream job within 3 months of completing the course.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=5"
+                  alt="Ritika Roy"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ritika Roy</div>
+                  <div class="author-role">Web Developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Edu-learn transformed my career! The web development course was
+                very excellent and the instructors were amazing. I landed my
+                dream job within 3 months of completing the course.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=9"
+                  alt="Ritika Roy"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ritika Roy</div>
+                  <div class="author-role">Web Developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                The data science program completely changed my perspective.
+                Practical projects and mentorship helped me transition from
+                marketing to analytics seamlessly.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=3"
+                  alt="Ananya Sharma"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ananya Sharma</div>
+                  <div class="author-role">Data Analyst</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Best learning platform I've ever used. The cloud computing
+                certification opened doors to opportunities I never thought
+                possible. Highly recommended!
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=8"
+                  alt="Vikram Patel"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Vikram Patel</div>
+                  <div class="author-role">Cloud Architect</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                The AI course structure is phenomenal. From basics to advanced
+                concepts, everything was covered with real-world applications.
+                Got hired at a top tech firm!
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=11"
+                  alt="Neha Gupta"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Neha Gupta</div>
+                  <div class="author-role">ML Engineer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate set for seamless infinite scroll -->
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Edu-learn transformed my career! The web development course was
+                very excellent and the instructors were amazing. I landed my
+                dream job within 3 months of completing the course.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=1"
+                  alt="Ritika Roy"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ritika Roy</div>
+                  <div class="author-role">Web Developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Edu-learn transformed my career! The web development course was
+                very excellent and the instructors were amazing. I landed my
+                dream job within 3 months of completing the course.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=5"
+                  alt="Ritika Roy"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ritika Roy</div>
+                  <div class="author-role">Web Developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Edu-learn transformed my career! The web development course was
+                very excellent and the instructors were amazing. I landed my
+                dream job within 3 months of completing the course.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=9"
+                  alt="Ritika Roy"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ritika Roy</div>
+                  <div class="author-role">Web Developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                The data science program completely changed my perspective.
+                Practical projects and mentorship helped me transition from
+                marketing to analytics seamlessly.
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=3"
+                  alt="Ananya Sharma"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Ananya Sharma</div>
+                  <div class="author-role">Data Analyst</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                Best learning platform I've ever used. The cloud computing
+                certification opened doors to opportunities I never thought
+                possible. Highly recommended!
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=8"
+                  alt="Vikram Patel"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Vikram Patel</div>
+                  <div class="author-role">Cloud Architect</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee-testimonial-card">
+            <div class="marquee-testimonial-top">
+              <div class="marquee-testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="marquee-testimonial-text">
+                The AI course structure is phenomenal. From basics to advanced
+                concepts, everything was covered with real-world applications.
+                Got hired at a top tech firm!
+              </p>
+            </div>
+            <div class="marquee-testimonial-below">
+              <div class="marquee-testimonial-divider"></div>
+              <div class="marquee-testimonial-author">
+                <img
+                  src="https://i.pravatar.cc/150?img=11"
+                  alt="Neha Gupta"
+                  class="author-img"
+                />
+                <div>
+                  <div class="author-name">Neha Gupta</div>
+                  <div class="author-role">ML Engineer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Marquee section end -->
+
+    <!--  Story Carousel  -->
+    <section class="story-section mt-5">
+      <div class="container position-relative">
+        <div
+          id="storyCarousel"
+          class="carousel slide story-carousel"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
+          data-bs-pause="hover"
+        >
+          <!-- carousel-fade -->
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row align-items-start">
+                <div class="col-lg-6 story-text-col">
+                  <h3 class="story-section-quote-text">
+                    &ldquo;I worked on hands-on projects that introduced me to
+                    real-world problems&rdquo;
+                  </h3>
+                  <p class="story-section-quote-desc">
+                    I had a really enjoyable learning experience. The program
+                    covered tools and topics I use in modern-day analytics. The
+                    mentors and Program Manager were always there to guide me. I
+                    was able to build strong foundational skills in Python, SQL,
+                    and Tableau and these skills are helping in my current role.
+                    I was able to land an amazing job as a business analyst in
+                    Amazon.
+                  </p>
+                  <div class="story-section-quote-author-name">
+                    Saanjey Shankhadhar
+                  </div>
+                  <div class="story-section-quote-author-role">
+                    PG Graduate Program in Data Science and Business Analytics
+                  </div>
+                </div>
+                <div class="col-lg-6 story-image-col">
+                  <div class="story-image-wrapper">
+                    <img
+                      src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+                      alt="Story"
+                      class="story-image"
+                    />
+                    <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                    <div class="story-section-play-text animi-btn">
+                      <i class="fas fa-play"></i> Watch Story
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-lg-6 story-text-col">
+                  <h3 class="story-section-quote-text">
+                    &ldquo;The mentorship and curriculum helped me switch
+                    careers seamlessly&rdquo;
+                  </h3>
+                  <p class="story-section-quote-desc">
+                    Coming from a non-tech background, I was worried about
+                    keeping up. But the structured approach and patient mentors
+                    made all the difference. The projects were industry-relevant
+                    and the career support team helped me crack interviews at
+                    multiple Fortune 500 companies.
+                  </p>
+                  <div class="story-section-quote-author-name">Priya Menon</div>
+                  <div class="story-section-quote-author-role">
+                    PG Graduate Program in Full Stack Development
+                  </div>
+                </div>
+                <div class="col-lg-6 story-image-col">
+                  <div class="story-image-wrapper">
+                    <img
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
+                      alt="Story"
+                      class="story-image"
+                    />
+                    <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                    <div class="story-section-play-text animi-btn">
+                      <i class="fas fa-play"></i> Watch Story
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-lg-6 story-text-col">
+                  <h3 class="story-section-quote-text">
+                    &ldquo;From learning to earning in just 6 months&rdquo;
+                  </h3>
+                  <p class="story-section-quote-desc">
+                    The Generative AI program was ahead of its time. While
+                    others were still figuring out the basics, I was already
+                    building LLM-powered applications. The capstone project
+                    directly led to my current role as an AI Product Manager at
+                    a leading startup.
+                  </p>
+                  <div class="story-section-quote-author-name">Rahul Verma</div>
+                  <div class="story-section-quote-author-role">
+                    PG Graduate Program in Generative AI
+                  </div>
+                </div>
+                <div class="col-lg-6 story-image-col">
+                  <div class="story-image-wrapper">
+                    <img
+                      src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop"
+                      alt="Story"
+                      class="story-image"
+                    />
+                    <!-- <div class="story-section-play-button"><i class="fas fa-play"></i></div> -->
+                    <div class="story-section-play-text animi-btn">
+                      <i class="fas fa-play"></i> Watch Story
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Custom Arrows -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#storyCarousel"
+            data-bs-slide="prev"
+          >
+            <!-- <i class="fas fa-chevron-left"></i> -->
+            <img src="../assets/icons/front/student/Vector (4).svg" alt="" />
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#storyCarousel"
+            data-bs-slide="next"
+          >
+            <!-- <i class="fas fa-chevron-right"></i> -->
+            <img src="../assets/icons/front/student/Vector (5).svg" alt="" />
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- stroy section end -->
+
+    <!--Faculty Section -->
+    <section class="faculty-section">
+      <div class="container">
+        <h2 class="faculty-title">
+          Master your craft with <span>renowned faculty</span>
+        </h2>
+        <div class="row g-lg-5 g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="faculty-card">
+              <div class="faculty-img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  alt="Pramanth Raj Sinha"
+                  class="faculty-img"
+                />
+              </div>
+              <div class="faculty-body">
+                <div class="faculty-name">Pramanth Raj Sinha</div>
+                <div class="faculty-role">Founder & Trustee</div>
+                <div class="faculty-working-label">WORKING AT</div>
+                <p class="faculty-desc">
+                  Former McKinsey Partner, Co-Founder & Trustee of Ashoka
+                  University, and PhD holder in Mechani...
+                  <a href="#" class="faculty-read-more">Read More</a>
+                </p>
+                <a href="#" class="faculty-linkedin-link">
+                  LinkedIn Profile
+                  <img src="../assets/icons/front/student/Vector (6).svg" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="faculty-card">
+              <div class="faculty-img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  alt="Pramanth Raj Sinha"
+                  class="faculty-img"
+                />
+              </div>
+              <div class="faculty-body">
+                <div class="faculty-name">Pramanth Raj Sinha</div>
+                <div class="faculty-role">Founder & Trustee</div>
+                <div class="faculty-working-label">WORKING AT</div>
+                <p class="faculty-desc">
+                  Former McKinsey Partner, Co-Founder & Trustee of Ashoka
+                  University, and PhD holder in Mechani...
+                  <a href="#" class="faculty-read-more">Read More</a>
+                </p>
+                <a href="#" class="faculty-linkedin-link">
+                  LinkedIn Profile
+                  <img src="../assets/icons/front/student/Vector (6).svg" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="faculty-card">
+              <div class="faculty-img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  alt="Pramanth Raj Sinha"
+                  class="faculty-img"
+                />
+              </div>
+              <div class="faculty-body">
+                <div class="faculty-name">Pramanth Raj Sinha</div>
+                <div class="faculty-role">Founder & Trustee</div>
+                <div class="faculty-working-label">WORKING AT</div>
+                <p class="faculty-desc">
+                  Former McKinsey Partner, Co-Founder & Trustee of Ashoka
+                  University, and PhD holder in Mechani...
+                  <a href="#" class="faculty-read-more">Read More</a>
+                </p>
+                <a href="#" class="faculty-linkedin-link">
+                  LinkedIn Profile
+                  <img src="../assets/icons/front/student/Vector (6).svg" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Faculty Section End-->
+
+    <!-- EXPLORE MORE SECTION START -->
+    <section class="explore-more-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="explore-section-title">
+            Explore more about the <span>AI programs</span>
+          </h2>
+          <p class="explore-section-subtitle">
+            Get all your queries answered through our quick links
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="explore-card">
+              <h4 class="explore-card-title">
+                Artificial Intelligence (AI) Course Eligibility
+              </h4>
+              <p class="explore-card-desc">
+                Find your path with <br />industry-leading AI progr...
+              </p>
+              <a href="#" class="explore-card-link">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="explore-card">
+              <h4 class="explore-card-title">
+                Artificial Intelligence (AI) Course Eligibility
+              </h4>
+              <p class="explore-card-desc">
+                Find your path with <br />
+                industry-leading AI progr...
+              </p>
+              <a href="#" class="explore-card-link">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="explore-card">
+              <h4 class="explore-card-title">
+                Artificial Intelligence (AI) Course Eligibility
+              </h4>
+              <p class="explore-card-desc">
+                Find your path with <br />
+                industry-leading AI progr...
+              </p>
+              <a href="#" class="explore-card-link">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="explore-card">
+              <h4 class="explore-card-title">
+                Artificial Intelligence (AI) Course Eligibility
+              </h4>
+              <p class="explore-card-desc">
+                Find your path with <br />
+                industry-leading AI progr...
+              </p>
+              <a href="#" class="explore-card-link">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="explore-card">
+              <h4 class="explore-card-title">
+                Artificial Intelligence (AI) Course Eligibility
+              </h4>
+              <p class="explore-card-desc">
+                Find your path with <br />
+                industry-leading AI progr...
+              </p>
+              <a href="#" class="explore-card-link">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="explore-card">
+              <h4 class="explore-card-title">
+                Artificial Intelligence (AI) Course Eligibility
+              </h4>
+              <p class="explore-card-desc">
+                Find your path with <br />
+                industry-leading AI progr...
+              </p>
+              <a href="#" class="explore-card-link">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- EXPLORE MORE SECTION END -->
+
+    <!-- SKILLS TAGS SECTION START -->
+    <section class="skills-tags-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="skills-section-title">AI ML skills you will learn</h2>
+          <p class="skills-section-subtitle">
+            Our AI and Machine Learning courses explore all the latest skills &
+            technologies for all aspiring AI professionals
+          </p>
+        </div>
+
+        <!-- Custom Flowing Tag Layout -->
+        <div class="skills-tags-wrapper">
+          <!-- Row 1: 4 tags -->
+          <div class="skills-row skills-row-1">
+            <span class="skill-tag">MACHINE LEARNING</span>
+            <span class="skill-tag">USING OPENAI API</span>
+            <span class="skill-tag">MACHINE LEARNING</span>
+            <span class="skill-tag">DEEP LEARNING</span>
+          </div>
+
+          <!-- Row 2: 4 tags -->
+          <div class="skills-row skills-row-2">
+            <span class="skill-tag">MACHINE LEARNING</span>
+            <span class="skill-tag">GENERATIVE AI</span>
+            <span class="skill-tag">AI IN DATA ANALYSIS</span>
+            <span class="skill-tag">COMPUTER VISION</span>
+          </div>
+
+          <!-- Row 3: 3 tags -->
+          <div class="skills-row skills-row-3">
+            <span class="skill-tag">PROMPT ENGINEERING</span>
+            <span class="skill-tag">GENERATIVE AI</span>
+            <span class="skill-tag">MACHINE LEARNING</span>
+          </div>
+
+          <!-- Row 4: 3 tags -->
+          <div class="skills-row skills-row-4">
+            <span class="skill-tag">GENERATIVE AI</span>
+            <span class="skill-tag">USING OPENAI API</span>
+            <span class="skill-tag">PROMPT ENGINEERING</span>
+          </div>
+
+          <!-- Row 5: 2 tags -->
+          <div class="skills-row skills-row-5">
+            <span class="skill-tag">COMPUTER VISION</span>
+            <span class="skill-tag">PROMPT ENGINEERING</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SKILLS TAGS SECTION END -->
+
+    <!-- Faq section -->
+    <section class="faq-container">
+      <div class="container">
+        <h2 class="faq-title mb-4">Frequently Asked Questions</h2>
+
+        <div class="accordion accordion-flush" id="tuishalaFaq">
+          <!-- Question 1 (Expanded) -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q1"
+                aria-expanded="true"
+              >
+                What is Tuishala?
+              </button>
+            </h2>
+            <div
+              id="q1"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#tuishalaFaq"
+            >
+              <div class="accordion-body">
+                EduLearn is an online learning community with thousands of
+                classes for creative and curious people, on topics including
+                illustration, design, photography, video, freelancing, and more.
+                On EduLearn, you'll find inspiration from hands-on classes and
+                teachers at the top of their creative fields, so you can take
+                the next step in your creative journey.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q2"
+              >
+                Why Choose Tuishala?
+              </button>
+            </h2>
+            <div
+              id="q2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#tuishalaFaq"
+            >
+              <div class="accordion-body">
+                Placeholder text for why users should choose this platform.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q3"
+              >
+                What is Tuishala?
+              </button>
+            </h2>
+            <div
+              id="q3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#tuishalaFaq"
+            >
+              <div class="accordion-body">
+                Tuishala provides a comprehensive learning environment for
+                students.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q4"
+              >
+                What Can I Learn From Tuishala?
+              </button>
+            </h2>
+            <div
+              id="q4"
+              class="accordion-collapse collapse"
+              data-bs-parent="#tuishalaFaq"
+            >
+              <div class="accordion-body">
+                Explore a wide range of subjects from technology to the arts.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q5"
+              >
+                Can I teach on Tuishala?
+              </button>
+            </h2>
+            <div
+              id="q5"
+              class="accordion-collapse collapse"
+              data-bs-parent="#tuishalaFaq"
+            >
+              <div class="accordion-body">
+                Yes! We welcome experts to share their knowledge on our
+                platform.
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeated Question for Layout Match -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q6"
+              >
+                What Can I Learn From Tuishala?
+              </button>
+            </h2>
+            <div
+              id="q6"
+              class="accordion-collapse collapse"
+              data-bs-parent="#tuishalaFaq"
+            >
+              <div class="accordion-body">
+                Information regarding specific learning paths.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q7"
+              >
+                What Can I Learn From Tuishala?
+              </button>
+            </h2>
+            <div
+              id="q7"
+              class="accordion-collapse collapse"
+              data-bs-parent="#tuishalaFaq"
+            >
+              <div class="accordion-body">
+                Information regarding advanced certifications.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Faq section end-->
+
+    <!-- TOOLS SECTION START -->
+    <section class="tools-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-4">
+          <h2 class="tools-section-title">
+            Essential tools for aspiring AI professionals
+          </h2>
+          <p class="tools-section-subtitle">
+            Master AI tools that are currently relevant in the industry
+          </p>
+        </div>
+
+        <!-- Tools Grid - Bootstrap -->
+        <div class="row justify-content-center">
+          <!-- Tool 1: ChatGPT -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/Rectangle (6).svg"
+                  alt="ChatGPT"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">ChatGPT</span>
+            </div>
+          </div>
+
+          <!-- Tool 2: SQL -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/SQL 1.svg"
+                  alt="SQL"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">SQL</span>
+            </div>
+          </div>
+
+          <!-- Tool 3: Hugging Face -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/Untitled_design_-_2023-08-28T100408.png 1.svg"
+                  alt="Hugging Face"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">Hugging Face</span>
+            </div>
+          </div>
+
+          <!-- Tool 4: Azure AI Services -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/Rectangle (7).svg"
+                  alt="Azure AI Services"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">Azure AI Services</span>
+            </div>
+          </div>
+
+          <!-- Tool 5: Python -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/PYTHON 1.svg"
+                  alt="Python"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">Python</span>
+            </div>
+          </div>
+
+          <!-- Tool 6: NumPy -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/numpy-logo-png_seeklogo-398690 1.svg"
+                  alt="NumPy"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">NumPy</span>
+            </div>
+          </div>
+
+          <!-- Tool 7: Pandas -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/pandas-icon-logo-png_seeklogo-483545 1.svg"
+                  alt="Pandas"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">Pandas</span>
+            </div>
+          </div>
+
+          <!-- Tool 8: MidJourney -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="tool-item">
+              <div class="tool-icon-circle">
+                <img
+                  src="./../assets/icons/front/student/midjourney-logo-png 1.svg"
+                  alt="MidJourney"
+                  class="tool-icon-img"
+                />
+              </div>
+              <span class="tool-name">MidJourney</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TOOLS SECTION END -->
+
+    <!--  CTA SECTION -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="offer-badge">
+          Limited Time Offer
+          <img src="../assets/icons/front/student/Rectangle (5).svg" alt="" />
+        </div>
+        <h1 class="cta-title">Start Your Learning Journey Today</h1>
+        <p class="cta-subtitle">
+          Get access to 500+ courses with a special discount. Transform your
+          career with expert-led training.
+        </p>
+
+        <div class="cta-btns d-flex justify-content-center gap-3">
+          <button class="btn-white white-animi-btn">
+            Get Started Now
+            <img src="../assets/icons/front/student/Arrow 2.svg" alt="" />
+          </button>
+          <button class="btn-outline-white animi-btn">
+            Browse Courses
+            <img src="../assets/icons/front/student/Arrow 3.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="social-follow">
+          <span>Follow Us On</span>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="../assets/icons/front/student/logo 4.svg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="../assets/icons/front/student/linkedin 3.svg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="../assets/icons/front/student/instagram 3.svg" alt=""
+            /></a>
+            <a href="#"
+              ><img
+                src="../assets/icons/front/student/communication (1) 3.svg"
+                alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  CTA SECTION end-->
+
+    <!--  FOOTER SECTION -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="footer-logo">
+              <img
+                src="../assets/icons/front/student/logo figma 2.svg"
+                alt="Tuishala Logo"
+              />
+            </div>
+            <p class="footer-tagline">Building Careers of Tomorrow</p>
+            <div class="footer-social-icons mb-4 mb-lg-0">
+              <a href="#"
+                ><img src="../assets/icons/front/student/logo 4.svg" alt=""
+              /></a>
+              <a href="#"
+                ><img src="../assets/icons/front/student/linkedin 3.svg" alt=""
+              /></a>
+              <a href="#"
+                ><img
+                  src="../assets/icons/front/student/instagram 3.svg"
+                  alt=""
+              /></a>
+              <a href="#"
+                ><img
+                  src="../assets/icons/front/student/communication (1) 3.svg"
+                  alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-lg-end mt-5">
+            <div
+              class="footer-app-buttons d-flex flex-column align-items-lg-end"
+            >
+              <a href="#" class="btn white-animi-btn">GET THE ANDROID APP</a>
+              <a href="#" class="btn white-animi-btn">GET THE IOS APP</a>
+            </div>
+          </div>
+        </div>
+
+        <hr style="border-color: #333" />
+
+        <div class="row mt-5">
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Instructors</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Category</h5>
+            <ul class="footer-links">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Business</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Support</h5>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="/pages/TermsCondition.html">Terms of Service</a></li>
+              <li><a href="/pages/Privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Support</h5>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="/pages/TermsCondition.html">Terms of Service</a></li>
+              <li><a href="/pages/Privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- for signup popup add js code -->
+    <script src="../assets/js/front/student/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

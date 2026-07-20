@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuishala | Course Detail</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <!-- Index css -->
+    <link rel="stylesheet" href="../assets/css/front/student/header.css" />
+    <link rel="stylesheet" href="../assets/css/front/student/footer.css" />
+    <!-- <link rel="stylesheet" href="../assets/css/front/student/Courses.css" /> -->
+    <!-- Course Detail Page css -->
+    <link rel="stylesheet" href="../assets/css/front/student/course_detail.css" />
+    <!-- symbols -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="../assets/icons/front/student/logo figma 2.svg"
+            alt="logo"
+            class="logo-img"
+          />
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Center Links -->
+          <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="Courses.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Categories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contact.html">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Right Buttons -->
+          <div
+            class="d-flex gap-2 justify-content-center align-items-center mt-3 mt-lg-0"
+          >
+            <button
+              class="btn btn-primary-custom animi-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#signInModal"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- SIGN IN MODAL -->
+    <div class="modal fade" id="signInModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-upgrad">
+        <div class="modal-content tuishala-modal">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="row g-0">
+            <!-- LEFT PANEL -->
+            <div class="col-sm-5 tuishala-left d-none d-sm-block">
+              <div class="float-card c2">📈 Career Growth</div>
+              <div class="float-card c3">🏆 Certificate</div>
+              <div class="float-card c4">💼 Job Ready</div>
+              <div class="float-card c5">🚀 Mentorship</div>
+
+              <div class="text-center">
+                <img
+                  src="../assets/icons/front/student/logo figma 2.svg"
+                  class="tuishala-logo"
+                />
+
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                  class="tuishala-illustration"
+                />
+
+                <h3>Learn Skills That Get You Hired</h3>
+                <p>
+                  Join thousands of learners building successful careers with
+                  Tuishala.
+                </p>
+              </div>
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="col-sm-7 tuishala-right">
+              <div class="tuishala-right-inner">
+                <!-- TOP CONTENT -->
+                <div class="tuishala-step tuishala-step-1">
+                  <h2>Welcome to Tuishala</h2>
+                  <p class="subtext">
+                    Sign in to continue your learning journey
+                  </p>
+
+                  <!-- PHONE INPUT -->
+                  <div class="input-group phone-group mb-3" id="phoneGroup">
+                    <button
+                      class="btn country-code dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                    >
+                      🇮🇳 +91
+                    </button>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item">🇮🇳 +91</a></li>
+                      <li><a class="dropdown-item">🇺🇸 +1</a></li>
+                      <li><a class="dropdown-item">🇬🇧 +44</a></li>
+                    </ul>
+
+                    <input
+                      type="tel"
+                      class="form-control phone-input"
+                      placeholder="Enter mobile number"
+                      maxlength="10"
+                      inputmode="numeric"
+                    />
+                  </div>
+                  <!-- EMAIL INPUT -->
+                  <div class="mb-3 d-none" id="emailGroup">
+                    <input
+                      type="email"
+                      class="form-control phone-input email-input"
+                      placeholder="Enter email address"
+                    />
+                  </div>
+                  <!-- OR -->
+                  <div class="or-divider text-center">or</div>
+
+                  <a href="#" class="email-link" id="toggleLoginMode">
+                    Sign up/Login with Email
+                  </a>
+                </div>
+                <!-- STEP 2 OTP -->
+                <div class="tuishala-step tuishala-step-2 d-none">
+                  <div>
+                    <h2>Verify OTP</h2>
+                    <p class="subtext">
+                      Enter the 6-digit code sent to
+                      <strong>+91 XXXXXXXX</strong>
+                    </p>
+
+                    <!-- OTP BOXES -->
+                    <div class="otp-boxes mb-3">
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                      <input type="text" maxlength="1" />
+                    </div>
+
+                    <p class="resend-text">
+                      Didn't receive OTP?
+                      <a href="#">Resend</a>
+                    </p>
+                  </div>
+                  <div>
+                    <button class="continue-btn animi-btn" id="otpBtn" disabled>
+                      Verify & Continue
+                    </button>
+
+                    <p class="edit-number">
+                      <a href="#" onclick="goBackStep1()"
+                        >← Edit mobile number</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- BOTTOM SECTION -->
+                <div class="bottom-section" id="step1Footer">
+                  <button
+                    class="continue-btn animi-btn"
+                    id="step1Btn"
+                    disabled
+                    onclick="goToStep2()"
+                  >
+                    Continue
+                  </button>
+
+                  <div class="privacy">
+                    By continuing, you agree to Tuishala Terms & Privacy Policy
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- NAVBAR END -->
+
+    <!-- ============================================
+         COURSE BANNER SECTION START
+    ============================================ -->
+    <section class="cdp-banner-section mt-lg-5 mt-4">
+      <div class="container">
+        <div class="cdp-banner-img-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1200&h=500&fit=crop"
+            alt="Course banner"
+            class="cdp-banner-img"
+          />
+          <button class="cdp-banner-play-btn" aria-label="Play course preview">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- COURSE BANNER SECTION END -->
+
+    <!-- ============================================
+         COURSE HEADER SECTION START
+    ============================================ -->
+    <section class="cdp-course-header-section">
+      <div class="container">
+        <div class="cdp-header-top">
+          <h1 class="cdp-course-title">French Language Complete Course</h1>
+          <div class="cdp-header-meta">
+            <span><i class="fa-regular fa-clock"></i> 08 hr 15 mins</span>
+            <span><i class="fa-regular fa-circle-play"></i> 24 Lessons</span>
+          </div>
+        </div>
+
+        <div class="cdp-header-mid">
+          <p class="cdp-course-subtitle">our most popular courses</p>
+          <div class="cdp-header-rating">
+            <i class="fa-solid fa-star"></i> 4.7/5
+          </div>
+        </div>
+
+        <div class="cdp-header-bottom">
+          <p class="cdp-course-desc">
+            Speak French Confidently from Beginner to Conversational Level
+          </p>
+          <div class="cdp-course-price">₹999.00</div>
+        </div>
+
+        <!-- Info Badges -->
+        <div class="cdp-info-badges">
+          <span class="cdp-info-badge">
+            <i class="fa-solid fa-user-graduate"></i> Beginner
+          </span>
+          <span class="cdp-info-badge">
+            <i class="fa-solid fa-book"></i> 24 Lessons
+          </span>
+          <span class="cdp-info-badge">
+            <i class="fa-regular fa-clock"></i> 18 Hours
+          </span>
+          <span class="cdp-info-badge">
+            <i class="fa-solid fa-book"></i> French
+          </span>
+        </div>
+      </div>
+    </section>
+    <!-- COURSE HEADER SECTION END -->
+
+    <!-- ============================================
+         ABOUT THIS COURSE SECTION START
+    ============================================ -->
+    <section class="cdp-about-section">
+      <div class="container">
+        <h2 class="cdp-section-title">About this Course</h2>
+        <p class="cdp-about-desc">
+          Lorem Ipsum has been the industry's standard dummy text since the
+          1500s, when an unknown printer took a galley of type and scrambled
+          it to make type specimen book has survived not five centuries but
+          also the leap into electronic Lorem Ipsum has been the industry's
+          standard dummy text since the 1500s, when an unknown printer took a
+          galley of type and scrambled it to make type specimen book has
+          survived not five centuries but also the leap into
+          electronic&hellip;<a href="#" class="cdp-readmore-link">Read more</a>
+        </p>
+      </div>
+    </section>
+    <!-- ABOUT THIS COURSE SECTION END -->
+
+    <!-- ============================================
+         SKILLS + REVIEWS SUMMARY SECTION START
+    ============================================ -->
+    <section class="cdp-skills-reviews-section">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <!-- LEFT: Skills + What You Will Learn -->
+          <div class="col-lg-8">
+            <h2 class="cdp-section-title">Skills You Get</h2>
+            <div class="cdp-skills-badges">
+              <span class="cdp-skill-badge"
+                ><i class="fa-solid fa-user-graduate"></i> Speaking</span
+              >
+              <span class="cdp-skill-badge"
+                ><i class="fa-solid fa-user-graduate"></i> Grammar</span
+              >
+              <span class="cdp-skill-badge"
+                ><i class="fa-solid fa-user-graduate"></i> Listening</span
+              >
+              <span class="cdp-skill-badge"
+                ><i class="fa-solid fa-user-graduate"></i> Vocabulary</span
+              >
+              <span class="cdp-skill-badge"
+                ><i class="fa-solid fa-user-graduate"></i> Grammar</span
+              >
+              <span class="cdp-skill-badge"
+                ><i class="fa-solid fa-user-graduate"></i> Listening</span
+              >
+            </div>
+
+            <h2 class="cdp-section-title mt-4 mt-lg-5">What You Will Learn</h2>
+            <ul class="cdp-learn-list">
+              <li>Basic French Greetings</li>
+              <li>Daily Conversations</li>
+              <li>French Pronunciation</li>
+              <li>Grammar Fundamentals</li>
+              <li>Vocabulary Building</li>
+              <li>Speaking Practice</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT: Reviews Summary -->
+          <div class="col-lg-4">
+            <h2 class="cdp-review-title">Reviews</h2>
+            <div class="cdp-reviews-box">
+              <span class="cdp-reviews-score">5.0</span>
+              <div class="cdp-reviews-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="cdp-reviews-total">Total 5 Rating</p>
+            </div>
+
+            <div class="cdp-rating-breakdown">
+              <div class="cdp-rating-row">
+                <span class="cdp-rating-label"
+                  ><i class="fa-solid fa-star"></i> 5</span
+                >
+                <div class="cdp-rating-bar">
+                  <div class="cdp-rating-bar-fill" style="width: 100%"></div>
+                </div>
+                <span class="cdp-rating-count">5 Ratings</span>
+              </div>
+              <div class="cdp-rating-row">
+                <span class="cdp-rating-label"
+                  ><i class="fa-solid fa-star"></i> 4</span
+                >
+                <div class="cdp-rating-bar">
+                  <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                </div>
+                <span class="cdp-rating-count">0 Ratings</span>
+              </div>
+              <div class="cdp-rating-row">
+                <span class="cdp-rating-label"
+                  ><i class="fa-solid fa-star"></i> 3</span
+                >
+                <div class="cdp-rating-bar">
+                  <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                </div>
+                <span class="cdp-rating-count">0 Ratings</span>
+              </div>
+              <div class="cdp-rating-row">
+                <span class="cdp-rating-label"
+                  ><i class="fa-solid fa-star"></i> 2</span
+                >
+                <div class="cdp-rating-bar">
+                  <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                </div>
+                <span class="cdp-rating-count">0 Ratings</span>
+              </div>
+              <div class="cdp-rating-row">
+                <span class="cdp-rating-label"
+                  ><i class="fa-solid fa-star"></i> 1</span
+                >
+                <div class="cdp-rating-bar">
+                  <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                </div>
+                <span class="cdp-rating-count">0 Ratings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SKILLS + REVIEWS SUMMARY SECTION END -->
+
+    <!-- ============================================
+         COURSE CURRICULUM SECTION START
+    ============================================ -->
+    <section class="cdp-curriculum-section">
+      <div class="container">
+        <h2 class="cdp-curriculumSection-title">Course Curriculum</h2>
+
+        <div class="accordion cdp-curriculum-accordion" id="cdpCurriculumAccordion">
+          <!-- Item 1 -->
+          <div class="accordion-item cdp-curriculum-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button cdp-curriculum-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#cdpCurr1"
+                aria-expanded="true"
+              >
+                <span class="cdp-curriculum-heading">
+                  <span class="cdp-curriculum-title">Introduction</span>
+                  <span class="cdp-curriculum-count">4 Lessons</span>
+                </span>
+              </button>
+            </h2>
+            <div
+              id="cdpCurr1"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#cdpCurriculumAccordion"
+            >
+              <div class="accordion-body cdp-curriculum-body">
+                <ul class="cdp-lesson-list">
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Welcome to the Course</span>
+                    <span class="cdp-lesson-duration">05:20</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> How to Use this Course</span>
+                    <span class="cdp-lesson-duration">03:40</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> French Alphabet Overview</span>
+                    <span class="cdp-lesson-duration">08:15</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Setting Learning Goals</span>
+                    <span class="cdp-lesson-duration">04:05</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item cdp-curriculum-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed cdp-curriculum-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#cdpCurr2"
+              >
+                <span class="cdp-curriculum-heading">
+                  <span class="cdp-curriculum-title">Basic Communication</span>
+                  <span class="cdp-curriculum-count">4 Lessons</span>
+                </span>
+              </button>
+            </h2>
+            <div
+              id="cdpCurr2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#cdpCurriculumAccordion"
+            >
+              <div class="accordion-body cdp-curriculum-body">
+                <ul class="cdp-lesson-list">
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Greetings & Introductions</span>
+                    <span class="cdp-lesson-duration">06:10</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Everyday Phrases</span>
+                    <span class="cdp-lesson-duration">07:25</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Asking Questions</span>
+                    <span class="cdp-lesson-duration">05:50</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Numbers & Time</span>
+                    <span class="cdp-lesson-duration">06:35</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item cdp-curriculum-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed cdp-curriculum-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#cdpCurr3"
+              >
+                <span class="cdp-curriculum-heading">
+                  <span class="cdp-curriculum-title">Grammar</span>
+                  <span class="cdp-curriculum-count">3 Lessons</span>
+                </span>
+              </button>
+            </h2>
+            <div
+              id="cdpCurr3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#cdpCurriculumAccordion"
+            >
+              <div class="accordion-body cdp-curriculum-body">
+                <ul class="cdp-lesson-list">
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Nouns & Articles</span>
+                    <span class="cdp-lesson-duration">09:00</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Verb Conjugation Basics</span>
+                    <span class="cdp-lesson-duration">10:15</span>
+                  </li>
+                  <li>
+                    <span><i class="fa-regular fa-circle-play"></i> Sentence Structure</span>
+                    <span class="cdp-lesson-duration">07:45</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COURSE CURRICULUM SECTION END -->
+
+    <!-- ============================================
+         INSTRUCTOR + COURSE RATING SECTION START
+    ============================================ -->
+    <section class="cdp-instructor-rating-section">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <!-- LEFT: Instructor -->
+          <div class="col-lg-5">
+            <h2 class="cdp-instructor-title">Instructors</h2>
+            <div class="cdp-instructor-card">
+              <div class="cdp-instructor-img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=200&h=200&fit=crop&crop=face"
+                  alt="Jacob"
+                  class="cdp-instructor-img"
+                />
+              </div>
+              <div class="cdp-instructor-info">
+                <h4 class="cdp-instructor-name">Jacob</h4>
+                <span class="cdp-instructor-badge">Chief English Expert</span>
+                <div class="cdp-instructor-meta">
+                  <span
+                    ><i class="fa-solid fa-star"></i> 4.9</span
+                  >
+                  <span
+                    ><i class="fa-solid fa-user-graduate"></i> 8K Students</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Course Rating -->
+          <div class="col-lg-7">
+            <h2 class="cdp-instructor-title">Course Rating</h2>
+            <div class="cdp-course-rating-wrapper">
+              <div class="cdp-course-rating-left">
+                <span class="cdp-reviews-score">5.0</span>
+                <div class="cdp-reviews-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="cdp-reviews-total">2,456 Rating</p>
+              </div>
+              <div class="cdp-course-rating-right">
+                <div class="cdp-rating-row cdp-rating-row-compact">
+                  <span class="cdp-rating-num">5</span>
+                  <div class="cdp-rating-bar">
+                    <div class="cdp-rating-bar-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="cdp-rating-row cdp-rating-row-compact">
+                  <span class="cdp-rating-num">4</span>
+                  <div class="cdp-rating-bar">
+                    <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                  </div>
+                </div>
+                <div class="cdp-rating-row cdp-rating-row-compact">
+                  <span class="cdp-rating-num">3</span>
+                  <div class="cdp-rating-bar">
+                    <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                  </div>
+                </div>
+                <div class="cdp-rating-row cdp-rating-row-compact">
+                  <span class="cdp-rating-num">2</span>
+                  <div class="cdp-rating-bar">
+                    <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                  </div>
+                </div>
+                <div class="cdp-rating-row cdp-rating-row-compact">
+                  <span class="cdp-rating-num">1</span>
+                  <div class="cdp-rating-bar">
+                    <div class="cdp-rating-bar-fill" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- INSTRUCTOR + COURSE RATING SECTION END -->
+
+    <!-- ============================================
+         STUDENT REVIEWS SECTION START
+    ============================================ -->
+    <section class="cdp-student-reviews-section">
+      <div class="container">
+        <h2 class="cdp-instructor-title">Student Reviews</h2>
+
+        <div class="cdp-review-card">
+          <div class="cdp-review-top">
+            <div class="cdp-review-user">
+              <div class="cdp-review-avatar-wrapper">
+                <img
+                  src="https://i.pravatar.cc/150?img=12"
+                  alt="Ritvik Roy"
+                  class="cdp-review-avatar"
+                />
+              </div>
+              <span class="cdp-review-name">Ritvik Roy</span>
+            </div>
+            <div class="cdp-review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="cdp-review-text">
+            Excellent course. Easy to understand and very practical for
+            beginners.
+          </p>
+        </div>
+
+        <div class="cdp-review-card">
+          <div class="cdp-review-top">
+            <div class="cdp-review-user">
+              <div class="cdp-review-avatar-wrapper">
+                <img
+                  src="https://i.pravatar.cc/150?img=13"
+                  alt="Ritvik Roy"
+                  class="cdp-review-avatar"
+                />
+              </div>
+              <span class="cdp-review-name">Ritvik Roy</span>
+            </div>
+            <div class="cdp-review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="cdp-review-text">
+            Excellent course. Easy to understand and very practical for
+            beginners.
+          </p>
+        </div>
+
+        <div class="cdp-review-card">
+          <div class="cdp-review-top">
+            <div class="cdp-review-user">
+              <div class="cdp-review-avatar-wrapper">
+                <img
+                  src="https://i.pravatar.cc/150?img=14"
+                  alt="Ritvik Roy"
+                  class="cdp-review-avatar"
+                />
+              </div>
+              <span class="cdp-review-name">Ritvik Roy</span>
+            </div>
+            <div class="cdp-review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="cdp-review-text">
+            Excellent course. Easy to understand and very practical for
+            beginners.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- STUDENT REVIEWS SECTION END -->
+
+    <!-- ============================================
+         RELATED COURSES SECTION START
+    ============================================ -->
+    <section class="cdp-related-courses-section">
+      <div class="container">
+        <div class="cdp-related-header mb-5">
+          <h2 class="cdp-instructor-title mb-0">Related Courses</h2>
+          <a href="Courses.html" class="cdp-seeall-link">See All</a>
+        </div>
+
+        <div class="row g-4" >
+          <!-- Card 1 -->
+          <div class="col-6 col-md-3">
+            <div class="cdp-related-card">
+              <div class="cdp-related-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="German Language"
+                  class="cdp-related-img"
+                />
+              </div>
+              <div class="cdp-related-body">
+                <h5 class="cdp-related-title">German Language</h5>
+                <div class="cdp-related-rating">
+                  <i class="fa-solid fa-star"></i> 4.7/5
+                </div>
+                <div class="cdp-related-price">₹ 899</div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-6 col-md-3">
+            <div class="cdp-related-card">
+              <div class="cdp-related-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="German Language"
+                  class="cdp-related-img"
+                />
+              </div>
+              <div class="cdp-related-body">
+                <h5 class="cdp-related-title">German Language</h5>
+                <div class="cdp-related-rating">
+                  <i class="fa-solid fa-star"></i> 4.7/5
+                </div>
+                <div class="cdp-related-price">₹ 899</div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-6 col-md-3">
+            <div class="cdp-related-card">
+              <div class="cdp-related-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="German Language"
+                  class="cdp-related-img"
+                />
+              </div>
+              <div class="cdp-related-body">
+                <h5 class="cdp-related-title">German Language</h5>
+                <div class="cdp-related-rating">
+                  <i class="fa-solid fa-star"></i> 4.7/5
+                </div>
+                <div class="cdp-related-price">₹ 899</div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-6 col-md-3">
+            <div class="cdp-related-card">
+              <div class="cdp-related-img-wrapper">
+                <img
+                  src="../assets/images/front/student/Home/Rectangle 4.png"
+                  alt="German Language"
+                  class="cdp-related-img"
+                />
+              </div>
+              <div class="cdp-related-body">
+                <h5 class="cdp-related-title">German Language</h5>
+                <div class="cdp-related-rating">
+                  <i class="fa-solid fa-star"></i> 4.7/5
+                </div>
+                <div class="cdp-related-price">₹ 899</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- RELATED COURSES SECTION END -->
+
+    <!--  CTA SECTION (Reused as-is) -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="offer-badge">
+          Limited Time Offer
+          <img src="../assets/icons/front/student/Rectangle (5).svg" alt="" />
+        </div>
+        <h1 class="cta-title">Start Your Learning Journey Today</h1>
+        <p class="cta-subtitle">
+          Get access to 500+ courses with a special discount. Transform your
+          career with expert-led training.
+        </p>
+
+        <div class="cta-btns d-flex justify-content-center gap-3">
+          <button class="btn-white white-animi-btn">
+            Get Started Now
+            <img src="../assets/icons/front/student/Arrow 2.svg" alt="" />
+          </button>
+          <button class="btn-outline-white animi-btn">
+            Browse Courses
+            <img src="../assets/icons/front/student/Arrow 3.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="social-follow">
+          <span>Follow Us On</span>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="../assets/icons/front/student/logo 4.svg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="../assets/icons/front/student/linkedin 3.svg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="../assets/icons/front/student/instagram 3.svg" alt=""
+            /></a>
+            <a href="#"
+              ><img
+                src="../assets/icons/front/student/communication (1) 3.svg"
+                alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  CTA SECTION end-->
+
+    <!--  FOOTER SECTION (Reused as-is) -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="footer-logo">
+              <img
+                src="../assets/icons/front/student/logo figma 2.svg"
+                alt="Tuishala Logo"
+              />
+            </div>
+            <p class="footer-tagline">Building Careers of Tomorrow</p>
+            <div class="footer-social-icons mb-4 mb-lg-0">
+              <a href="#"
+                ><img src="../assets/icons/front/student/logo 4.svg" alt=""
+              /></a>
+              <a href="#"
+                ><img src="../assets/icons/front/student/linkedin 3.svg" alt=""
+              /></a>
+              <a href="#"
+                ><img
+                  src="../assets/icons/front/student/instagram 3.svg"
+                  alt=""
+              /></a>
+              <a href="#"
+                ><img
+                  src="../assets/icons/front/student/communication (1) 3.svg"
+                  alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-lg-end mt-5">
+            <div
+              class="footer-app-buttons d-flex flex-column align-items-lg-end"
+            >
+              <a href="#" class="btn white-animi-btn">GET THE ANDROID APP</a>
+              <a href="#" class="btn white-animi-btn">GET THE IOS APP</a>
+            </div>
+          </div>
+        </div>
+
+        <hr style="border-color: #333" />
+
+        <div class="row mt-5">
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Instructors</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Category</h5>
+            <ul class="footer-links">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Business</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Support</h5>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="/pages/TermsCondition.html">Terms of Service</a></li>
+              <li><a href="/pages/Privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5 class="footer-col-title">Support</h5>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="/pages/TermsCondition.html">Terms of Service</a></li>
+              <li><a href="/pages/Privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- for signup popup add js code -->
+    <script src="../assets/js/front/student/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1228 @@
+/* ============================================
+    PAGE GLOBAL RESET & VARIABLES
+   ============================================ */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+ /*  font family  */
+   --font-family: 'Poppins', sans-serif;
+
+ /*  PRIMARY COLORS  */
+  --primary-color:#1E3A8A; 
+  --primary-light:#5dadea;
+  --primary-dark:#2650EA;
+  --primary-link:#0A66C2;
+
+  /*  TEXT COLORS */
+  --text-primary: #363942;   
+  --text-secondary: #565656; 
+  --text-muted: #6E7380;
+  --text-dark:#000000;
+  
+
+  /*  BACKGROUND COLORS */
+  --bg-white: #ffffff;
+  --bg-light: #F5F8FE;
+  --bg-section: #FAFAFA;
+  --bg-card:#EEEEEE;
+  --bg-dark: #0f172a;
+
+  /*  BORDER & CARD */
+  --border-color: #CCCCCC;
+  --border-light-color:#D7D7D7;
+  --border-fadelight-color:#D5D5D5;
+  --card-bg: #ffffff;
+  --card-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  /*  ACCENT COLORS */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --transition: all 0.3s ease;
+}
+body {
+  font-family: var(--font-family);
+}
+
+/* ============================================================
+   COURSE DETAIL PAGE (cdp-) — Uses global :root variables
+   defined in Courses.css. Do not redeclare :root here.
+============================================================ */
+
+/* ============================================================
+   SHARED SECTION TITLE (used across cdp- sections)
+============================================================ */
+.cdp-section-title {
+  font-size: 1.5rem; /* ~28px */
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+/* ============================================================
+   1. COURSE BANNER SECTION
+============================================================ */
+.cdp-banner-section {
+  padding: 45px 0 40px;
+}
+
+.cdp-banner-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 477px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.cdp-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cdp-banner-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 61px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1.375rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.cdp-banner-play-btn i {
+  margin-left: 4px;
+}
+
+.cdp-banner-play-btn:hover {
+  background: var(--bg-white);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+@media (max-width: 991px) {
+  .cdp-banner-img-wrapper {
+    height: 320px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cdp-banner-img-wrapper {
+    height: 260px;
+    border-radius: 12px;
+  }
+
+  .cdp-banner-play-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cdp-banner-img-wrapper {
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .cdp-banner-play-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
+   2. COURSE HEADER SECTION
+============================================================ */
+.cdp-course-header-section {
+  padding-bottom:  20px;
+}
+
+.cdp-header-top,
+.cdp-header-mid,
+.cdp-header-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cdp-course-title {
+  font-size: 1.875rem; /* ~30px */
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.cdp-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  white-space: nowrap;
+  padding-top: 6px;
+}
+
+.cdp-header-meta span {
+  font-size: 1.375rem;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+
+.cdp-header-meta i {
+  color: var(--primary-color);
+  margin-right: 4px;
+}
+
+.cdp-course-subtitle {
+  font-size: 1.563rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.cdp-header-rating {
+  font-size: 1.375rem;
+  color: var(--text-dark);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.cdp-header-rating i {
+  color: var(--warning);
+  margin-right: 4px;
+}
+
+.cdp-course-desc {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 0;
+  max-width: 80%;
+}
+
+.cdp-course-price {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
+
+/* Info Badges */
+.cdp-info-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.cdp-info-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg-light);
+  /* border: 1px solid #dbe6f7; */
+  border-radius: 40px;
+  padding: 10px 22px;
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: var(--transition);
+  width: 188px;
+}
+
+.cdp-info-badge i {
+  color: var(--primary-dark);
+  font-size: 1.4rem;
+}
+
+.cdp-info-badge:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.1);
+}
+
+@media (max-width: 767px) {
+  .cdp-header-top,
+  .cdp-header-mid,
+  .cdp-header-bottom {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cdp-course-title {
+    font-size: 1.4rem;
+  }
+
+  .cdp-header-meta {
+    gap: 16px;
+    padding-top: 0;
+  }
+
+  .cdp-course-desc {
+    max-width: 100%;
+  }
+
+  .cdp-course-price {
+    font-size: 1.4rem;
+  }
+
+  .cdp-info-badges {
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .cdp-info-badge {
+    padding: 8px 16px;
+    font-size: 0.813rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .cdp-header-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+    .cdp-info-badge{
+      max-width: 135px;
+    }
+}
+
+/* ============================================================
+   3. ABOUT THIS COURSE SECTION
+============================================================ */
+.cdp-about-section {
+  padding: 15px 0 8px;
+}
+
+.cdp-about-desc {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.cdp-readmore-link {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.cdp-readmore-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .cdp-about-desc {
+    font-size: 0.938rem;
+  }
+}
+
+/* ============================================================
+   4. SKILLS + REVIEWS SUMMARY SECTION
+============================================================ */
+.cdp-skills-reviews-section {
+  padding: 28px 0 10px;
+}
+
+/* Skills badges */
+.cdp-skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.cdp-skill-badge {
+  display: inline-flex;
+  width: 188px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg-light);
+  border: 1px solid rgba(38, 80, 234, 0.31);
+  border-radius: 40px;
+  padding: 10px 22px;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.cdp-skill-badge i {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.cdp-skill-badge:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.1);
+}
+
+/* What You Will Learn */
+.cdp-learn-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cdp-learn-list li {
+  position: relative;
+  padding-left: 1.063rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.cdp-learn-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-secondary);
+}
+
+.cdp-learn-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Reviews summary box */
+.cdp-review-title{
+  font-size: 1.125rem; /* ~18px */
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+.cdp-reviews-box {
+  background: var(--bg-light);
+  border-radius: 23px;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.cdp-reviews-score {
+  display: block;
+  font-size: 2.813rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+
+.cdp-reviews-stars {
+  margin: 6px 0;
+}
+
+.cdp-reviews-stars i {
+  color: var(--warning);
+  font-size: 1.95rem;
+  margin: 0 2px;
+}
+
+.cdp-reviews-total {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 6px 0 0;
+}
+
+/* Rating breakdown */
+.cdp-rating-breakdown {
+  margin-top: 40px;
+}
+
+.cdp-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cdp-rating-row:last-child {
+  margin-bottom: 0;
+}
+
+.cdp-rating-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 34px;
+}
+
+.cdp-rating-label i {
+  color: var(--warning);
+  font-size: 1.2rem;
+}
+
+.cdp-rating-bar {
+  flex: 1;
+  height: 9px;
+  background: #e2e2e2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cdp-rating-bar-fill {
+  height: 100%;
+  background: var(--warning);
+  border-radius: 10px;
+}
+
+.cdp-rating-count {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .cdp-reviews-box {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .cdp-rating-breakdown {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .cdp-skills-badges {
+    gap: 10px;
+  }
+
+  .cdp-skill-badge {
+    padding: 8px 16px;
+    font-size: 0.813rem;
+  }
+
+  .cdp-learn-list li {
+    font-size: 0.938rem;
+    margin-bottom: 14px;
+  }
+}
+@media (max-width: 410px){
+  .cdp-skill-badge{
+    max-width: 135px;
+  }
+}
+
+/* ============================================================
+   5. COURSE CURRICULUM SECTION
+============================================================ */
+.cdp-curriculum-section {
+  padding: 28px 0 10px;
+}
+.cdp-curriculumSection-title{
+  font-size: 1.375rem; /* ~18px */
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 35px;
+}
+.cdp-curriculum-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cdp-curriculum-item {
+  border: none;
+  background: transparent;
+}
+
+.cdp-curriculum-btn.accordion-button {
+  background: #f5f8ff;
+  border-radius: 10px;
+  padding: 18px 24px;
+  box-shadow: none !important;
+  font-family: var(--font-family);
+}
+
+.cdp-curriculum-btn.accordion-button::after {
+  background-image: none;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f078"; /* chevron-down */
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  width: auto;
+  height: auto;
+  transform: none !important;
+}
+
+.cdp-curriculum-btn.accordion-button:not(.collapsed)::after {
+  content: "\f077"; /* chevron-up */
+}
+
+.cdp-curriculum-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.cdp-curriculum-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cdp-curriculum-count {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.cdp-curriculum-body {
+  padding: 16px 24px 8px;
+}
+
+.cdp-lesson-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cdp-lesson-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-fadelight-color);
+  font-size: 0.938rem;
+  color: var(--text-primary);
+}
+
+.cdp-lesson-list li:last-child {
+  border-bottom: none;
+}
+
+.cdp-lesson-list li i {
+  color: var(--primary-color);
+  margin-right: 8px;
+}
+
+.cdp-lesson-duration {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .cdp-curriculum-btn.accordion-button {
+    padding: 14px 16px;
+  }
+
+  .cdp-curriculum-title {
+    font-size: 1rem;
+  }
+
+  .cdp-curriculum-count {
+    font-size: 0.813rem;
+  }
+
+  .cdp-curriculum-body {
+    padding: 12px 16px 4px;
+  }
+}
+
+/* ============================================================
+   6. INSTRUCTOR + COURSE RATING SECTION
+============================================================ */
+.cdp-instructor-rating-section {
+  padding: 30px 0 10px;
+}
+.cdp-instructor-title{
+  font-size: 1.313rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 35px;
+}
+/* Instructor card */
+.cdp-instructor-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.cdp-instructor-img-wrapper {
+  width: 149px;
+  height: 149px;
+  min-width: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--primary-dark);
+}
+
+.cdp-instructor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cdp-instructor-name {
+  font-size: 1.188rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.cdp-instructor-badge {
+  display: inline-block;
+  background: var(--primary-dark);
+  color: var(--bg-white);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 22px;
+  margin-bottom: 10px;
+}
+
+.cdp-instructor-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cdp-instructor-meta span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.cdp-instructor-meta i {
+  margin-right: 4px;
+  font-size: 1.2rem;
+}
+
+.cdp-instructor-meta span:first-child i {
+  color: var(--warning);
+}
+
+.cdp-instructor-meta span:last-child i {
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+}
+
+/* Course rating (compact bars, no count text) */
+.cdp-course-rating-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.cdp-course-rating-left {
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.cdp-course-rating-left .cdp-reviews-score {
+  text-align: left;
+}
+
+.cdp-course-rating-left .cdp-reviews-stars {
+  margin: 4px 0;
+}
+
+.cdp-course-rating-left .cdp-reviews-stars i {
+  font-size: 1.285rem;
+}
+
+.cdp-course-rating-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.cdp-rating-row-compact {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cdp-rating-num {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  width: 12px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .cdp-instructor-card {
+    gap: 16px;
+  }
+
+  .cdp-instructor-img-wrapper {
+    width: 78px;
+    height: 78px;
+    min-width: 78px;
+  }
+
+  .cdp-instructor-name {
+    font-size: 1.125rem;
+  }
+
+  .cdp-course-rating-wrapper {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cdp-instructor-rating-section {
+    padding: 30px 0 10px;
+  }
+
+  .cdp-instructor-meta {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ============================================================
+   7. STUDENT REVIEWS SECTION
+============================================================ */
+.cdp-student-reviews-section {
+  padding: 40px 0 10px;
+}
+
+.cdp-review-card {
+  box-shadow: -3px 2px 11px -3px rgba(0, 0, 0, 0.25);
+  border-radius: 23px;
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  transition: var(--transition);
+}
+
+.cdp-review-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: var(--border-light-color);
+}
+
+.cdp-review-card:last-child {
+  margin-bottom: 0;
+}
+
+.cdp-review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.cdp-review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cdp-review-avatar-wrapper {
+  width: 45px;
+  height: 45px;
+  min-width: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--primary-color);
+}
+
+.cdp-review-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cdp-review-name {
+  font-size: 1.188rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.cdp-review-stars i {
+  color: var(--warning);
+  font-size: 1rem;
+  margin-left: 2px;
+}
+
+.cdp-review-text {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .cdp-review-card {
+    padding: 16px 18px;
+  }
+
+  .cdp-review-name {
+    font-size: 0.938rem;
+  }
+
+  .cdp-review-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================================
+   8. RELATED COURSES SECTION
+============================================================ */
+.cdp-related-courses-section {
+  padding: 40px 0 60px;
+  background-color: var(--bg-light);
+}
+
+.cdp-related-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.cdp-seeall-link {
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 1.063rem;
+  text-decoration: none;
+}
+
+.cdp-seeall-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.cdp-related-card {
+  background: var(--bg-white);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-light-color);
+  height: 100%;
+  transition: var(--transition);
+}
+
+.cdp-related-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.cdp-related-img-wrapper {
+  width: 100%;
+  height: 153px;
+  overflow: hidden;
+  padding: 5px;
+
+}
+
+.cdp-related-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  border-radius: 14px;
+}
+
+.cdp-related-card:hover .cdp-related-img {
+  transform: scale(1.06);
+}
+
+.cdp-related-body {
+  padding: 5px 16px 18px;
+}
+
+.cdp-related-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.cdp-related-rating {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.cdp-related-rating i {
+  color: var(--warning);
+  margin-right: 3px;
+}
+
+.cdp-related-price {
+  font-size: 0.938remrem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+@media (max-width: 576px) {
+  .cdp-related-courses-section {
+    padding: 30px 0 40px;
+  }
+
+  .cdp-related-header {
+    margin-bottom: 18px;
+  }
+
+  .cdp-related-img-wrapper {
+    height: 100px;
+  }
+
+  .cdp-related-body {
+    padding: 10px 12px 14px;
+  }
+
+  .cdp-related-title {
+    font-size: 0.875rem;
+  }
+
+  .cdp-related-rating {
+    font-size: 0.75rem;
+  }
+
+  .cdp-related-price {
+    font-size: 0.938rem;
+  }
+}
+
+/* CTA SECTION (BLUE) section*/
+.cta-section { 
+    background-color: var(--primary-color); 
+    color: white; 
+    padding: 50px 0 40px; 
+    text-align: center;
+
+}
+.offer-badge {
+    background: white; 
+    color: var(--primary-color);
+        padding: 5px 41px;
+    border-radius: 33px; 
+    font-weight: 600;
+        font-size: 1.125rem;
+        display: inline-block;
+        margin-bottom: 25px;
+        position: relative;
+}
+.offer-badge img{
+    height: 50px;
+    width: 50px;
+        object-fit: contain;
+        position: absolute;
+        bottom: -13%;
+        right:-5%;
+}
+.cta-title { 
+    font-weight: 500;
+        font-size: 2.813rem; 
+        margin-bottom: 15px; 
+    }
+.cta-subtitle {
+        font-size: 1.875rem; 
+        font-weight: 500; 
+        margin: 0 auto 30px;  
+    }
+    .cta-btns {
+flex-wrap: wrap;
+}
+
+.cta-section .btn-white { 
+    background: white;
+        color: black;
+        font-weight: 500;
+        font-size: 1rem; 
+        border-radius: 10px;
+        padding: 12px 21px;
+        border: none;
+        }
+.cta-section .btn-outline-white { 
+    border: 2px solid white; 
+    color: white; 
+    font-weight: 500;
+    font-size: 1rem; 
+    border-radius: 10px;
+        padding: 10px 21px;
+        background: transparent; 
+    }
+
+.cta-section .social-follow {
+    margin-top: 30px;
+}
+
+.cta-section .social-follow span {
+    display: block;
+    margin-bottom: 11px;
+
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+/* Social icons container */
+.cta-section .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Icon button */
+.cta-section .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+
+    position: relative;
+}
+
+/* Icon image */
+.cta-section .social-icons img {
+    width: 38px;
+
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.cta-section .social-icons a:hover {
+    transform: translateY(-5px) scale(1.08);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.14),
+        0 4px 10px rgba(0,0,0,0.08);
+
+    background-color: rgba(255,255,255,0.08);
+}
+
+/* Slight icon zoom */
+.cta-section .social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+/* Active / click */
+.cta-section .social-icons a:active {
+    transform: translateY(-1px) scale(0.95);
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.10);
+}
+@media (max-width: 992px) {
+  .cta-title {
+    font-size: 32px;
+  }
+
+  .cta-subtitle {
+    font-size: 16px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cta-section {
+    padding: 40px 15px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+  }
+
+  .cta-subtitle {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .cta-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .cta-section .btn-white,
+ .cta-section .btn-outline-white {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .offer-badge {
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+
+  .offer-badge img {
+    height: 30px;
+    width: 30px;
+    right: -8%;
+  }
+
+ .cta-section .social-follow span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-title {
+    font-size: 22px;
+  }
+
+  .cta-subtitle {
+    font-size: 13px;
+  }
+
+ .cta-section .btn-white,
+ .cta-section .btn-outline-white {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* CTA SECTION (BLUE) section end*/

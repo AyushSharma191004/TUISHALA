@@ -2113,11 +2113,9 @@ flex-wrap: wrap;
 /* Hover effect */
 .cta-section .social-icons a:hover {
     transform: translateY(-5px) scale(1.08);
-
     box-shadow:
         0 10px 25px rgba(0,0,0,0.14),
         0 4px 10px rgba(0,0,0,0.08);
-
     background-color: rgba(255,255,255,0.08);
 }
 
@@ -2129,7 +2127,6 @@ flex-wrap: wrap;
 /* Active / click */
 .cta-section .social-icons a:active {
     transform: translateY(-1px) scale(0.95);
-
     box-shadow:
         0 4px 10px rgba(0,0,0,0.10);
 }
